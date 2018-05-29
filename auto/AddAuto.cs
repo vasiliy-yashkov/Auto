@@ -78,6 +78,12 @@ namespace auto
             {
                 try
                 {
+                    if (String.IsNullOrEmpty(txtColor.Text) || String.IsNullOrEmpty(txtPrice.Text))
+                    {
+                        MessageBox.Show("Пожалуйста, заполните все поля!",
+                        "Ошибка ввода данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     autoAdapter.Insert(txtColor.Text, (int)(long)cmbStatus.SelectedValue, (int)(long)cmbMod.SelectedValue, txtVIN.Text,
                         (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue, Decimal.Parse(txtPrice.Text));
                     this.Close();
@@ -92,6 +98,12 @@ namespace auto
             {
                 try
                 {
+                    if (String.IsNullOrEmpty(txtColor.Text) || String.IsNullOrEmpty(txtPrice.Text))
+                    {
+                        MessageBox.Show("Пожалуйста, заполните все поля!",
+                        "Ошибка ввода данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     autoAdapter.Update(txtColor.Text, (int)(long)cmbStatus.SelectedValue, (int)(long)cmbMod.SelectedValue,
                     txtVIN.Text, (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue, Decimal.Parse(txtPrice.Text),
                     (int)autoID);

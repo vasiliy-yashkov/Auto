@@ -16,6 +16,12 @@ namespace auto
         private autoDataSetTableAdapters.SALETableAdapter saleAdapter;
         private autoDataSetTableAdapters.MARKTableAdapter markAdapter;
         private autoDataSetTableAdapters.MODELTableAdapter modelAdapter;
+        private autoDataSetTableAdapters.STATUSTableAdapter statusAdapter;
+
+        private int modelID;
+        private int engineID;
+        private int modID;
+        private int autoID;
 
         public SaleEventForm ()
         {
@@ -30,6 +36,9 @@ namespace auto
             modelAdapter = new autoDataSetTableAdapters.MODELTableAdapter();
             modelAdapter.ClearBeforeFill = true;
 
+            statusAdapter = new autoDataSetTableAdapters.STATUSTableAdapter();
+            statusAdapter.ClearBeforeFill = true;
+
             this.dateTimePicker1.Format = DateTimePickerFormat.Time;
             //this.dateTimePicker1.ShowUpDown = true;
 
@@ -40,6 +49,14 @@ namespace auto
 
         private void SaleEventForm_Load (object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'autoDataSet.MODIFICATION' table. You can move, or remove it, as needed.
+            this.mODIFICATIONTableAdapter.Fill(this.autoDataSet.MODIFICATION);
+            // TODO: This line of code loads data into the 'autoDataSet.ENGINE' table. You can move, or remove it, as needed.
+            this.eNGINETableAdapter.Fill(this.autoDataSet.ENGINE);
+            // TODO: This line of code loads data into the 'autoDataSet.MODEL' table. You can move, or remove it, as needed.
+            this.mODELTableAdapter.Fill(this.autoDataSet.MODEL);
+            // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
+            this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
             // TODO: This line of code loads data into the 'autoDataSet.PAY' table. You can move, or remove it, as needed.
             this.pAYTableAdapter.Fill(this.autoDataSet.PAY);
             // TODO: This line of code loads data into the 'autoDataSet.EMPLOYEE' table. You can move, or remove it, as needed.
@@ -54,6 +71,7 @@ namespace auto
             saleAdapter.Fill(this.autoDataSet.SALE);
             markAdapter.Fill(this.autoDataSet.MARK);
             modelAdapter.Fill(this.autoDataSet.MODEL);
+            statusAdapter.Fill(this.autoDataSet.STATUS);
 
             this.Validate();
 
@@ -89,11 +107,6 @@ namespace auto
                 MessageBox.Show("Пожалуйста, укажите сотрудника, осуществляющего продажу автомобиля", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            else if (cmbAuto.SelectedValue == null)
-            {
-                MessageBox.Show("Пожалуйста, укажите продаваемый автомобиль", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
             else if (String.IsNullOrEmpty(tbPrice.Text))
             {
                 MessageBox.Show("Пожалуйста, укажите цену", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -118,7 +131,7 @@ namespace auto
                 saleAdapter.InsertQuery(dateTimePicker1.Value,
                     Int32.Parse(cmbPerson.SelectedValue.ToString()),
                     Int32.Parse(cmbEmployee.SelectedValue.ToString()),
-                    Int32.Parse(cmbAuto.SelectedValue.ToString()),
+                    autoID,
                     Decimal.Parse(tbPrice.Text),
                     Int32.Parse(cmbPay.SelectedValue.ToString())
                     );
@@ -167,7 +180,8 @@ namespace auto
                 FastReport.TextObject repCliPP = report1.FindObject("repTxtCPP") as FastReport.TextObject;
                 repCliPP.Text = cliPP;
 
-                auto.autoDataSet.AUTORow aObj = ((cmbAuto.SelectedItem as DataRowView).Row as auto.autoDataSet.AUTORow);
+                autoDataSet.AUTODataTable table = aUTOTableAdapter.GetDataByAutoID(autoID); 
+                auto.autoDataSet.AUTORow aObj = table.Rows[0] as autoDataSet.AUTORow;
                 autoDataSet.MODELDataTable mdlTable = modelAdapter.GetDataByModelID(Int32.Parse(aObj.MODEL_ID.ToString()));
                 string modelFull = (mdlTable.Rows[0] as auto.autoDataSet.MODELRow).MODEL_FULL.ToString();
 
@@ -197,8 +211,7 @@ namespace auto
                 FastReport.TextObject model = report1.FindObject("repTxtModel") as FastReport.TextObject;
                 model.Text = modelFull;
 
-                auto.autoDataSet.AUTORow obj2 = ((cmbAuto.SelectedItem as DataRowView).Row as auto.autoDataSet.AUTORow);
-                
+                auto.autoDataSet.AUTORow obj2 = aObj;
                 FastReport.TextObject all = report1.FindObject("repTxtAll") as FastReport.TextObject;
                 all.Text = obj2.AUTO_FULL;
                 
@@ -221,7 +234,7 @@ namespace auto
                 sum.Text = tbPrice.Text + " руб.";
 
                 FastReport.TextObject sum2 = report1.FindObject("repTxtSum2") as FastReport.TextObject;
-                sum2.Text = tbPrice.Text + " руб.";
+                sum2.Text = txtCatalogPrice.Text + " руб.";
 
                 FastReport.TextObject priceMethod = report1.FindObject("repTxtPriceMethod") as FastReport.TextObject;
                 auto.autoDataSet.PAYRow payRow = ((cmbPay.SelectedItem as DataRowView).Row as auto.autoDataSet.PAYRow);
@@ -233,7 +246,7 @@ namespace auto
                 //this.rdlViewer1.SourceFile = new Uri(filepath);
                 //this.rdlViewer1.Rebuild();
 
-                this.aUTOTableAdapter.UpdateQueryNotAvailable(Int32.Parse(cmbAuto.SelectedValue.ToString()));
+                this.aUTOTableAdapter.UpdateQueryNotAvailable(autoID);
                 SaleEventForm_Load(sender, e);
 
                 report1.Show();
@@ -247,6 +260,161 @@ namespace auto
         private void btnOK_Click (object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbMark_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            ComboBox cbo = (sender as ComboBox);
+            if (cbo.SelectedIndex > -1)
+            {
+                Int32 mark_ID = (Int32)(((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MARKRow).MARK_ID;
+
+                mODELBindingSource.Filter = string.Format("MARK_ID={0}", mark_ID);
+                getAutoInfo();
+            }            
+        }
+
+        private void cmbModel_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            ComboBox cbo = (sender as ComboBox);
+            if (cbo.SelectedIndex > -1)
+            {
+                Int32 modelID = (Int32)(((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_ID;
+
+                aUTOBindingSource.Filter = string.Format("MODEL_ID={0}", modelID);
+
+                object eObj = aUTOTableAdapter.getEngineID(modelID);
+                if (eObj != null)
+                {
+                    Int32 engineID = (Int32)(long)eObj;
+                    eNGINEBindingSource.Filter = string.Format("ENGINE_ID={0}", engineID);
+                }
+                else
+                {
+                    eNGINEBindingSource.Filter = string.Format("ENGINE_ID={0}", Int32.MaxValue);
+                }
+                object mObj = aUTOTableAdapter.getModID(modelID);
+                if (mObj != null)
+                {
+                    Int32 modificationID = (Int32)(long)mObj;
+                    mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", modificationID);                    
+                }
+                else
+                {
+                    mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", Int32.MaxValue);
+                }
+                getAutoInfo();
+            }            
+        }
+
+        private void cmbMark_SelectedValueChanged (object sender, EventArgs e)
+        {
+            ComboBox cbo = (sender as ComboBox);
+            if (cbo.SelectedValue != null)
+            {
+                Int32 mark_ID = (Int32)(((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MARKRow).MARK_ID;
+
+                mODELBindingSource.Filter = string.Format("MARK_ID={0}", mark_ID);
+                getAutoInfo();
+            }            
+        }
+
+        private void cmbModel_SelectedValueChanged (object sender, EventArgs e)
+        {
+            ComboBox cbo = (sender as ComboBox);
+            if (cbo.SelectedValue != null)
+            {
+                Int32 modelID = (Int32)(((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_ID;
+
+                aUTOBindingSource.Filter = string.Format("MODEL_ID={0}", modelID);
+
+                object eObj = aUTOTableAdapter.getEngineID(modelID);
+                if (eObj != null)
+                {
+                    Int32 engineID = (Int32)(long)eObj;
+                    eNGINEBindingSource.Filter = string.Format("ENGINE_ID={0}", engineID);
+                }
+                else
+                {
+                    eNGINEBindingSource.Filter = string.Format("ENGINE_ID={0}", Int32.MaxValue);
+                }
+                object mObj = aUTOTableAdapter.getModID(modelID);
+                if (mObj != null)
+                {
+                    Int32 modificationID = (Int32)(long)mObj;
+                    mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", modificationID);
+                }
+                else
+                {
+                    mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", Int32.MaxValue);
+                }
+                getAutoInfo();
+            }            
+        }
+
+        private void getAutoInfo()
+        {      
+            if (cmbModel.SelectedValue != null)
+            {
+                modelID = (Int32)(((System.Data.DataRowView)(cmbModel.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_ID;
+            }
+            else
+            {
+                tbPrice.Text = txtCatalogPrice.Text = String.Empty;
+                txtStatus.Text = String.Empty;
+                txtStatus.BackColor = Color.White;
+                btnApply.Enabled = false;
+                return;
+            }
+            if (cmbEngine.SelectedValue != null)
+            {
+                engineID = (Int32)(((System.Data.DataRowView)(cmbEngine.SelectedItem)).Row as autoDataSet.ENGINERow).ENGINE_ID;
+            }
+            else
+            {
+                tbPrice.Text = txtCatalogPrice.Text = String.Empty;
+                txtStatus.Text = String.Empty;
+                txtStatus.BackColor = Color.White;
+                btnApply.Enabled = false;
+                return;
+            }
+            if (cmbMod.SelectedValue != null)
+            {
+                modID = (Int32)(((System.Data.DataRowView)(cmbMod.SelectedItem)).Row as autoDataSet.MODIFICATIONRow).MODIFICATION_ID;
+            }
+            else
+            {
+                tbPrice.Text = txtCatalogPrice.Text = String.Empty;
+                txtStatus.Text = String.Empty;
+                txtStatus.BackColor = Color.White;
+                btnApply.Enabled = false;
+                return;
+            }
+            autoID = (int)(long)aUTOTableAdapter.getAutoID(modelID, modID, engineID);
+
+            autoDataSet.AUTODataTable table = aUTOTableAdapter.GetDataByAutoID(autoID);
+            autoDataSet.AUTORow row = table.Rows[0] as autoDataSet.AUTORow;
+
+            int statusID = (int)(long)row.STATUS_ID;
+
+            autoDataSet.STATUSDataTable statusTable = statusAdapter.GetDataByStatusID(statusID);
+            autoDataSet.STATUSRow statusRow = statusTable.Rows[0] as autoDataSet.STATUSRow;
+            string status = statusRow.STATUS_NAME;
+            if (!status.ToLower().Equals("в наличии"))
+            {
+                txtStatus.Text = status;
+                txtStatus.BackColor = Color.Red;
+                btnApply.Enabled = false;
+                return;
+            }
+            else
+            {
+                txtStatus.Text = status;
+                txtStatus.BackColor = Color.Green;
+            }
+
+            tbPrice.Text = txtCatalogPrice.Text = row.AUTO_PRICE.ToString();
+            btnApply.Enabled = true;
         }
     }
 }

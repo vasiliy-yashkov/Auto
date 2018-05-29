@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="05/28/2018 15:11:03" ReportInfo.Modified="05/28/2018 16:02:34" ReportInfo.CreatorVersion="2018.3.9.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/28/2018 15:11:03" ReportInfo.Modified="05/29/2018 13:08:51" ReportInfo.CreatorVersion="2018.3.9.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -73,10 +73,10 @@ namespace FastReport
   </ReportPage>
   <DialogPage Name="frmFilter" AcceptButton="btnOk" CancelButton="btnCancel" Text="Отчет за период">
     <ButtonControl Name="btnOk" Left="118" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="0" Text="OK" ClickEvent="btnOk_Click" DialogResult="OK"/>
-    <ButtonControl Name="btnCancel" Left="201" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="1" Text="Cancel" DialogResult="Cancel"/>
+    <ButtonControl Name="btnCancel" Left="201" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="1" Text="Отмена" DialogResult="Cancel"/>
     <LabelControl Name="Label1" Left="4" Top="8" Width="48" Height="13" Font="Tahoma, 8pt" TabIndex="2" Text="Начало:"/>
-    <DateTimePickerControl Name="date1" Left="4" Top="24" Font="Tahoma, 8pt" TabIndex="3" Value="05/28/2018 15:36:59"/>
+    <DateTimePickerControl Name="date1" Left="4" Top="24" Font="Tahoma, 8pt" TabIndex="3" Text="28 мая 2018 г." Value="05/28/2018 15:36:59"/>
     <LabelControl Name="Label2" Left="4" Top="56" Width="42" Height="13" Font="Tahoma, 8pt" TabIndex="4" Text="Конец:"/>
-    <DateTimePickerControl Name="date2" Left="4" Top="76" Font="Tahoma, 8pt" TabIndex="5" CustomFormat="DD.MM.YYYY" Value="05/28/2018 15:37:14"/>
+    <DateTimePickerControl Name="date2" Left="4" Top="76" Font="Tahoma, 8pt" TabIndex="5" Text="28 мая 2018 г." CustomFormat="DD.MM.YYYY" Value="05/28/2018 15:37:14"/>
   </DialogPage>
 </Report>

@@ -48,13 +48,14 @@
             this.eventsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.connectionLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.autoDataSet1 = new auto.autoDataSet();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deliveryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saleReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet1)).BeginInit();
@@ -223,6 +224,22 @@
             this.saleToolStripMenuItem.Text = "Оформление продажи автомобиля";
             this.saleToolStripMenuItem.Click += new System.EventHandler(this.saleToolStripMenuItem_Click);
             // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deliveryReportToolStripMenuItem,
+            this.saleReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.reportsToolStripMenuItem.Text = "Отчет";
+            // 
+            // deliveryReportToolStripMenuItem
+            // 
+            this.deliveryReportToolStripMenuItem.Name = "deliveryReportToolStripMenuItem";
+            this.deliveryReportToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.deliveryReportToolStripMenuItem.Text = "Поставка автомобилей";
+            this.deliveryReportToolStripMenuItem.Click += new System.EventHandler(this.deliveryReportToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -259,20 +276,12 @@
             this.autoDataSet1.DataSetName = "autoDataSet";
             this.autoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reportsToolStripMenuItem
+            // saleReportToolStripMenuItem
             // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deliveryReportToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.reportsToolStripMenuItem.Text = "Отчет";
-            // 
-            // deliveryReportToolStripMenuItem
-            // 
-            this.deliveryReportToolStripMenuItem.Name = "deliveryReportToolStripMenuItem";
-            this.deliveryReportToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.deliveryReportToolStripMenuItem.Text = "Поставка автомобилей";
-            this.deliveryReportToolStripMenuItem.Click += new System.EventHandler(this.deliveryReportToolStripMenuItem_Click);
+            this.saleReportToolStripMenuItem.Name = "saleReportToolStripMenuItem";
+            this.saleReportToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.saleReportToolStripMenuItem.Text = "Продажа автомобилей";
+            this.saleReportToolStripMenuItem.Click += new System.EventHandler(this.saleReportToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -327,6 +336,7 @@
         private System.Windows.Forms.ToolStripMenuItem engineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deliveryReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saleReportToolStripMenuItem;
     }
 }
 

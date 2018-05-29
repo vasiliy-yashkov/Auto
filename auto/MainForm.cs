@@ -252,5 +252,17 @@ namespace auto
             deliveryReport.MdiParent = this;
             deliveryReport.showReport();
         }
+
+        private void saleReportToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            FBSaleReport saleReport = new FBSaleReport();
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.GetType() == typeof(FBSaleReport))
+                    saleReport = (FBSaleReport)form;
+            }
+            saleReport.MdiParent = this;
+            saleReport.showReport();
+        }
     }
 }

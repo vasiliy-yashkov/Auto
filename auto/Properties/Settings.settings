@@ -8,7 +8,7 @@
   &lt;ConnectionString&gt;character set=WIN1251;data source=127.0.0.1;initial catalog=E:\source\Auto\auto\bin\Debug\db\AUTO.FDB;user=SYSDBA;password=masterkey&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;FirebirdSql.Data.FirebirdClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">character set=WIN1251;data source=127.0.0.1;initial catalog=E:\source\Rehcfx\auto\auto\bin\Debug\db\AUTO.FDB;user=SYSDBA;password=masterkey</Value>
+      <Value Profile="(Default)">character set=WIN1251;data source=127.0.0.1;initial catalog=E:\source\Auto\auto\bin\Debug\db\AUTO.FDB;user=SYSDBA;password=masterkey</Value>
     </Setting>
   </Settings>
 </SettingsFile>

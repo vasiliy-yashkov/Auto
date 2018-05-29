@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Auto));
             this.aUTOBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.aUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoDataSet = new auto.autoDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -44,11 +46,11 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aUTOBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.v_AUTODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,8 +70,6 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.v_AUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.autoDataSet = new auto.autoDataSet();
-            this.aUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aUTOTableAdapter = new auto.autoDataSetTableAdapters.AUTOTableAdapter();
             this.tableAdapterManager = new auto.autoDataSetTableAdapters.TableAdapterManager();
             this.eNGINETableAdapter = new auto.autoDataSetTableAdapters.ENGINETableAdapter();
@@ -85,10 +85,10 @@
             this.v_AUTOTableAdapter = new auto.autoDataSetTableAdapters.V_AUTOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingNavigator)).BeginInit();
             this.aUTOBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_AUTODataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_AUTOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).BeginInit();
@@ -126,7 +126,7 @@
             this.aUTOBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.aUTOBindingNavigator.Name = "aUTOBindingNavigator";
             this.aUTOBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.aUTOBindingNavigator.Size = new System.Drawing.Size(1122, 25);
+            this.aUTOBindingNavigator.Size = new System.Drawing.Size(1217, 25);
             this.aUTOBindingNavigator.TabIndex = 0;
             this.aUTOBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -139,6 +139,16 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Visible = false;
+            // 
+            // aUTOBindingSource
+            // 
+            this.aUTOBindingSource.DataMember = "AUTO";
+            this.aUTOBindingSource.DataSource = this.autoDataSet;
+            // 
+            // autoDataSet
+            // 
+            this.autoDataSet.DataSetName = "autoDataSet";
+            this.autoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -235,20 +245,6 @@
             this.toolStripButton1.Text = "Обновить";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "AUTO_ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "MODEL_ID";
-            this.dataGridViewTextBoxColumn7.HeaderText = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
             // tsbAdd
             // 
             this.tsbAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -279,6 +275,20 @@
             this.tsbDelete.Text = "Удалить";
             this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "AUTO_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MODEL_ID";
+            this.dataGridViewTextBoxColumn7.HeaderText = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
             // v_AUTODataGridView
             // 
             this.v_AUTODataGridView.AllowUserToAddRows = false;
@@ -307,9 +317,10 @@
             this.v_AUTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.v_AUTODataGridView.Location = new System.Drawing.Point(0, 25);
             this.v_AUTODataGridView.Name = "v_AUTODataGridView";
+            this.v_AUTODataGridView.ReadOnly = true;
             this.v_AUTODataGridView.RowHeadersVisible = false;
             this.v_AUTODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.v_AUTODataGridView.Size = new System.Drawing.Size(1122, 485);
+            this.v_AUTODataGridView.Size = new System.Drawing.Size(1217, 485);
             this.v_AUTODataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn2
@@ -317,6 +328,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "AUTO_ID";
             this.dataGridViewTextBoxColumn2.HeaderText = "AUTO_ID";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
             // 
             // dataGridViewTextBoxColumn3
@@ -324,6 +336,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "MODEL_ID";
             this.dataGridViewTextBoxColumn3.HeaderText = "MODEL_ID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
@@ -331,6 +344,7 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "MODIFICATION_ID";
             this.dataGridViewTextBoxColumn4.HeaderText = "MODIFICATION_ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Visible = false;
             // 
             // dataGridViewTextBoxColumn5
@@ -338,6 +352,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ENGINE_ID";
             this.dataGridViewTextBoxColumn5.HeaderText = "ENGINE_ID";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
@@ -345,6 +360,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "STATUS_ID";
             this.dataGridViewTextBoxColumn6.HeaderText = "STATUS_ID";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
@@ -352,87 +368,89 @@
             this.dataGridViewTextBoxColumn8.DataPropertyName = "MARK_NAME";
             this.dataGridViewTextBoxColumn8.HeaderText = "Марка";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "MODEL_NAME";
             this.dataGridViewTextBoxColumn9.HeaderText = "Модель";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "AUTO_COLOR";
             this.dataGridViewTextBoxColumn10.HeaderText = "Цвет";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "MODIFICATION_NAME";
             this.dataGridViewTextBoxColumn11.HeaderText = "Модификация";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "MODIFICATION_BODY";
             this.dataGridViewTextBoxColumn12.HeaderText = "Описание модификации";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "TRANSMISSION";
             this.dataGridViewTextBoxColumn13.HeaderText = "Трансмиссия";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "ENGINE_VOLUME";
             this.dataGridViewTextBoxColumn14.HeaderText = "Об. двигателя";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "ENGINE_POWER";
             this.dataGridViewTextBoxColumn15.HeaderText = "Мощность";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.DataPropertyName = "ENGINE_CONSUMPTION";
             this.dataGridViewTextBoxColumn16.HeaderText = "Расход";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.DataPropertyName = "AUTO_VIN";
             this.dataGridViewTextBoxColumn17.HeaderText = "VIN";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "STATUS_NAME";
             this.dataGridViewTextBoxColumn18.HeaderText = "Статус";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.DataPropertyName = "AUTO_PRICE";
             this.dataGridViewTextBoxColumn19.HeaderText = "Цена";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
             // 
             // v_AUTOBindingSource
             // 
             this.v_AUTOBindingSource.DataMember = "V_AUTO";
             this.v_AUTOBindingSource.DataSource = this.autoDataSet;
-            // 
-            // autoDataSet
-            // 
-            this.autoDataSet.DataSetName = "autoDataSet";
-            this.autoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aUTOBindingSource
-            // 
-            this.aUTOBindingSource.DataMember = "AUTO";
-            this.aUTOBindingSource.DataSource = this.autoDataSet;
             // 
             // aUTOTableAdapter
             // 
@@ -511,7 +529,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 510);
+            this.ClientSize = new System.Drawing.Size(1217, 510);
             this.Controls.Add(this.v_AUTODataGridView);
             this.Controls.Add(this.aUTOBindingNavigator);
             this.Name = "Auto";
@@ -520,10 +538,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingNavigator)).EndInit();
             this.aUTOBindingNavigator.ResumeLayout(false);
             this.aUTOBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_AUTODataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_AUTOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).EndInit();

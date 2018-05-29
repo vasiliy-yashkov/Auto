@@ -125,6 +125,12 @@
     <Compile Include="Engine.Designer.cs">
       <DependentUpon>Engine.cs</DependentUpon>
     </Compile>
+    <Compile Include="FBSaleReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBSaleReport.Designer.cs">
+      <DependentUpon>FBSaleReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRDiliveryReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Engine.resx">
       <DependentUpon>Engine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBSaleReport.resx">
+      <DependentUpon>FBSaleReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRDiliveryReport.resx">
       <DependentUpon>FRDiliveryReport.cs</DependentUpon>

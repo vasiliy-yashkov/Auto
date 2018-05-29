@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/29/2018 12:58:16" ReportInfo.Modified="05/29/2018 13:06:48" ReportInfo.CreatorVersion="2018.3.9.0">
+  <Styles Name="Standard">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data"/>
+    <Style Name="Footer"/>
+    <Style Name="EvenRows" Fill.Color="WhiteSmoke"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="V_SALE" ReferenceName="autoDataSet1.V_SALE" DataType="System.Int32" Enabled="true">
+      <Column Name="PERSON_FULL" DataType="System.String"/>
+      <Column Name="AUTO_FULL" DataType="System.String"/>
+      <Column Name="EMPLOYEE_FULL" DataType="System.String"/>
+      <Column Name="PAY_NAME" DataType="System.String"/>
+      <Column Name="SALE_DATE" DataType="System.DateTime"/>
+      <Column Name="SALE_PRICE" DataType="System.Decimal"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="Отчет по продажам от [date1.Value.ToShortDateString()] по [date2.Value.ToShortDateString()]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="41.8" Width="718.2" Height="198.45" DataSource="V_SALE" Filter="([V_SALE.SALE_DATE] &gt;= date1.Value) &amp;&amp; ([V_SALE.SALE_DATE]&lt;=date2.Value)">
+      <TextObject Name="Text2" Width="132.3" Height="28.35" Text="Покупатель" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text3" Left="132.3" Width="585.9" Height="28.35" Text="[V_SALE.PERSON_FULL]" Style="Data"/>
+      <TextObject Name="Text4" Top="28.35" Width="132.3" Height="56.7" Text="Автомобиль" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="132.3" Top="28.35" Width="585.9" Height="56.7" Text="[V_SALE.AUTO_FULL]" Style="Data"/>
+      <TextObject Name="Text6" Top="85.05" Width="132.3" Height="28.35" Text="Продавец" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="132.3" Top="85.05" Width="585.9" Height="28.35" Text="[V_SALE.EMPLOYEE_FULL]" Style="Data"/>
+      <TextObject Name="Text8" Top="113.4" Width="132.3" Height="18.9" Text="Оплата" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="132.3" Top="113.4" Width="585.9" Height="18.9" Text="[V_SALE.PAY_NAME]" Style="Data"/>
+      <TextObject Name="Text10" Top="132.3" Width="132.3" Height="18.9" Text="Дата покупки" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text11" Left="132.3" Top="132.3" Width="585.9" Height="18.9" Text="[V_SALE.SALE_DATE]" Format="Date" Format.Format="d" Style="Data"/>
+      <TextObject Name="Text12" Top="151.2" Width="132.3" Height="18.9" Text="Итоговая цена" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text13" Left="132.3" Top="151.2" Width="585.9" Height="18.9" Text="[V_SALE.SALE_PRICE]" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="244.25" Width="718.2" Height="18.9">
+      <TextObject Name="Text14" Width="718.2" Height="18.9" Dock="Fill" Text="[PageN]" HorzAlign="Right" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+  <DialogPage Name="Form1" AcceptButton="btnOk" CancelButton="btnCancel" Text="Выбор периода продаж">
+    <ButtonControl Name="btnOk" Left="118" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="0" Text="OK" DialogResult="OK"/>
+    <ButtonControl Name="btnCancel" Left="201" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="1" Text="Отмена" DialogResult="Cancel"/>
+    <LabelControl Name="Label1" Left="4" Top="8" Width="90" Height="13" Font="Tahoma, 8pt" TabIndex="2" Text="Начало периода"/>
+    <DateTimePickerControl Name="date1" Left="4" Top="28" Font="Tahoma, 8pt" TabIndex="3" Value="05/29/2018 13:01:47"/>
+    <LabelControl Name="Label2" Left="4" Top="56" Width="84" Height="13" Font="Tahoma, 8pt" TabIndex="4" Text="Конец периода"/>
+    <DateTimePickerControl Name="date2" Left="4" Top="80" Font="Tahoma, 8pt" TabIndex="5" Value="05/29/2018 13:02:18"/>
+  </DialogPage>
+</Report>

@@ -26,8 +26,8 @@ namespace auto.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("character set=WIN1251;data source=127.0.0.1;initial catalog=E:\\source\\Rehcfx\\auto" +
-            "\\auto\\bin\\Debug\\db\\AUTO.FDB;user=SYSDBA;password=masterkey")]
+        [global::System.Configuration.DefaultSettingValueAttribute("character set=WIN1251;data source=127.0.0.1;initial catalog=E:\\source\\Auto\\auto\\b" +
+            "in\\Debug\\db\\AUTO.FDB;user=SYSDBA;password=masterkey")]
         public string auto_database {
             get {
                 return ((string)(this["auto_database"]));
