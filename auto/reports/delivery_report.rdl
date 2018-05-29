@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Description>
+  </Description>
+  <Author>
+  </Author>
+  <PageHeight>11in</PageHeight>
+  <PageWidth>8.5in</PageWidth>
+  <DataSources>
+    <DataSource Name="DS1">
+      <ConnectionProperties>
+        <DataProvider>Firebird.NET 2.0</DataProvider>
+        <ConnectString>Dialect=3;User=SYSDBA;Database=e:\source\auto\auto\bin\Debug\db\AUTO.FDB;Data Source=localhost;Password=masterkey</ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <Width>7.5in</Width>
+  <TopMargin>.25in</TopMargin>
+  <LeftMargin>.25in</LeftMargin>
+  <RightMargin>.25in</RightMargin>
+  <BottomMargin>.25in</BottomMargin>
+  <DataSets>
+    <DataSet Name="Data">
+      <Query>
+        <DataSourceName>DS1</DataSourceName>
+        <CommandText>SELECT
+    p.provider_name,
+    p.provider_info,
+    a.auto_full,
+    DELIVERY_DATE,
+    DELIVERY_PRICE
+FROM
+DELIVERY d
+join "AUTO" a on a.auto_id = d.auto_id
+join PROVIDER p on p.provider_id = d.provider_id</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PROVIDER_NAME">
+          <DataField>PROVIDER_NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PROVIDER_INFO">
+          <DataField>PROVIDER_INFO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AUTO_FULL">
+          <DataField>AUTO_FULL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DELIVERY_DATE">
+          <DataField>DELIVERY_DATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DELIVERY_PRICE">
+          <DataField>DELIVERY_PRICE</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <PageHeader>
+    <Height>.5in</Height>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <Body>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>Data</DataSetName>
+        <NoRows>Query returned no rows!</NoRows>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>91.1pt</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>109.9pt</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>135.0pt</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>95.9pt</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.75in</Width>
+          </TableColumn>
+        </TableColumns>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>37.6pt</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Textbox1">
+                      <Value>Поставщик</Value>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Textbox2">
+                      <Value>Информация о поставщике</Value>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Textbox3">
+                      <Value>Автомобиль</Value>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Textbox4">
+                      <Value>Дата поставки</Value>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Textbox5">
+                      <Value>Закупочная цена(руб.)</Value>
+                      <Style>
+                        <TextAlign>Center</TextAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>12pt</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PROVIDER_NAME">
+                      <Value>=Fields!PROVIDER_NAME.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PROVIDER_INFO">
+                      <Value>=Fields!PROVIDER_INFO.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="AUTO_FULL">
+                      <Value>=Fields!AUTO_FULL.Value</Value>
+                      <CanGrow>true</CanGrow>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DELIVERY_DATE">
+                      <Value>=Fields!DELIVERY_DATE.Value</Value>
+                      <CanGrow>false</CanGrow>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingLeft>2pt</PaddingLeft>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DELIVERY_PRICE">
+                      <Value>=Fields!DELIVERY_PRICE.Value</Value>
+                      <CanGrow>false</CanGrow>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <PaddingRight>2pt</PaddingRight>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+      </Table>
+    </ReportItems>
+    <Height>157.6pt</Height>
+  </Body>
+  <PageFooter>
+    <Height>14pt</Height>
+    <ReportItems>
+      <Textbox Name="Textbox6">
+        <Top>1pt</Top>
+        <Left>10pt</Left>
+        <Height>12pt</Height>
+        <Width>3in</Width>
+        <Value>=Globals!PageNumber + ' из ' + Globals!TotalPages</Value>
+        <Style>
+          <FontSize>10pt</FontSize>
+          <FontWeight>Normal</FontWeight>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+</Report>

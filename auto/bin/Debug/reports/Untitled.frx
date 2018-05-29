@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/16/2018 11:36:01" ReportInfo.Modified="05/24/2018 19:10:01" ReportInfo.CreatorVersion="2018.3.9.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    public void setDate(string date) 
+    {
+      repTxtDate.Text = date;
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="CLIENT" ReferenceName="autoDataSet1.CLIENT" DataType="System.Int32" Enabled="true">
+      <Column Name="CLIENT_ID" DataType="System.Int64"/>
+      <Column Name="PERSON_ID" DataType="System.Int64"/>
+      <Column Name="AUTO_ID" DataType="System.Int64"/>
+    </TableDataSource>
+    <TableDataSource Name="DELIVERY" ReferenceName="autoDataSet1.DELIVERY" DataType="System.Int32" Enabled="true">
+      <Column Name="DELIVERY_ID" DataType="System.Int64"/>
+      <Column Name="PROVIDER_ID" DataType="System.Int64"/>
+      <Column Name="AUTO_ID" DataType="System.Int64"/>
+      <Column Name="DELIVERY_DATE" DataType="System.DateTime"/>
+      <Column Name="DELIVERY_PRICE" DataType="System.Decimal"/>
+    </TableDataSource>
+    <TableDataSource Name="EMPLOYEE" ReferenceName="autoDataSet1.EMPLOYEE" DataType="System.Int32" Enabled="true">
+      <Column Name="EMPLOYEE_ID" DataType="System.Int64"/>
+      <Column Name="PERSON_ID" DataType="System.Int64"/>
+      <Column Name="EMPLOYEE_BEGIN_DATE" DataType="System.DateTime"/>
+      <Column Name="EMPLOYEE_SALARY" DataType="System.Decimal"/>
+      <Column Name="POST_ID" DataType="System.Int64"/>
+      <Column Name="EMPLOYEE_FULL" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="PAY" ReferenceName="autoDataSet1.PAY" DataType="System.Int32" Enabled="true">
+      <Column Name="PAY_ID" DataType="System.Int64"/>
+      <Column Name="PAY_NAME" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="PERSON" ReferenceName="autoDataSet1.PERSON" DataType="System.Int32" Enabled="true">
+      <Column Name="PERSON_ID" DataType="System.Int64"/>
+      <Column Name="PERSON_NAME" DataType="System.String"/>
+      <Column Name="PERSON_LAST_NAME" DataType="System.String"/>
+      <Column Name="PERSON_MIDDLE_NAME" DataType="System.String"/>
+      <Column Name="PERSON_BIRTHDAY" DataType="System.DateTime"/>
+      <Column Name="PERSON_FULL" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="PERSON_INFO" ReferenceName="autoDataSet1.PERSON_INFO" DataType="System.Int32" Enabled="true">
+      <Column Name="PERSON_INFO_ID" DataType="System.Int64"/>
+      <Column Name="PERSON_PHONE" DataType="System.String"/>
+      <Column Name="PERSON_ADDRESS" DataType="System.String"/>
+      <Column Name="PERSON_ID" DataType="System.Int64"/>
+    </TableDataSource>
+    <TableDataSource Name="POST" ReferenceName="autoDataSet1.POST" DataType="System.Int32" Enabled="true">
+      <Column Name="POST_ID" DataType="System.Int64"/>
+      <Column Name="POST_NAME" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="PROVIDER" ReferenceName="autoDataSet1.PROVIDER" DataType="System.Int32" Enabled="true">
+      <Column Name="PROVIDER_ID" DataType="System.Int64"/>
+      <Column Name="PROVIDER_NAME" DataType="System.String"/>
+      <Column Name="PROVIDER_INFO" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="SALE" ReferenceName="autoDataSet1.SALE" DataType="System.Int32" Enabled="true">
+      <Column Name="SALE_ID" DataType="System.Int64"/>
+      <Column Name="SALE_DATE" DataType="System.DateTime"/>
+      <Column Name="PERSON_ID" DataType="System.Int64"/>
+      <Column Name="EMPLOYEE_ID" DataType="System.Int64"/>
+      <Column Name="AUTO_ID" DataType="System.Int64"/>
+      <Column Name="SALE_PRICE" DataType="System.Decimal"/>
+      <Column Name="PAY_ID" DataType="System.Int64"/>
+    </TableDataSource>
+    <TableDataSource Name="STATUS" ReferenceName="autoDataSet1.STATUS" DataType="System.Int32" Enabled="true">
+      <Column Name="STATUS_ID" DataType="System.Int64"/>
+      <Column Name="STATUS_NAME" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="AUTO" ReferenceName="autoDataSet1.AUTO" DataType="System.Int32" Enabled="true">
+      <Column Name="AUTO_ID" DataType="System.Int64"/>
+      <Column Name="AUTO_COLOR" DataType="System.String"/>
+      <Column Name="STATUS_ID" DataType="System.Int64"/>
+      <Column Name="MODIFICATION_ID" DataType="System.Int64"/>
+      <Column Name="AUTO_FULL" DataType="System.String"/>
+      <Column Name="AUTO_VIN" DataType="System.String"/>
+      <Column Name="MODEL_ID" DataType="System.Int64"/>
+      <Column Name="ENGINE_ID" DataType="System.Int64"/>
+    </TableDataSource>
+    <TableDataSource Name="ENGINE" ReferenceName="autoDataSet1.ENGINE" DataType="System.Int32" Enabled="true">
+      <Column Name="ENGINE_ID" DataType="System.Int64"/>
+      <Column Name="ENGINE_VOLUME" DataType="System.Decimal"/>
+      <Column Name="ENGINE_POWER" DataType="System.Int32"/>
+      <Column Name="ENGINE_TYPE" DataType="System.String"/>
+      <Column Name="ENGINE_CONSUMPTION" DataType="System.Decimal"/>
+      <Column Name="ENGINE_FULL" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="MARK" ReferenceName="autoDataSet1.MARK" DataType="System.Int32" Enabled="true">
+      <Column Name="MARK_ID" DataType="System.Int64"/>
+      <Column Name="MARK_NAME" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="MODEL" ReferenceName="autoDataSet1.MODEL" DataType="System.Int32" Enabled="true">
+      <Column Name="MODEL_ID" DataType="System.Int64"/>
+      <Column Name="MARK_ID" DataType="System.Int64"/>
+      <Column Name="MODEL_NAME" DataType="System.String"/>
+      <Column Name="MODEL_FULL" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="MODIFICATION" ReferenceName="autoDataSet1.MODIFICATION" DataType="System.Int32" Enabled="true">
+      <Column Name="MODIFICATION_ID" DataType="System.Int64"/>
+      <Column Name="MODIFICATION_NAME" DataType="System.String"/>
+      <Column Name="MODIFICATION_BODY" DataType="System.String"/>
+      <Column Name="TRANSMISSION" DataType="System.String"/>
+      <Column Name="FULL" DataType="System.String"/>
+    </TableDataSource>
+    <Relation Name="FK_CLIENT_1" ReferenceName="autoDataSet1.FK_CLIENT_1" ParentDataSource="PERSON" ChildDataSource="CLIENT" ParentColumns="PERSON_ID" ChildColumns="PERSON_ID" Enabled="true"/>
+    <Relation Name="FK_DELIVERY_1" ReferenceName="autoDataSet1.FK_DELIVERY_1" ParentDataSource="PROVIDER" ChildDataSource="DELIVERY" ParentColumns="PROVIDER_ID" ChildColumns="PROVIDER_ID" Enabled="true"/>
+    <Relation Name="FK_EMPLOYEE_1" ReferenceName="autoDataSet1.FK_EMPLOYEE_1" ParentDataSource="PERSON" ChildDataSource="EMPLOYEE" ParentColumns="PERSON_ID" ChildColumns="PERSON_ID" Enabled="true"/>
+    <Relation Name="FK_EMPLOYEE_2" ReferenceName="autoDataSet1.FK_EMPLOYEE_2" ParentDataSource="POST" ChildDataSource="EMPLOYEE" ParentColumns="POST_ID" ChildColumns="POST_ID" Enabled="true"/>
+    <Relation Name="FK_PERSON_INFO_1" ReferenceName="autoDataSet1.FK_PERSON_INFO_1" ParentDataSource="PERSON" ChildDataSource="PERSON_INFO" ParentColumns="PERSON_ID" ChildColumns="PERSON_ID" Enabled="true"/>
+    <Relation Name="FK_SALE_1" ReferenceName="autoDataSet1.FK_SALE_1" ParentDataSource="PERSON" ChildDataSource="SALE" ParentColumns="PERSON_ID" ChildColumns="PERSON_ID" Enabled="true"/>
+    <Relation Name="FK_SALE_2" ReferenceName="autoDataSet1.FK_SALE_2" ParentDataSource="EMPLOYEE" ChildDataSource="SALE" ParentColumns="EMPLOYEE_ID" ChildColumns="EMPLOYEE_ID" Enabled="true"/>
+    <Relation Name="FK_SALE_4" ReferenceName="autoDataSet1.FK_SALE_4" ParentDataSource="PAY" ChildDataSource="SALE" ParentColumns="PAY_ID" ChildColumns="PAY_ID" Enabled="true"/>
+    <Relation Name="FK_CLIENT_2" ReferenceName="autoDataSet1.FK_CLIENT_2" ParentDataSource="AUTO" ChildDataSource="CLIENT" ParentColumns="AUTO_ID" ChildColumns="AUTO_ID" Enabled="true"/>
+    <Relation Name="FK_DELIVERY_2" ReferenceName="autoDataSet1.FK_DELIVERY_2" ParentDataSource="AUTO" ChildDataSource="DELIVERY" ParentColumns="AUTO_ID" ChildColumns="AUTO_ID" Enabled="true"/>
+    <Relation Name="FK_SALE_3" ReferenceName="autoDataSet1.FK_SALE_3" ParentDataSource="AUTO" ChildDataSource="SALE" ParentColumns="AUTO_ID" ChildColumns="AUTO_ID" Enabled="true"/>
+    <Relation Name="FK_AUTO_1" ReferenceName="autoDataSet1.FK_AUTO_1" ParentDataSource="STATUS" ChildDataSource="AUTO" ParentColumns="STATUS_ID" ChildColumns="STATUS_ID" Enabled="true"/>
+    <Relation Name="FK_AUTO_2" ReferenceName="autoDataSet1.FK_AUTO_2" ParentDataSource="MODIFICATION" ChildDataSource="AUTO" ParentColumns="MODIFICATION_ID" ChildColumns="MODIFICATION_ID" Enabled="true"/>
+    <Relation Name="FK_AUTO_3" ReferenceName="autoDataSet1.FK_AUTO_3" ParentDataSource="MODEL" ChildDataSource="AUTO" ParentColumns="MODEL_ID" ChildColumns="MODEL_ID" Enabled="true"/>
+    <Relation Name="FK_AUTO_4" ReferenceName="autoDataSet1.FK_AUTO_4" ParentDataSource="ENGINE" ChildDataSource="AUTO" ParentColumns="ENGINE_ID" ChildColumns="ENGINE_ID" Enabled="true"/>
+    <Relation Name="FK_MODEL_1" ReferenceName="autoDataSet1.FK_MODEL_1" ParentDataSource="MARK" ChildDataSource="MODEL" ParentColumns="MARK_ID" ChildColumns="MARK_ID" Enabled="true"/>
+    <Parameter Name="Parameter" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="189" Top="9.45" Width="189" Height="18.9" Text="Договор купли-продажи от" AutoWidth="true" HorzAlign="Center"/>
+      <TextObject Name="repTxtDate" Left="378" Top="9.45" Width="94.5" Height="18.9" Text="dfg"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35"/>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="623.7">
+      <TextObject Name="Text2" Left="9.45" Top="9.45" Width="122.85" Height="18.9" Text="ФИО продавца:" AutoWidth="true"/>
+      <TextObject Name="Text5" Left="548.1" Top="9.45" Width="47.25" Height="18.9" Text="Дата рождения:"/>
+      <TextObject Name="Text6" Left="9.45" Top="37.8" Width="122.85" Height="18.9" Text="Серия паспорта:"/>
+      <TextObject Name="Text7" Left="9.45" Top="66.15" Width="94.5" Height="18.9" Text="Выдан"/>
+      <TextObject Name="Text8" Left="9.45" Top="94.5" Width="122.85" Height="18.9" Text="ФИО покупателя:" AutoWidth="true"/>
+      <TextObject Name="Text9" Left="548.1" Top="94.5" Width="47.25" Height="18.9" Text="Дата рождения:"/>
+      <TextObject Name="Text12" Left="9.45" Top="179.55" Width="151.2" Height="18.9" Text="Заключили договор"/>
+      <TextObject Name="Text13" Left="9.45" Top="207.9" Width="680.4" Height="37.8" Text="По настоящему Договору Покупатель обязуется принять и оплатить, а Продавец обязуется передать в собственность Покупателю следующее транспортное средство:"/>
+      <TextObject Name="Text14" Left="9.45" Top="255.15" Width="122.85" Height="18.9" Text="Марка,модель:"/>
+      <TextObject Name="Text15" Left="472.5" Top="255.15" Width="37.8" Height="18.9" Text="VIN:"/>
+      <TextObject Name="Text22" Left="463.05" Top="330.75" Width="47.25" Height="18.9" Text="Цвет:"/>
+      <TextObject Name="Text29" Left="9.45" Top="330.75" Width="170.1" Height="18.9" Text="Цена автомобиля:"/>
+      <TextObject Name="Text30" Left="9.45" Top="359.1" Width="661.5" Height="28.35" Text="Цена автомобиля определяется в соглашении Продавца и Покупателя и составляет денежную сумму в размере"/>
+      <TextObject Name="Text31" Left="9.45" Top="387.45" Width="680.4" Height="66.15" Text="Продавец подтверждает факт отсутствия у автомобиля обреиенения от любых прав третьих лиц. Право собственности на автомобиль переходит к Покупателю в момент подписания настоящего Договора. До заключения настоящего Договора Продавец подверждает,что автомобиль никому не продан,не заложен,под арестом не находится,не имеет регистрационных ограничений."/>
+      <TextObject Name="Text33" Left="18.9" Top="500.85" Width="170.1" Height="18.9" Text="ТС (автомобиль):"/>
+      <TextObject Name="Text34" Left="18.9" Top="529.2" Width="94.5" Height="18.9" Text=" VIN:"/>
+      <TextObject Name="Text35" Left="18.9" Top="557.55" Width="94.5" Height="18.9" Text="Получил:"/>
+      <TextObject Name="Text36" Left="9.45" Top="463.05" Width="160.65" Height="18.9" Text="Деньги в сумме:"/>
+      <TextObject Name="Text37" Left="444.15" Top="557.55" Width="94.5" Height="18.9" Text="Получил:"/>
+      <TextObject Name="Text38" Left="18.9" Top="585.9" Width="311.85" Height="18.9" Text="Подпись Покупателя:                   Дата:"/>
+      <TextObject Name="Text39" Left="415.8" Top="585.9" Width="292.95" Height="18.9" Text="Подпись Продавца:               Дата:"/>
+      <TextObject Name="repTxtPerson" Left="132.3" Top="94.5" Width="406.35" Height="18.9"/>
+      <TextObject Name="repTxtModel" Left="132.3" Top="255.15" Width="340.2" Height="18.9"/>
+      <TextObject Name="repTxtSum" Left="444.15" Top="481.95" Width="264.6" Height="18.9"/>
+      <TextObject Name="repTxtVin" Left="510.3" Top="255.15" Width="179.55" Height="18.9"/>
+      <TextObject Name="repTxtEmployee" Left="132.3" Top="9.45" Width="406.35" Height="18.9"/>
+      <TextObject Name="repTxtVin2" Left="113.4" Top="529.2" Width="179.55" Height="18.9"/>
+      <TextObject Name="Text40" Left="444.15" Top="510.3" Width="160.65" Height="18.9" Text="Способ оплаты:"/>
+      <TextObject Name="repTxtPriceMethod" Left="444.15" Top="529.2" Width="264.6" Height="18.9"/>
+      <TextObject Name="Text41" Left="9.45" Top="122.85" Width="122.85" Height="18.9" Text="Серия паспорта:"/>
+      <TextObject Name="Text42" Left="198.45" Top="37.8" Width="28.35" Height="18.9" Text="№:"/>
+      <TextObject Name="Text43" Left="198.45" Top="122.85" Width="28.35" Height="18.9" Text="№:"/>
+      <TextObject Name="repTxtEPS" Left="132.3" Top="37.8" Width="66.15" Height="18.9" Text="1234"/>
+      <TextObject Name="repTxtEPN" Left="226.8" Top="37.8" Width="85.05" Height="18.9" Text="123456"/>
+      <TextObject Name="repTxtCPS" Left="132.3" Top="122.85" Width="66.15" Height="18.9"/>
+      <TextObject Name="repTxtCPN" Left="226.8" Top="122.85" Width="85.05" Height="18.9"/>
+      <TextObject Name="Text10" Left="311.85" Top="37.8" Width="94.5" Height="18.9" Text="Дата выдачи:"/>
+      <TextObject Name="Text44" Left="311.85" Top="122.85" Width="94.5" Height="18.9" Text="Дата выдачи:"/>
+      <TextObject Name="repTxtEPD" Left="406.35" Top="37.8" Width="292.95" Height="18.9"/>
+      <TextObject Name="repTxtCPD" Left="406.35" Top="122.85" Width="292.95" Height="18.9"/>
+      <TextObject Name="Text45" Left="9.45" Top="151.2" Width="94.5" Height="18.9" Text="Выдан"/>
+      <TextObject Name="repTxtEPP" Left="103.95" Top="66.15" Width="595.35" Height="18.9"/>
+      <TextObject Name="repTxtCPP" Left="103.95" Top="151.2" Width="595.35" Height="18.9"/>
+      <TextObject Name="repTxtEBD" Left="595.35" Top="9.45" Width="94.5" Height="18.9"/>
+      <TextObject Name="repTxtCBD" Left="595.35" Top="94.5" Width="94.5" Height="18.9"/>
+      <TextObject Name="repTxtAll" Left="9.45" Top="283.5" Width="680.4" Height="37.8"/>
+      <TextObject Name="repTxtColor" Left="510.3" Top="330.75" Width="179.55" Height="18.9"/>
+      <TextObject Name="repTxtSum2" Left="179.55" Top="330.75" Width="264.6" Height="18.9"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="701.85" Width="718.2" Height="113.4"/>
+  </ReportPage>
+</Report>

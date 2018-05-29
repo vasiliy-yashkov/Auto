@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/28/2018 15:11:03" ReportInfo.Modified="05/28/2018 16:02:34" ReportInfo.CreatorVersion="2018.3.9.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void btnOk_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    private void Page1_StartPage(object sender, EventArgs e)
+    {
+//      frmFilter.ShowDialog();
+//      Data1.Filter = &quot;DILIVERY &gt;= &quot; + date1.Value.ToShortDateString();
+    }
+  }
+}
+</ScriptText>
+  <Styles Name="Standard">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data"/>
+    <Style Name="Footer"/>
+    <Style Name="EvenRows" Fill.Color="WhiteSmoke"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="V_DILIVERY" ReferenceName="autoDataSet1.V_DILIVERY" DataType="System.Int32" Enabled="true">
+      <Column Name="PROVIDER_NAME" DataType="System.String"/>
+      <Column Name="PROVIDER_INFO" DataType="System.String"/>
+      <Column Name="AUTO_FULL" DataType="System.String"/>
+      <Column Name="DELIVERY_DATE" DataType="System.DateTime"/>
+      <Column Name="DELIVERY_PRICE" DataType="System.Decimal"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" StartPageEvent="Page1_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="Отчет о поставках за период от [date1.Value.ToShortDateString()] по [date2.Value.ToShortDateString()]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Width="103.95" Height="18.9" Text="Поставщик" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="103.95" Width="141.75" Height="18.9" Text="Информация" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="245.7" Width="255.15" Height="18.9" Text="Автомобиль" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="500.85" Width="113.4" Height="18.9" Text="Дата поставки" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text11" Left="614.25" Width="103.95" Height="18.9" Text="Цена" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="132.3" EvenStyle="EvenRows" DataSource="V_DILIVERY" Filter="([V_DILIVERY.DELIVERY_DATE] &gt;= date1.Value)&amp;&amp;([V_DILIVERY.DELIVERY_DATE]&lt;=date2.Value)">
+      <TextObject Name="Text2" Width="103.95" Height="103.95" Text="[V_DILIVERY.PROVIDER_NAME]" Style="Data"/>
+      <TextObject Name="Text4" Left="103.95" Width="141.75" Height="103.95" Text="[V_DILIVERY.PROVIDER_INFO]" Style="Data"/>
+      <TextObject Name="Text6" Left="245.7" Width="255.15" Height="103.95" Text="[V_DILIVERY.AUTO_FULL]" Style="Data"/>
+      <TextObject Name="Text8" Left="500.85" Width="113.4" Height="103.95" Text="[V_DILIVERY.DELIVERY_DATE]" Format="Date" Format.Format="d" Style="Data"/>
+      <TextObject Name="Text10" Left="614.25" Width="103.95" Height="103.95" Text="[V_DILIVERY.DELIVERY_PRICE]" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="210.45" Width="718.2" Height="18.9">
+      <TextObject Name="Text12" Width="718.2" Height="18.9" Dock="Fill" Text="[PageN]" HorzAlign="Right" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+  <DialogPage Name="frmFilter" AcceptButton="btnOk" CancelButton="btnCancel" Text="Отчет за период">
+    <ButtonControl Name="btnOk" Left="118" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="0" Text="OK" ClickEvent="btnOk_Click" DialogResult="OK"/>
+    <ButtonControl Name="btnCancel" Left="201" Top="230" Anchor="Bottom, Right" Font="Tahoma, 8pt" TabIndex="1" Text="Cancel" DialogResult="Cancel"/>
+    <LabelControl Name="Label1" Left="4" Top="8" Width="48" Height="13" Font="Tahoma, 8pt" TabIndex="2" Text="Начало:"/>
+    <DateTimePickerControl Name="date1" Left="4" Top="24" Font="Tahoma, 8pt" TabIndex="3" Value="05/28/2018 15:36:59"/>
+    <LabelControl Name="Label2" Left="4" Top="56" Width="42" Height="13" Font="Tahoma, 8pt" TabIndex="4" Text="Конец:"/>
+    <DateTimePickerControl Name="date2" Left="4" Top="76" Font="Tahoma, 8pt" TabIndex="5" CustomFormat="DD.MM.YYYY" Value="05/28/2018 15:37:14"/>
+  </DialogPage>
+</Report>
