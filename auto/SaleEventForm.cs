@@ -39,7 +39,6 @@ namespace auto
             statusAdapter = new autoDataSetTableAdapters.STATUSTableAdapter();
             statusAdapter.ClearBeforeFill = true;
 
-            this.dateTimePicker1.Format = DateTimePickerFormat.Time;
             //this.dateTimePicker1.ShowUpDown = true;
 
             string filepath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "reports\\BuySale.rdl");

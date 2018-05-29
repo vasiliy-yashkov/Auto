@@ -51,12 +51,12 @@
             this.eMPLOYEEBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.eMPLOYEEDataGridView = new DataGridWithFilter.DataGridWithFilter();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PERSON_FULL = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.POST = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pOSTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EMPLOYEE_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PERSON_FULL = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.POST = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -252,8 +252,8 @@
             this.eMPLOYEEDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.eMPLOYEEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eMPLOYEEDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.EMPLOYEE_ID,
+            this.PERSON_ID,
             this.PERSON_FULL,
             this.POST,
             this.dataGridViewTextBoxColumn3,
@@ -268,17 +268,27 @@
             this.eMPLOYEEDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.eMPLOYEEDataGridView_CellEndEdit);
             this.eMPLOYEEDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.eMPLOYEEDataGridView_DataError);
             // 
-            // dataGridViewTextBoxColumn1
+            // pERSONBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "EMPLOYEE_ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.pERSONBindingSource.DataMember = "PERSON";
+            this.pERSONBindingSource.DataSource = this.autoDataSet;
             // 
-            // dataGridViewTextBoxColumn2
+            // pOSTBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PERSON_ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.pOSTBindingSource.DataMember = "POST";
+            this.pOSTBindingSource.DataSource = this.autoDataSet;
+            // 
+            // EMPLOYEE_ID
+            // 
+            this.EMPLOYEE_ID.DataPropertyName = "EMPLOYEE_ID";
+            this.EMPLOYEE_ID.Name = "EMPLOYEE_ID";
+            this.EMPLOYEE_ID.Visible = false;
+            // 
+            // PERSON_ID
+            // 
+            this.PERSON_ID.DataPropertyName = "PERSON_ID";
+            this.PERSON_ID.Name = "PERSON_ID";
+            this.PERSON_ID.Visible = false;
             // 
             // PERSON_FULL
             // 
@@ -290,11 +300,6 @@
             this.PERSON_FULL.Width = 250;
             this.PERSON_FULL.HeaderText = "ФИО";
             // 
-            // pERSONBindingSource
-            // 
-            this.pERSONBindingSource.DataMember = "PERSON";
-            this.pERSONBindingSource.DataSource = this.autoDataSet;
-            // 
             // POST
             // 
             this.POST.DataPropertyName = "POST_ID";
@@ -305,16 +310,11 @@
             this.POST.Width = 200;
             this.POST.HeaderText = "Должность";
             // 
-            // pOSTBindingSource
-            // 
-            this.pOSTBindingSource.DataMember = "POST";
-            this.pOSTBindingSource.DataSource = this.autoDataSet;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "EMPLOYEE_BEGIN_DATE";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Дата приема на работу";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Дата устройства";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -375,13 +375,13 @@
         private autoDataSetTableAdapters.POSTTableAdapter pOSTTableAdapter;
         private System.Windows.Forms.BindingSource pOSTBindingSource;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridWithFilter.DataGridWithFilter eMPLOYEEDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMPLOYEE_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PERSON_ID;
         private System.Windows.Forms.DataGridViewComboBoxColumn PERSON_FULL;
         private System.Windows.Forms.DataGridViewComboBoxColumn POST;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridWithFilter.DataGridWithFilter eMPLOYEEDataGridView;
     }
 }

@@ -21,10 +21,18 @@ namespace auto
 
         private void eMPLOYEEBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
         {
-            this.Validate();
-            this.eMPLOYEEBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.eMPLOYEEBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно, " +
+                    "одна есть дубликаты записей",
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Employee_Load ( object sender, EventArgs e )
@@ -35,6 +43,8 @@ namespace auto
             this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
             // TODO: This line of code loads data into the 'autoDataSet.EMPLOYEE' table. You can move, or remove it, as needed.
             this.eMPLOYEETableAdapter.Fill(this.autoDataSet.EMPLOYEE);
+
+            updateComboboxes();
 
         }
 
