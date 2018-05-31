@@ -219,7 +219,7 @@
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy hh:mm";
+            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(109, 238);
             this.dateTimePicker1.Name = "dateTimePicker1";

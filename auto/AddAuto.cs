@@ -66,10 +66,13 @@ namespace auto
             // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
             this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
 
-            cmbStatus.SelectedValue = statusID;
-            cmbMark.SelectedValue = markID;
-            cmbModel.SelectedValue = modelID;
-            cmbEngine.SelectedValue = engineID;
+            if (edit)
+            {
+                cmbStatus.SelectedValue = statusID;
+                cmbMark.SelectedValue = markID;
+                cmbModel.SelectedValue = modelID;
+                cmbEngine.SelectedValue = engineID;
+            }
         }
 
         private void btnOK_Click (object sender, EventArgs e)
