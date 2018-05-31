@@ -87,6 +87,12 @@
     <Compile Include="AddDelivery.Designer.cs">
       <DependentUpon>AddDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewPerson.Designer.cs">
+      <DependentUpon>AddNewPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Auto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddDelivery.resx">
       <DependentUpon>AddDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewPerson.resx">
+      <DependentUpon>AddNewPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Auto.resx">
       <DependentUpon>Auto.cs</DependentUpon>

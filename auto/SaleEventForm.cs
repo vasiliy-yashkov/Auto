@@ -17,6 +17,7 @@ namespace auto
         private autoDataSetTableAdapters.MARKTableAdapter markAdapter;
         private autoDataSetTableAdapters.MODELTableAdapter modelAdapter;
         private autoDataSetTableAdapters.STATUSTableAdapter statusAdapter;
+        private autoDataSetTableAdapters.CLIENTTableAdapter clientAdapter;
 
         private int modelID;
         private int engineID;
@@ -38,6 +39,9 @@ namespace auto
 
             statusAdapter = new autoDataSetTableAdapters.STATUSTableAdapter();
             statusAdapter.ClearBeforeFill = true;
+
+            clientAdapter = new autoDataSetTableAdapters.CLIENTTableAdapter();
+            clientAdapter.ClearBeforeFill = true;
 
             //this.dateTimePicker1.ShowUpDown = true;
 
@@ -179,7 +183,7 @@ namespace auto
                 FastReport.TextObject repCliPP = report1.FindObject("repTxtCPP") as FastReport.TextObject;
                 repCliPP.Text = cliPP;
 
-                autoDataSet.AUTODataTable table = aUTOTableAdapter.GetDataByAutoID(autoID); 
+                autoDataSet.AUTODataTable table = aUTOTableAdapter.GetDataByAutoID(autoID);
                 auto.autoDataSet.AUTORow aObj = table.Rows[0] as autoDataSet.AUTORow;
                 autoDataSet.MODELDataTable mdlTable = modelAdapter.GetDataByModelID(Int32.Parse(aObj.MODEL_ID.ToString()));
                 string modelFull = (mdlTable.Rows[0] as auto.autoDataSet.MODELRow).MODEL_FULL.ToString();
@@ -213,7 +217,7 @@ namespace auto
                 auto.autoDataSet.AUTORow obj2 = aObj;
                 FastReport.TextObject all = report1.FindObject("repTxtAll") as FastReport.TextObject;
                 all.Text = obj2.AUTO_FULL;
-                
+
                 file = file.Replace("REP_COLOR", obj2.AUTO_COLOR.ToString());
 
                 FastReport.TextObject color = report1.FindObject("repTxtColor") as FastReport.TextObject;
@@ -246,6 +250,7 @@ namespace auto
                 //this.rdlViewer1.Rebuild();
 
                 this.aUTOTableAdapter.UpdateQueryNotAvailable(autoID);
+                this.clientAdapter.Insert((int)(long)cmbPerson.SelectedValue, autoID);
                 SaleEventForm_Load(sender, e);
 
                 report1.Show();
@@ -270,7 +275,7 @@ namespace auto
 
                 mODELBindingSource.Filter = string.Format("MARK_ID={0}", mark_ID);
                 getAutoInfo();
-            }            
+            }
         }
 
         private void cmbModel_SelectedIndexChanged (object sender, EventArgs e)
@@ -296,14 +301,14 @@ namespace auto
                 if (mObj != null)
                 {
                     Int32 modificationID = (Int32)(long)mObj;
-                    mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", modificationID);                    
+                    mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", modificationID);
                 }
                 else
                 {
                     mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", Int32.MaxValue);
                 }
                 getAutoInfo();
-            }            
+            }
         }
 
         private void cmbMark_SelectedValueChanged (object sender, EventArgs e)
@@ -315,7 +320,7 @@ namespace auto
 
                 mODELBindingSource.Filter = string.Format("MARK_ID={0}", mark_ID);
                 getAutoInfo();
-            }            
+            }
         }
 
         private void cmbModel_SelectedValueChanged (object sender, EventArgs e)
@@ -348,11 +353,11 @@ namespace auto
                     mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", Int32.MaxValue);
                 }
                 getAutoInfo();
-            }            
+            }
         }
 
-        private void getAutoInfo()
-        {      
+        private void getAutoInfo ()
+        {
             if (cmbModel.SelectedValue != null)
             {
                 modelID = (Int32)(((System.Data.DataRowView)(cmbModel.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_ID;
@@ -414,6 +419,25 @@ namespace auto
 
             tbPrice.Text = txtCatalogPrice.Text = row.AUTO_PRICE.ToString();
             btnApply.Enabled = true;
+        }
+
+        private void addNewPerson_Click (object sender, EventArgs e)
+        {
+            AddNewPerson addPerson = new AddNewPerson();
+
+            try
+            {
+                addPerson.ShowDialog();
+
+                pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
+
+                cmbPerson.SelectedValue = addPerson.PersonID;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных и повторите попытку!",
+                "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

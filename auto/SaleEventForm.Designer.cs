@@ -72,9 +72,9 @@
             this.mODELTableAdapter = new auto.autoDataSetTableAdapters.MODELTableAdapter();
             this.eNGINETableAdapter = new auto.autoDataSetTableAdapters.ENGINETableAdapter();
             this.mODIFICATIONTableAdapter = new auto.autoDataSetTableAdapters.MODIFICATIONTableAdapter();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
+            this.addNewPerson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
@@ -103,10 +103,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPerson.DataSource = this.pERSONBindingSource;
             this.cmbPerson.DisplayMember = "PERSON_FULL";
+            this.cmbPerson.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPerson.FormattingEnabled = true;
             this.cmbPerson.Location = new System.Drawing.Point(109, 12);
             this.cmbPerson.Name = "cmbPerson";
-            this.cmbPerson.Size = new System.Drawing.Size(650, 21);
+            this.cmbPerson.Size = new System.Drawing.Size(518, 21);
             this.cmbPerson.TabIndex = 1;
             this.cmbPerson.ValueMember = "PERSON_ID";
             // 
@@ -423,15 +424,6 @@
             // 
             this.mODIFICATIONTableAdapter.ClearBeforeFill = true;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 150);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Информация";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -451,14 +443,25 @@
             this.txtStatus.Size = new System.Drawing.Size(650, 20);
             this.txtStatus.TabIndex = 27;
             // 
+            // addNewPerson
+            // 
+            this.addNewPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addNewPerson.Location = new System.Drawing.Point(633, 10);
+            this.addNewPerson.Name = "addNewPerson";
+            this.addNewPerson.Size = new System.Drawing.Size(126, 23);
+            this.addNewPerson.TabIndex = 28;
+            this.addNewPerson.Text = "Добавить клиента";
+            this.addNewPerson.UseVisualStyleBackColor = true;
+            this.addNewPerson.Click += new System.EventHandler(this.addNewPerson_Click);
+            // 
             // SaleEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 359);
+            this.Controls.Add(this.addNewPerson);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbMod);
             this.Controls.Add(this.cmbEngine);
             this.Controls.Add(this.cmbModel);
@@ -544,8 +547,8 @@
         private autoDataSetTableAdapters.ENGINETableAdapter eNGINETableAdapter;
         private System.Windows.Forms.BindingSource mODIFICATIONBindingSource;
         private autoDataSetTableAdapters.MODIFICATIONTableAdapter mODIFICATIONTableAdapter;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Button addNewPerson;
     }
 }

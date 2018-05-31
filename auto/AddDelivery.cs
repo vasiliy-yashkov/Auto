@@ -77,6 +77,7 @@ namespace auto
                     }
                     deliveryAdapter.Insert((int)(long)cmbProvider.SelectedValue, (int)(long)cmbAuto.SelectedValue,
                         dateTimePicker1.Value, Decimal.Parse(txtPrice.Text));
+                    aUTOTableAdapter.SetAutoAvailable((int)(long)cmbAuto.SelectedValue);
                     this.Close();
                 }
                 catch (Exception ex)

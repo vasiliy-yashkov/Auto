@@ -10808,26 +10808,19 @@ namespace auto.autoDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"CLIENT\" (\"CLIENT_ID\", \"PERSON_ID\", \"AUTO_ID\") VALUES (@CLIENT_ID, @P" +
-                "ERSON_ID, @AUTO_ID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO CLIENT\r\n                         (PERSON_ID, AUTO_ID)\r\nVALUES        " +
+                "(@PERSON_ID, @AUTO_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@CLIENT_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "CLIENT_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@PERSON_ID";
-            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int32;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "PERSON_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AUTO_ID";
-            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int32;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "AUTO_ID";
@@ -10983,10 +10976,9 @@ namespace auto.autoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long CLIENT_ID, long PERSON_ID, long AUTO_ID) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(CLIENT_ID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(PERSON_ID));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((long)(AUTO_ID));
+        public virtual int Insert(int PERSON_ID, int AUTO_ID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PERSON_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AUTO_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12841,7 +12833,7 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[2];
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[3];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PERSON_ID, PERSON_NAME, PERSON_LAST_NAME, PERSON_MIDDLE_NAME, PERSON_BIRTH" +
@@ -12861,6 +12853,26 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             param.IsNullable = true;
             param.SourceColumn = "PERSON_ID";
             this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        PERSON_ID\r\nFROM            PERSON\r\nWHERE        (PERSON_PASSPORT_SE" +
+                "RIAL = @PERSON_PASSPORT_SERIAL) AND (PERSON_PASSPORT_NUMBER = @PERSON_PASSPORT_N" +
+                "UMBER)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@PERSON_PASSPORT_SERIAL";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "PERSON_PASSPORT_SERIAL";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@PERSON_PASSPORT_NUMBER";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "PERSON_PASSPORT_NUMBER";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13246,6 +13258,46 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
                     string Original_PERSON_P_PLACE) {
             return this.Update(Original_PERSON_ID, PERSON_NAME, PERSON_LAST_NAME, PERSON_MIDDLE_NAME, PERSON_BIRTHDAY, PERSON_PASSPORT_NUMBER, PERSON_PASSPORT_SERIAL, PERSON_P_DATE, PERSON_P_PLACE, Original_PERSON_ID, Original_PERSON_NAME, Original_PERSON_LAST_NAME, Original_PERSON_MIDDLE_NAME, Original_PERSON_BIRTHDAY, Original_PERSON_FULL, Original_PERSON_PASSPORT_NUMBER, Original_PERSON_PASSPORT_SERIAL, Original_PERSON_P_DATE, Original_PERSON_P_PLACE);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<long> GetPersonIDByPSN(global::System.Nullable<int> PERSON_PASSPORT_SERIAL, global::System.Nullable<int> PERSON_PASSPORT_NUMBER) {
+            global::FirebirdSql.Data.FirebirdClient.FbCommand command = this.CommandCollection[2];
+            if ((PERSON_PASSPORT_SERIAL.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(PERSON_PASSPORT_SERIAL.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((PERSON_PASSPORT_NUMBER.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(PERSON_PASSPORT_NUMBER.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<long>();
+            }
+            else {
+                return new global::System.Nullable<long>(((long)(returnValue)));
+            }
+        }
     }
     
     /// <summary>
@@ -13419,16 +13471,9 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"PERSON_INFO\" (\"PERSON_INFO_ID\", \"PERSON_PHONE\", \"PERSON_ADDRESS\", \"P" +
-                "ERSON_ID\") VALUES (@PERSON_INFO_ID, @PERSON_PHONE, @PERSON_ADDRESS, @PERSON_ID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO PERSON_INFO\r\n                         (PERSON_PHONE, PERSON_ADDRESS, " +
+                "PERSON_ID)\r\nVALUES        (@PERSON_PHONE, @PERSON_ADDRESS, @PERSON_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@PERSON_INFO_ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "PERSON_INFO_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@PERSON_PHONE";
             param.Size = 20;
@@ -13443,7 +13488,7 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@PERSON_ID";
-            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int32;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "PERSON_ID";
@@ -13636,25 +13681,24 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long PERSON_INFO_ID, string PERSON_PHONE, string PERSON_ADDRESS, global::System.Nullable<long> PERSON_ID) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(PERSON_INFO_ID));
+        public virtual int Insert(string PERSON_PHONE, string PERSON_ADDRESS, global::System.Nullable<int> PERSON_ID) {
             if ((PERSON_PHONE == null)) {
                 throw new global::System.ArgumentNullException("PERSON_PHONE");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PERSON_PHONE));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(PERSON_PHONE));
             }
             if ((PERSON_ADDRESS == null)) {
                 throw new global::System.ArgumentNullException("PERSON_ADDRESS");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PERSON_ADDRESS));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PERSON_ADDRESS));
             }
             if ((PERSON_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((long)(PERSON_ID.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(PERSON_ID.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -15877,7 +15921,7 @@ WHERE        (AUTO_ID = @Original_AUTO_ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[9];
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[10];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_FULL, AUTO_VIN, MODE" +
@@ -15971,7 +16015,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "UPDATE       \"AUTO\"\r\nSET                STATUS_ID = 3\r\nWHERE        (AUTO_ID = @O" +
+            this._commandCollection[8].CommandText = "UPDATE       \"AUTO\"\r\nSET                STATUS_ID = 0\r\nWHERE        (AUTO_ID = @O" +
                 "riginal_AUTO_ID)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
@@ -15982,6 +16026,19 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param.SourceColumn = "AUTO_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[8].Parameters.Add(param);
+            this._commandCollection[9] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE       \"AUTO\"\r\nSET                STATUS_ID = 3\r\nWHERE        (AUTO_ID = @O" +
+                "riginal_AUTO_ID)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AUTO_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[9].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16353,8 +16410,32 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQueryNotAvailable(int Original_AUTO_ID) {
+        public virtual int SetAutoAvailable(int Original_AUTO_ID) {
             global::FirebirdSql.Data.FirebirdClient.FbCommand command = this.CommandCollection[8];
+            command.Parameters[0].Value = ((int)(Original_AUTO_ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryNotAvailable(int Original_AUTO_ID) {
+            global::FirebirdSql.Data.FirebirdClient.FbCommand command = this.CommandCollection[9];
             command.Parameters[0].Value = ((int)(Original_AUTO_ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
