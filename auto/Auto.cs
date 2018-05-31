@@ -155,6 +155,7 @@ namespace auto
                     (long)row.Cells[3].Value,
                     row.Cells[14].Value.ToString(),
                     (decimal)row.Cells[16].Value);
+                addAuto.Text = "Редактирование автомобиля";
                 addAuto.ShowDialog();
                 aUTOBindingNavigatorSaveItem_Click(sender, e);
                 toolStripButton1_Click(sender, e);

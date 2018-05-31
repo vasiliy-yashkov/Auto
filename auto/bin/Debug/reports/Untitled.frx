@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="05/16/2018 11:36:01" ReportInfo.Modified="05/24/2018 19:10:01" ReportInfo.CreatorVersion="2018.3.9.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/16/2018 11:36:01" ReportInfo.Modified="05/31/2018 12:47:56" ReportInfo.CreatorVersion="2018.3.9.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -178,8 +178,8 @@ namespace FastReport
       <TextObject Name="Text41" Left="9.45" Top="122.85" Width="122.85" Height="18.9" Text="Серия паспорта:"/>
       <TextObject Name="Text42" Left="198.45" Top="37.8" Width="28.35" Height="18.9" Text="№:"/>
       <TextObject Name="Text43" Left="198.45" Top="122.85" Width="28.35" Height="18.9" Text="№:"/>
-      <TextObject Name="repTxtEPS" Left="132.3" Top="37.8" Width="66.15" Height="18.9" Text="1234"/>
-      <TextObject Name="repTxtEPN" Left="226.8" Top="37.8" Width="85.05" Height="18.9" Text="123456"/>
+      <TextObject Name="repTxtEPS" Left="132.3" Top="37.8" Width="66.15" Height="18.9"/>
+      <TextObject Name="repTxtEPN" Left="226.8" Top="37.8" Width="85.05" Height="18.9"/>
       <TextObject Name="repTxtCPS" Left="132.3" Top="122.85" Width="66.15" Height="18.9"/>
       <TextObject Name="repTxtCPN" Left="226.8" Top="122.85" Width="85.05" Height="18.9"/>
       <TextObject Name="Text10" Left="311.85" Top="37.8" Width="94.5" Height="18.9" Text="Дата выдачи:"/>

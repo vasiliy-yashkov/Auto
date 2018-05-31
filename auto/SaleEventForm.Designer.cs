@@ -72,7 +72,6 @@
             this.mODELTableAdapter = new auto.autoDataSetTableAdapters.MODELTableAdapter();
             this.eNGINETableAdapter = new auto.autoDataSetTableAdapters.ENGINETableAdapter();
             this.mODIFICATIONTableAdapter = new auto.autoDataSetTableAdapters.MODIFICATIONTableAdapter();
-            this.txtInfo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
@@ -146,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 250);
+            this.label3.Location = new System.Drawing.Point(12, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
@@ -160,7 +159,7 @@
             this.cmbEmployee.DisplayMember = "EMPLOYEE_FULL";
             this.cmbEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(109, 247);
+            this.cmbEmployee.Location = new System.Drawing.Point(109, 176);
             this.cmbEmployee.Name = "cmbEmployee";
             this.cmbEmployee.Size = new System.Drawing.Size(650, 21);
             this.cmbEmployee.TabIndex = 5;
@@ -178,7 +177,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 277);
+            this.label4.Location = new System.Drawing.Point(12, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 26);
             this.label4.TabIndex = 6;
@@ -192,7 +191,7 @@
             this.cmbPay.DisplayMember = "PAY_NAME";
             this.cmbPay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPay.FormattingEnabled = true;
-            this.cmbPay.Location = new System.Drawing.Point(109, 282);
+            this.cmbPay.Location = new System.Drawing.Point(109, 211);
             this.cmbPay.Name = "cmbPay";
             this.cmbPay.Size = new System.Drawing.Size(650, 21);
             this.cmbPay.TabIndex = 7;
@@ -210,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 316);
+            this.label5.Location = new System.Drawing.Point(12, 245);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 8;
@@ -222,7 +221,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.CustomFormat = "dd.MM.yyyy hh:mm";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 309);
+            this.dateTimePicker1.Location = new System.Drawing.Point(109, 238);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(650, 20);
             this.dateTimePicker1.TabIndex = 9;
@@ -230,7 +229,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 364);
+            this.label6.Location = new System.Drawing.Point(12, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 10;
@@ -240,7 +239,7 @@
             // 
             this.tbPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPrice.Location = new System.Drawing.Point(109, 361);
+            this.tbPrice.Location = new System.Drawing.Point(109, 290);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(650, 20);
             this.tbPrice.TabIndex = 11;
@@ -248,7 +247,7 @@
             // btnApply
             // 
             this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApply.Location = new System.Drawing.Point(17, 399);
+            this.btnApply.Location = new System.Drawing.Point(603, 324);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 12;
@@ -259,7 +258,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(684, 399);
+            this.btnOK.Location = new System.Drawing.Point(684, 324);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 13;
@@ -276,7 +275,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 338);
+            this.label7.Location = new System.Drawing.Point(12, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 13);
             this.label7.TabIndex = 14;
@@ -286,7 +285,7 @@
             // 
             this.txtCatalogPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCatalogPrice.Location = new System.Drawing.Point(109, 335);
+            this.txtCatalogPrice.Location = new System.Drawing.Point(109, 264);
             this.txtCatalogPrice.Name = "txtCatalogPrice";
             this.txtCatalogPrice.ReadOnly = true;
             this.txtCatalogPrice.Size = new System.Drawing.Size(650, 20);
@@ -424,17 +423,6 @@
             // 
             this.mODIFICATIONTableAdapter.ClearBeforeFill = true;
             // 
-            // txtInfo
-            // 
-            this.txtInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInfo.Location = new System.Drawing.Point(109, 147);
-            this.txtInfo.Multiline = true;
-            this.txtInfo.Name = "txtInfo";
-            this.txtInfo.ReadOnly = true;
-            this.txtInfo.Size = new System.Drawing.Size(650, 68);
-            this.txtInfo.TabIndex = 24;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -447,7 +435,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 224);
+            this.label12.Location = new System.Drawing.Point(11, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 26;
@@ -457,7 +445,7 @@
             // 
             this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStatus.Location = new System.Drawing.Point(109, 221);
+            this.txtStatus.Location = new System.Drawing.Point(109, 150);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.Size = new System.Drawing.Size(650, 20);
@@ -467,11 +455,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 434);
+            this.ClientSize = new System.Drawing.Size(771, 359);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.cmbMod);
             this.Controls.Add(this.cmbEngine);
             this.Controls.Add(this.cmbModel);
@@ -557,7 +544,6 @@
         private autoDataSetTableAdapters.ENGINETableAdapter eNGINETableAdapter;
         private System.Windows.Forms.BindingSource mODIFICATIONBindingSource;
         private autoDataSetTableAdapters.MODIFICATIONTableAdapter mODIFICATIONTableAdapter;
-        private System.Windows.Forms.TextBox txtInfo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStatus;

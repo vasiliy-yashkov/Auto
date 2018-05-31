@@ -138,7 +138,7 @@ namespace auto
                 auto.autoDataSet.EMPLOYEERow employeeRow = ((cmbEmployee.SelectedItem as DataRowView).Row as auto.autoDataSet.EMPLOYEERow);
                 DateTime empBD = employeeRow.PERSONRow.PERSON_BIRTHDAY;
                 int empPS = employeeRow.PERSONRow.PERSON_PASSPORT_SERIAL;
-                int empPN = employeeRow.PERSONRow.PERSON_PASSPORT_SERIAL;
+                int empPN = employeeRow.PERSONRow.PERSON_PASSPORT_NUMBER;
                 DateTime empPD = employeeRow.PERSONRow.PERSON_P_DATE;
                 string empPP = employeeRow.PERSONRow.PERSON_P_PLACE;
 
