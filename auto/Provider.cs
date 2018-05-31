@@ -27,6 +27,8 @@ namespace auto
 
         private void Provider_Load ( object sender, EventArgs e )
         {
+            // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
+            this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
             // TODO: This line of code loads data into the 'autoDataSet.PROVIDER' table. You can move, or remove it, as needed.
             this.pROVIDERTableAdapter.Fill(this.autoDataSet.PROVIDER);
 

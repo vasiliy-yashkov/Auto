@@ -49,14 +49,17 @@
             this.pROVIDERBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.pROVIDERDataGridView = new DataGridWithFilter.DataGridWithFilter();
+            this.mARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mARKTableAdapter = new auto.autoDataSetTableAdapters.MARKTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROVIDERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROVIDERBindingNavigator)).BeginInit();
             this.pROVIDERBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pROVIDERDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mARKBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // autoDataSet
@@ -245,6 +248,15 @@
             this.pROVIDERDataGridView.TabIndex = 1;
             this.pROVIDERDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.pROVIDERDataGridView_DataError);
             // 
+            // mARKBindingSource
+            // 
+            this.mARKBindingSource.DataMember = "MARK";
+            this.mARKBindingSource.DataSource = this.autoDataSet;
+            // 
+            // mARKTableAdapter
+            // 
+            this.mARKTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "PROVIDER_ID";
@@ -254,7 +266,12 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "PROVIDER_NAME";
+            this.dataGridViewTextBoxColumn2.DataSource = this.mARKBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "MARK_NAME";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "MARK_NAME";
             this.dataGridViewTextBoxColumn2.Width = 250;
             this.dataGridViewTextBoxColumn2.HeaderText = "Поставщик";
             // 
@@ -262,8 +279,8 @@
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "PROVIDER_INFO";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Информация";
             this.dataGridViewTextBoxColumn3.Width = 400;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Описание";
             // 
             // Provider
             // 
@@ -281,6 +298,7 @@
             this.pROVIDERBindingNavigator.ResumeLayout(false);
             this.pROVIDERBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pROVIDERDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mARKBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,10 +323,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton pROVIDERBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private DataGridWithFilter.DataGridWithFilter pROVIDERDataGridView;
+        private System.Windows.Forms.BindingSource mARKBindingSource;
+        private autoDataSetTableAdapters.MARKTableAdapter mARKTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
