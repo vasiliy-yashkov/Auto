@@ -17,22 +17,38 @@ namespace auto
             InitializeComponent();
         }
 
-        private void sTATUSBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
+        private void sTATUSBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.sTATUSBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.sTATUSBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void AutoStatus_Load ( object sender, EventArgs e )
+        private void AutoStatus_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.STATUS' table. You can move, or remove it, as needed.
-            this.sTATUSTableAdapter.Fill(this.autoDataSet.STATUS);
-
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.STATUS' table. You can move, or remove it, as needed.
+                this.sTATUSTableAdapter.Fill(this.autoDataSet.STATUS);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void toolStripButton1_Click ( object sender, EventArgs e )
+        private void toolStripButton1_Click (object sender, EventArgs e)
         {
             this.Validate();
             this.sTATUSBindingSource.EndEdit();

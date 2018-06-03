@@ -19,11 +19,20 @@ namespace auto
             updateComboboxes();
         }
 
-        private void sALEBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
+        private void sALEBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.sALEBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            try
+            {
+                this.Validate();
+                this.sALEBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             foreach (DataGridViewRow row in sALEDataGridView.Rows)
             {
@@ -36,7 +45,7 @@ namespace auto
 
         }
 
-        private void SaleEvent_Load ( object sender, EventArgs e )
+        private void SaleEvent_Load (object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'autoDataSet.PAY' table. You can move, or remove it, as needed.
             this.pAYTableAdapter.Fill(this.autoDataSet.PAY);
@@ -51,13 +60,22 @@ namespace auto
 
         }
 
-        private void toolStripButton1_Click ( object sender, EventArgs e )
+        private void toolStripButton1_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.sALEBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            try
+            {
+                this.Validate();
+                this.sALEBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
 
-            this.sALETableAdapter.Fill(this.autoDataSet.SALE);
+                this.sALETableAdapter.Fill(this.autoDataSet.SALE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             updateComboboxes();
         }
@@ -77,7 +95,7 @@ namespace auto
             }
         }
 
-        private void sALEDataGridView_CellEndEdit ( object sender, DataGridViewCellEventArgs e )
+        private void sALEDataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
         {
             Object obj = sALEDataGridView.Rows[e.RowIndex].Cells[5].Value;
             if (obj != null)

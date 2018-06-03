@@ -17,15 +17,23 @@ namespace auto
             InitializeComponent();
         }
 
-        private void pROVIDERBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
+        private void pROVIDERBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.pROVIDERBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.pROVIDERBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void Provider_Load ( object sender, EventArgs e )
+        private void Provider_Load (object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
             this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
@@ -34,13 +42,22 @@ namespace auto
 
         }
 
-        private void toolStripButton1_Click ( object sender, EventArgs e )
+        private void toolStripButton1_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.pROVIDERBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            try
+            {
+                this.Validate();
+                this.pROVIDERBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
 
-            this.pROVIDERTableAdapter.Fill(this.autoDataSet.PROVIDER);
+                this.pROVIDERTableAdapter.Fill(this.autoDataSet.PROVIDER);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pROVIDERDataGridView_DataError (object sender, DataGridViewDataErrorEventArgs e)

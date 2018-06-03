@@ -19,7 +19,7 @@ namespace auto
             updateComboboxes();
         }
 
-        private void eMPLOYEEBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
+        private void eMPLOYEEBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
             try
             {
@@ -29,26 +29,34 @@ namespace auto
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно, " +
-                    "одна есть дубликаты записей",
-                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void Employee_Load ( object sender, EventArgs e )
+        private void Employee_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.POST' table. You can move, or remove it, as needed.
-            this.pOSTTableAdapter.Fill(this.autoDataSet.POST);
-            // TODO: This line of code loads data into the 'autoDataSet.PERSON' table. You can move, or remove it, as needed.
-            this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
-            // TODO: This line of code loads data into the 'autoDataSet.EMPLOYEE' table. You can move, or remove it, as needed.
-            this.eMPLOYEETableAdapter.Fill(this.autoDataSet.EMPLOYEE);
-
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.POST' table. You can move, or remove it, as needed.
+                this.pOSTTableAdapter.Fill(this.autoDataSet.POST);
+                // TODO: This line of code loads data into the 'autoDataSet.PERSON' table. You can move, or remove it, as needed.
+                this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
+                // TODO: This line of code loads data into the 'autoDataSet.EMPLOYEE' table. You can move, or remove it, as needed.
+                this.eMPLOYEETableAdapter.Fill(this.autoDataSet.EMPLOYEE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             updateComboboxes();
 
         }
 
-        private void toolStripButton1_Click ( object sender, EventArgs e )
+        private void toolStripButton1_Click (object sender, EventArgs e)
         {
             this.Validate();
             this.eMPLOYEEBindingSource.EndEdit();
@@ -68,7 +76,7 @@ namespace auto
             }
         }
 
-        private void eMPLOYEEDataGridView_CellEndEdit ( object sender, DataGridViewCellEventArgs e )
+        private void eMPLOYEEDataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
         {
             Object obj = eMPLOYEEDataGridView.Rows[e.RowIndex].Cells[2].Value;
             if (obj != null)

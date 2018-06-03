@@ -23,11 +23,19 @@ namespace auto
             deliveryAdapter.Fill(autoDataSet.DELIVERY);
         }
 
-        private void DeliveryEvent_Load ( object sender, EventArgs e )
+        private void DeliveryEvent_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.V_DELIVERY_TABLE' table. You can move, or remove it, as needed.
-            this.v_DELIVERY_TABLETableAdapter.Fill(this.autoDataSet.V_DELIVERY_TABLE);
-
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.V_DELIVERY_TABLE' table. You can move, or remove it, as needed.
+                this.v_DELIVERY_TABLETableAdapter.Fill(this.autoDataSet.V_DELIVERY_TABLE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void v_DELIVERY_TABLEDataGridView_DataError (object sender, DataGridViewDataErrorEventArgs e)
@@ -48,7 +56,9 @@ namespace auto
             }
             catch (Exception ex)
             {
-                int i = 0;
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

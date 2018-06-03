@@ -17,26 +17,42 @@ namespace auto
             InitializeComponent();
         }
 
-        private void cLIENTBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
+        private void cLIENTBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.cLIENTBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.cLIENTBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void Client_Load ( object sender, EventArgs e )
+        private void Client_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.AUTO' table. You can move, or remove it, as needed.
-            this.aUTOTableAdapter.Fill(this.autoDataSet.AUTO);
-            // TODO: This line of code loads data into the 'autoDataSet.PERSON' table. You can move, or remove it, as needed.
-            this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
-            // TODO: This line of code loads data into the 'autoDataSet.CLIENT' table. You can move, or remove it, as needed.
-            this.cLIENTTableAdapter.Fill(this.autoDataSet.CLIENT);
-
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.AUTO' table. You can move, or remove it, as needed.
+                this.aUTOTableAdapter.Fill(this.autoDataSet.AUTO);
+                // TODO: This line of code loads data into the 'autoDataSet.PERSON' table. You can move, or remove it, as needed.
+                this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
+                // TODO: This line of code loads data into the 'autoDataSet.CLIENT' table. You can move, or remove it, as needed.
+                this.cLIENTTableAdapter.Fill(this.autoDataSet.CLIENT);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void toolStripButton1_Click ( object sender, EventArgs e )
+        private void toolStripButton1_Click (object sender, EventArgs e)
         {
             this.Validate();
             this.cLIENTBindingSource.EndEdit();
@@ -56,7 +72,7 @@ namespace auto
             }
         }
 
-        private void cLIENTDataGridView_CellEndEdit ( object sender, DataGridViewCellEventArgs e )
+        private void cLIENTDataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
         {
             Object obj = cLIENTDataGridView.Rows[e.RowIndex].Cells[1].Value;
             if (obj != null)

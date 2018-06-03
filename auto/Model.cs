@@ -19,19 +19,35 @@ namespace auto
 
         private void mODELBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.mODELBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.mODELBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Model_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
-            this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
-            // TODO: This line of code loads data into the 'autoDataSet.MODEL' table. You can move, or remove it, as needed.
-            this.mODELTableAdapter.Fill(this.autoDataSet.MODEL);
-
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
+                this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
+                // TODO: This line of code loads data into the 'autoDataSet.MODEL' table. You can move, or remove it, as needed.
+                this.mODELTableAdapter.Fill(this.autoDataSet.MODEL);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             updateComboboxes();
         }
 

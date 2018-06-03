@@ -17,26 +17,43 @@ namespace auto
             InitializeComponent();
         }
 
-        private void SubjectInfo_Load ( object sender, EventArgs e )
+        private void SubjectInfo_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.PERSON' table. You can move, or remove it, as needed.
-            this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
-            // TODO: This line of code loads data into the 'autoDataSet.PERSON_INFO' table. You can move, or remove it, as needed.
-            this.pERSON_INFOTableAdapter.Fill(this.autoDataSet.PERSON_INFO);
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.PERSON' table. You can move, or remove it, as needed.
+                this.pERSONTableAdapter.Fill(this.autoDataSet.PERSON);
+                // TODO: This line of code loads data into the 'autoDataSet.PERSON_INFO' table. You can move, or remove it, as needed.
+                this.pERSON_INFOTableAdapter.Fill(this.autoDataSet.PERSON_INFO);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             updateComboboxes();
 
         }
 
-        private void pERSON_INFOBindingNavigatorSaveItem_Click ( object sender, EventArgs e )
+        private void pERSON_INFOBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
-            this.Validate();
-            this.pERSON_INFOBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
+            try
+            {
+                this.Validate();
+                this.pERSON_INFOBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.autoDataSet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void toolStripButton1_Click ( object sender, EventArgs e )
+        private void toolStripButton1_Click (object sender, EventArgs e)
         {
             this.Validate();
             this.pERSON_INFOBindingSource.EndEdit();
@@ -47,7 +64,7 @@ namespace auto
             updateComboboxes();
         }
 
-        private void pERSON_INFODataGridView_CellEndEdit ( object sender, DataGridViewCellEventArgs e )
+        private void pERSON_INFODataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
         {
             Object obj = pERSON_INFODataGridView.Rows[e.RowIndex].Cells[1].Value;
             if (obj != null)

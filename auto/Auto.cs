@@ -27,10 +27,12 @@ namespace auto
             }
             catch (Exception ex)
             {
-                int i = 0;
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+}
 
         private void Auto_Load (object sender, EventArgs e)
         {
@@ -90,7 +92,9 @@ namespace auto
             }
             catch (Exception ex)
             {
-                int i = 0;
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             Auto_Load(sender, e);
@@ -167,7 +171,7 @@ namespace auto
             if (v_AUTODataGridView.CurrentRow != null)
             {
                 try
-                {                
+                {
                     DataGridViewRow row = v_AUTODataGridView.CurrentRow;
                     aUTOTableAdapter.Delete((int)(long)row.Cells[0].Value);
                 }

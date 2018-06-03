@@ -28,7 +28,7 @@ namespace auto
             catch (Exception ex)
             {
                 MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
-                    "присутствуют дублирующиеся значения. \n" + ex.Message,
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
                 "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
