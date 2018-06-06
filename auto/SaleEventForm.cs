@@ -521,5 +521,38 @@ namespace auto
         {
             getAutoInfo();
         }
+
+        private void tbPrice_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            // запрет на ввод букв
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbPrice_TextChanged (object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (!String.IsNullOrEmpty(tb.Text))
+            {
+                try
+                {
+                    decimal d = decimal.Parse(tb.Text);
+                    if (d == 0)
+                    {
+                        MessageBox.Show("Цена не может быть меньше или равна 0!",
+                            "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        tb.Text = "";
+                        return;
+                    }
+                    tb.Text = d.ToString();
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+        }
     }
 }

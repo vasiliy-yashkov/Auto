@@ -250,6 +250,8 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(650, 20);
             this.tbPrice.TabIndex = 11;
+            this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
+            this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
             // 
             // btnApply
             // 
