@@ -50,11 +50,12 @@
             this.mODELBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.mODELDataGridView = new DataGridWithFilter.DataGridWithFilter();
+            this.mARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MARK = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.mARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODEL_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingNavigator)).BeginInit();
@@ -79,6 +80,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AUTO_COUNTTableAdapter = null;
             this.tableAdapterManager.AUTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CLIENTTableAdapter = null;
@@ -94,7 +96,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // mARKTableAdapter
@@ -128,7 +129,7 @@
             this.mODELBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.mODELBindingNavigator.Name = "mODELBindingNavigator";
             this.mODELBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.mODELBindingNavigator.Size = new System.Drawing.Size(770, 25);
+            this.mODELBindingNavigator.Size = new System.Drawing.Size(832, 25);
             this.mODELBindingNavigator.TabIndex = 0;
             this.mODELBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -245,15 +246,21 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.MARK,
-            this.dataGridViewTextBoxColumn3});
+            this.dataGridViewTextBoxColumn3,
+            this.MODEL_PRICE});
             this.mODELDataGridView.DataSource = this.mODELBindingSource;
             this.mODELDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mODELDataGridView.Location = new System.Drawing.Point(0, 25);
             this.mODELDataGridView.Name = "mODELDataGridView";
-            this.mODELDataGridView.Size = new System.Drawing.Size(770, 482);
+            this.mODELDataGridView.Size = new System.Drawing.Size(832, 482);
             this.mODELDataGridView.TabIndex = 1;
             this.mODELDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.mODELDataGridView_CellEndEdit);
             this.mODELDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.mODELDataGridView_DataError);
+            // 
+            // mARKBindingSource
+            // 
+            this.mARKBindingSource.DataMember = "MARK";
+            this.mARKBindingSource.DataSource = this.autoDataSet;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -275,11 +282,7 @@
             this.MARK.Name = "MARK";
             this.MARK.ValueMember = "MARK_ID";
             this.MARK.Width = 250;
-            // 
-            // mARKBindingSource
-            // 
-            this.mARKBindingSource.DataMember = "MARK";
-            this.mARKBindingSource.DataSource = this.autoDataSet;
+            this.MARK.HeaderText = "Марка";
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -288,11 +291,17 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.HeaderText = "Модель";
             // 
+            // MODEL_PRICE
+            // 
+            this.MODEL_PRICE.DataPropertyName = "MODEL_PRICE";
+            this.MODEL_PRICE.Name = "MODEL_PRICE";
+            this.MODEL_PRICE.HeaderText = "Цена";
+            // 
             // Model
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 507);
+            this.ClientSize = new System.Drawing.Size(832, 507);
             this.Controls.Add(this.mODELDataGridView);
             this.Controls.Add(this.mODELBindingNavigator);
             this.Name = "Model";
@@ -332,10 +341,11 @@
         private autoDataSetTableAdapters.MARKTableAdapter mARKTableAdapter;
         private System.Windows.Forms.BindingSource mARKBindingSource;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private DataGridWithFilter.DataGridWithFilter mODELDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn MARK;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridWithFilter.DataGridWithFilter mODELDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MODEL_PRICE;
     }
 }

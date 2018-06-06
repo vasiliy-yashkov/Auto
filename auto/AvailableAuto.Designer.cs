@@ -1,6 +1,6 @@
 ﻿namespace auto
 {
-    partial class Client
+    partial class AvailableAuto
     {
         /// <summary>
         /// Required designer variable.
@@ -11,7 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose ( bool disposing )
+        protected override void Dispose (bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -29,12 +29,12 @@
         private void InitializeComponent ()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Client));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AvailableAuto));
             this.autoDataSet = new auto.autoDataSet();
-            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cLIENTTableAdapter = new auto.autoDataSetTableAdapters.CLIENTTableAdapter();
+            this.aUTO_COUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aUTO_COUNTTableAdapter = new auto.autoDataSetTableAdapters.AUTO_COUNTTableAdapter();
             this.tableAdapterManager = new auto.autoDataSetTableAdapters.TableAdapterManager();
-            this.cLIENTBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.aUTO_COUNTBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -46,24 +46,18 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.cLIENTBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.cLIENTDataGridView = new DataGridWithFilter.DataGridWithFilter();
-            this.pERSONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pERSONTableAdapter = new auto.autoDataSetTableAdapters.PERSONTableAdapter();
+            this.aUTO_COUNTBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.aUTO_COUNTDataGridView = new DataGridWithFilter.DataGridWithFilter();
             this.aUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aUTOTableAdapter = new auto.autoDataSetTableAdapters.AUTOTableAdapter();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PERSON = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.AUTO = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingNavigator)).BeginInit();
-            this.cLIENTBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTO_COUNTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTO_COUNTBindingNavigator)).BeginInit();
+            this.aUTO_COUNTBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTO_COUNTDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,38 +66,42 @@
             this.autoDataSet.DataSetName = "autoDataSet";
             this.autoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cLIENTBindingSource
+            // aUTO_COUNTBindingSource
             // 
-            this.cLIENTBindingSource.DataMember = "CLIENT";
-            this.cLIENTBindingSource.DataSource = this.autoDataSet;
+            this.aUTO_COUNTBindingSource.DataMember = "AUTO_COUNT";
+            this.aUTO_COUNTBindingSource.DataSource = this.autoDataSet;
             // 
-            // cLIENTTableAdapter
+            // aUTO_COUNTTableAdapter
             // 
-            this.cLIENTTableAdapter.ClearBeforeFill = true;
+            this.aUTO_COUNTTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AUTO_COUNTTableAdapter = this.aUTO_COUNTTableAdapter;
             this.tableAdapterManager.AUTOTableAdapter = this.aUTOTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CLIENTTableAdapter = this.cLIENTTableAdapter;
+            this.tableAdapterManager.CLIENTTableAdapter = null;
             this.tableAdapterManager.DELIVERYTableAdapter = null;
             this.tableAdapterManager.EMPLOYEETableAdapter = null;
+            this.tableAdapterManager.ENGINETableAdapter = null;
+            this.tableAdapterManager.MARKTableAdapter = null;
+            this.tableAdapterManager.MODELTableAdapter = null;
             this.tableAdapterManager.MODIFICATIONTableAdapter = null;
             this.tableAdapterManager.PAYTableAdapter = null;
             this.tableAdapterManager.PERSON_INFOTableAdapter = null;
-            this.tableAdapterManager.PERSONTableAdapter = this.pERSONTableAdapter;
+            this.tableAdapterManager.PERSONTableAdapter = null;
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // cLIENTBindingNavigator
+            // aUTO_COUNTBindingNavigator
             // 
-            this.cLIENTBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.cLIENTBindingNavigator.BindingSource = this.cLIENTBindingSource;
-            this.cLIENTBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.cLIENTBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.cLIENTBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aUTO_COUNTBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.aUTO_COUNTBindingNavigator.BindingSource = this.aUTO_COUNTBindingSource;
+            this.aUTO_COUNTBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.aUTO_COUNTBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.aUTO_COUNTBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -115,18 +113,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.cLIENTBindingNavigatorSaveItem,
-            this.toolStripButton1});
-            this.cLIENTBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.cLIENTBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.cLIENTBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.cLIENTBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.cLIENTBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.cLIENTBindingNavigator.Name = "cLIENTBindingNavigator";
-            this.cLIENTBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cLIENTBindingNavigator.Size = new System.Drawing.Size(957, 25);
-            this.cLIENTBindingNavigator.TabIndex = 0;
-            this.cLIENTBindingNavigator.Text = "bindingNavigator1";
+            this.aUTO_COUNTBindingNavigatorSaveItem});
+            this.aUTO_COUNTBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.aUTO_COUNTBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.aUTO_COUNTBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.aUTO_COUNTBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.aUTO_COUNTBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.aUTO_COUNTBindingNavigator.Name = "aUTO_COUNTBindingNavigator";
+            this.aUTO_COUNTBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.aUTO_COUNTBindingNavigator.Size = new System.Drawing.Size(571, 25);
+            this.aUTO_COUNTBindingNavigator.TabIndex = 0;
+            this.aUTO_COUNTBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -213,42 +210,29 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // cLIENTBindingNavigatorSaveItem
+            // aUTO_COUNTBindingNavigatorSaveItem
             // 
-            this.cLIENTBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.cLIENTBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("cLIENTBindingNavigatorSaveItem.Image")));
-            this.cLIENTBindingNavigatorSaveItem.Name = "cLIENTBindingNavigatorSaveItem";
-            this.cLIENTBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-            this.cLIENTBindingNavigatorSaveItem.Text = "Save Data";
-            this.cLIENTBindingNavigatorSaveItem.Click += new System.EventHandler(this.cLIENTBindingNavigatorSaveItem_Click);
+            this.aUTO_COUNTBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.aUTO_COUNTBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("aUTO_COUNTBindingNavigatorSaveItem.Image")));
+            this.aUTO_COUNTBindingNavigatorSaveItem.Name = "aUTO_COUNTBindingNavigatorSaveItem";
+            this.aUTO_COUNTBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.aUTO_COUNTBindingNavigatorSaveItem.Text = "Save Data";
+            this.aUTO_COUNTBindingNavigatorSaveItem.Click += new System.EventHandler(this.aUTO_COUNTBindingNavigatorSaveItem_Click);
             // 
-            // cLIENTDataGridView
+            // aUTO_COUNTDataGridView
             // 
-            this.cLIENTDataGridView.AutoGenerateColumns = false;
-            this.cLIENTDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.cLIENTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cLIENTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.aUTO_COUNTDataGridView.AutoGenerateColumns = false;
+            this.aUTO_COUNTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aUTO_COUNTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.PERSON,
-            this.AUTO});
-            this.cLIENTDataGridView.DataSource = this.cLIENTBindingSource;
-            this.cLIENTDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cLIENTDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.cLIENTDataGridView.Name = "cLIENTDataGridView";
-            this.cLIENTDataGridView.Size = new System.Drawing.Size(957, 475);
-            this.cLIENTDataGridView.TabIndex = 1;
-            this.cLIENTDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.cLIENTDataGridView_CellEndEdit);
-            // 
-            // pERSONBindingSource
-            // 
-            this.pERSONBindingSource.DataMember = "PERSON";
-            this.pERSONBindingSource.DataSource = this.autoDataSet;
-            // 
-            // pERSONTableAdapter
-            // 
-            this.pERSONTableAdapter.ClearBeforeFill = true;
+            this.dataGridViewTextBoxColumn3});
+            this.aUTO_COUNTDataGridView.DataSource = this.aUTO_COUNTBindingSource;
+            this.aUTO_COUNTDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.aUTO_COUNTDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.aUTO_COUNTDataGridView.Name = "aUTO_COUNTDataGridView";
+            this.aUTO_COUNTDataGridView.Size = new System.Drawing.Size(571, 401);
+            this.aUTO_COUNTDataGridView.TabIndex = 1;
             // 
             // aUTOBindingSource
             // 
@@ -259,74 +243,47 @@
             // 
             this.aUTOTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(65, 22);
-            this.toolStripButton1.Text = "Обновить";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CLIENT_ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CLIENT_ID";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "AC_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "AC_ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PERSON_ID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PERSON_ID";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "AC_AUTO_ID";
+            this.dataGridViewTextBoxColumn2.DataSource = this.aUTOBindingSource;
+            this.dataGridViewTextBoxColumn2.DisplayMember = "AUTO_FULL";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Автомобиль";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn2.ValueMember = "AUTO_ID";
+            this.dataGridViewTextBoxColumn2.Width = 350;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "AUTO_ID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "AUTO_ID";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "AC_AUTO_COUNT";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Количество";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Visible = false;
             // 
-            // PERSON
-            // 
-            this.PERSON.DataPropertyName = "PERSON_ID";
-            this.PERSON.DataSource = this.pERSONBindingSource;
-            this.PERSON.DisplayMember = "PERSON_FULL";
-            this.PERSON.HeaderText = "Клиент";
-            this.PERSON.Name = "PERSON";
-            this.PERSON.ValueMember = "PERSON_ID";
-            this.PERSON.Width = 400;
-            // 
-            // AUTO
-            // 
-            this.AUTO.DataPropertyName = "AUTO_ID";
-            this.AUTO.DataSource = this.aUTOBindingSource;
-            this.AUTO.DisplayMember = "AUTO_FULL";
-            this.AUTO.HeaderText = "Автомобиль";
-            this.AUTO.Name = "AUTO";
-            this.AUTO.ValueMember = "AUTO_ID";
-            this.AUTO.Width = 500;
-            // 
-            // Client
+            // AvailableAuto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 500);
-            this.Controls.Add(this.cLIENTDataGridView);
-            this.Controls.Add(this.cLIENTBindingNavigator);
-            this.Name = "Client";
-            this.Text = "Клиенты";
-            this.Load += new System.EventHandler(this.Client_Load);
+            this.ClientSize = new System.Drawing.Size(571, 426);
+            this.Controls.Add(this.aUTO_COUNTDataGridView);
+            this.Controls.Add(this.aUTO_COUNTBindingNavigator);
+            this.Name = "AvailableAuto";
+            this.Text = "Наличие автомобилей";
+            this.Load += new System.EventHandler(this.AvailableAuto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingNavigator)).EndInit();
-            this.cLIENTBindingNavigator.ResumeLayout(false);
-            this.cLIENTBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTO_COUNTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTO_COUNTBindingNavigator)).EndInit();
+            this.aUTO_COUNTBindingNavigator.ResumeLayout(false);
+            this.aUTO_COUNTBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aUTO_COUNTDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -336,10 +293,10 @@
         #endregion
 
         private autoDataSet autoDataSet;
-        private System.Windows.Forms.BindingSource cLIENTBindingSource;
-        private autoDataSetTableAdapters.CLIENTTableAdapter cLIENTTableAdapter;
+        private System.Windows.Forms.BindingSource aUTO_COUNTBindingSource;
+        private autoDataSetTableAdapters.AUTO_COUNTTableAdapter aUTO_COUNTTableAdapter;
         private autoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator cLIENTBindingNavigator;
+        private System.Windows.Forms.BindingNavigator aUTO_COUNTBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -351,17 +308,12 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton cLIENTBindingNavigatorSaveItem;
-        private autoDataSetTableAdapters.PERSONTableAdapter pERSONTableAdapter;
-        private System.Windows.Forms.DataGridView cLIENTDataGridView;
-        private System.Windows.Forms.BindingSource pERSONBindingSource;
+        private System.Windows.Forms.ToolStripButton aUTO_COUNTBindingNavigatorSaveItem;
         private autoDataSetTableAdapters.AUTOTableAdapter aUTOTableAdapter;
+        private System.Windows.Forms.DataGridView aUTO_COUNTDataGridView;
         private System.Windows.Forms.BindingSource aUTOBindingSource;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn PERSON;
-        private System.Windows.Forms.DataGridViewComboBoxColumn AUTO;
     }
 }

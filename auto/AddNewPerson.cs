@@ -58,7 +58,8 @@ namespace auto
             int serial;
             int number;
 
-            if (!int.TryParse(txtPassportSerial.Text, out serial) || !int.TryParse(txtPassportNumber.Text, out number))
+            if (!int.TryParse(txtPassportSerial.Text, out serial) || !int.TryParse(txtPassportNumber.Text, out number) ||
+                 txtPassportSerial.Text.Length != 4 || txtPassportNumber.Text.Length != 6)
             {
                 MessageBox.Show("Пожалуйста, введите корректные серию и номер паспорта!",
                 "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -71,11 +72,11 @@ namespace auto
                     txtLastName.Text,
                     txtMiddleName.Text,
                     bdDate.Value,
-                    number,
-                    serial,
+                    txtPassportNumber.Text,
+                    txtPassportSerial.Text,
                     releaseDate.Value,
                     txtGov.Text);
-                personID = (long)personAdapter.GetPersonIDByPSN(serial, number);
+                personID = (long)personAdapter.GetPersonIDByPSN(txtPassportSerial.Text, txtPassportNumber.Text);
                 personInfoAdapter.Insert(txtPhone.Text, txtAddress.Text, (int)PersonID);
 
                 this.Close();
@@ -92,6 +93,52 @@ namespace auto
         private void btnCancel_Click (object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtPassportSerial_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassportSerial_TextChanged (object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassportNumber_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassportNumber_TextChanged (object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhone_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != '+'))
+            {
+                e.Handled = true;
+            }
+            if (!String.IsNullOrEmpty(txtPhone.Text) && txtPhone.Text.Length > 1 && (e.KeyChar == '+'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPhone_TextChanged (object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtPhone.Text) && txtPhone.Text.Contains("+"))
+                txtPhone.MaxLength = 12;
+            else
+                txtPhone.MaxLength = 11;
         }
     }
 }

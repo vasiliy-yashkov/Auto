@@ -54,6 +54,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ENGINE_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNGINEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNGINEBindingNavigator)).BeginInit();
@@ -77,6 +78,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AUTO_COUNTTableAdapter = null;
             this.tableAdapterManager.AUTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CLIENTTableAdapter = null;
@@ -92,7 +94,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // eNGINEBindingNavigator
@@ -240,13 +241,15 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.ENGINE_PRICE});
             this.eNGINEDataGridView.DataSource = this.eNGINEBindingSource;
             this.eNGINEDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eNGINEDataGridView.Location = new System.Drawing.Point(0, 25);
             this.eNGINEDataGridView.Name = "eNGINEDataGridView";
             this.eNGINEDataGridView.Size = new System.Drawing.Size(842, 533);
             this.eNGINEDataGridView.TabIndex = 1;
+            this.eNGINEDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.eNGINEDataGridView_CellEndEdit);
             this.eNGINEDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.eNGINEDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
@@ -265,7 +268,7 @@
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ENGINE_POWER";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Мощность(л.с.)";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Мощность";
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -278,6 +281,12 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ENGINE_CONSUMPTION";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.HeaderText = "Расход";
+            // 
+            // ENGINE_PRICE
+            // 
+            this.ENGINE_PRICE.DataPropertyName = "ENGINE_PRICE";
+            this.ENGINE_PRICE.Name = "ENGINE_PRICE";
+            this.ENGINE_PRICE.HeaderText = "Цена";
             // 
             // Engine
             // 
@@ -319,12 +328,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton eNGINEBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private DataGridWithFilter.DataGridWithFilter eNGINEDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private DataGridWithFilter.DataGridWithFilter eNGINEDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ENGINE_PRICE;
     }
 }

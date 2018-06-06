@@ -16,8 +16,9 @@ namespace auto
         private autoDataSetTableAdapters.SALETableAdapter saleAdapter;
         private autoDataSetTableAdapters.MARKTableAdapter markAdapter;
         private autoDataSetTableAdapters.MODELTableAdapter modelAdapter;
-        private autoDataSetTableAdapters.STATUSTableAdapter statusAdapter;
         private autoDataSetTableAdapters.CLIENTTableAdapter clientAdapter;
+        private autoDataSetTableAdapters.AUTO_COUNTTableAdapter autoCount;
+        private autoDataSetTableAdapters.CHECK_SALE_PRICETableAdapter checkAdapter;
 
         private int modelID;
         private int engineID;
@@ -37,11 +38,14 @@ namespace auto
             modelAdapter = new autoDataSetTableAdapters.MODELTableAdapter();
             modelAdapter.ClearBeforeFill = true;
 
-            statusAdapter = new autoDataSetTableAdapters.STATUSTableAdapter();
-            statusAdapter.ClearBeforeFill = true;
-
             clientAdapter = new autoDataSetTableAdapters.CLIENTTableAdapter();
             clientAdapter.ClearBeforeFill = true;
+
+            autoCount = new autoDataSetTableAdapters.AUTO_COUNTTableAdapter();
+            autoCount.ClearBeforeFill = true;
+
+            checkAdapter = new autoDataSetTableAdapters.CHECK_SALE_PRICETableAdapter();
+            checkAdapter.ClearBeforeFill = true;
 
             //this.dateTimePicker1.ShowUpDown = true;
 
@@ -74,7 +78,7 @@ namespace auto
             saleAdapter.Fill(this.autoDataSet.SALE);
             markAdapter.Fill(this.autoDataSet.MARK);
             modelAdapter.Fill(this.autoDataSet.MODEL);
-            statusAdapter.Fill(this.autoDataSet.STATUS);
+            autoCount.Fill(autoDataSet.AUTO_COUNT);
 
             this.Validate();
 
@@ -83,6 +87,7 @@ namespace auto
             this.aUTOTableAdapter.Update(this.autoDataSet);
             this.pERSONTableAdapter.Update(this.autoDataSet);
             this.cLIENTTableAdapter.Update(this.autoDataSet);
+            this.autoCount.Update(autoDataSet.AUTO_COUNT);
 
             this.pAYBindingSource.EndEdit();
             this.eMPLOYEEBindingSource.EndEdit();
@@ -131,6 +136,18 @@ namespace auto
             }
             try
             {
+                autoDataSet.CHECK_SALE_PRICEDataTable checkData =  checkAdapter.GetData(autoID, decimal.Parse(tbPrice.Text));
+                autoDataSet.CHECK_SALE_PRICERow checkRow = checkData.Rows[0] as autoDataSet.CHECK_SALE_PRICERow;
+
+                if (checkRow.OUT_RES != 0)
+                {
+                    if (MessageBox.Show("Цена продажи автомобиля меньше закупочной! Продолжить?", "Подтверждение продажи",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+
                 saleAdapter.InsertQuery(dateTimePicker1.Value,
                     Int32.Parse(cmbPerson.SelectedValue.ToString()),
                     Int32.Parse(cmbEmployee.SelectedValue.ToString()),
@@ -141,15 +158,15 @@ namespace auto
 
                 auto.autoDataSet.EMPLOYEERow employeeRow = ((cmbEmployee.SelectedItem as DataRowView).Row as auto.autoDataSet.EMPLOYEERow);
                 DateTime empBD = employeeRow.PERSONRow.PERSON_BIRTHDAY;
-                int empPS = employeeRow.PERSONRow.PERSON_PASSPORT_SERIAL;
-                int empPN = employeeRow.PERSONRow.PERSON_PASSPORT_NUMBER;
+                string empPS = employeeRow.PERSONRow.PERSON_PASSPORT_SERIAL;
+                string empPN = employeeRow.PERSONRow.PERSON_PASSPORT_NUMBER;
                 DateTime empPD = employeeRow.PERSONRow.PERSON_P_DATE;
                 string empPP = employeeRow.PERSONRow.PERSON_P_PLACE;
 
                 auto.autoDataSet.PERSONRow client = ((cmbPerson.SelectedItem as DataRowView).Row as auto.autoDataSet.PERSONRow);
                 DateTime cliBD = client.PERSON_BIRTHDAY;
-                int cliPS = client.PERSON_PASSPORT_SERIAL;
-                int cliPN = client.PERSON_PASSPORT_NUMBER;
+                string cliPS = client.PERSON_PASSPORT_SERIAL;
+                string cliPN = client.PERSON_PASSPORT_NUMBER;
                 DateTime cliPD = client.PERSON_P_DATE;
                 string cliPP = client.PERSON_P_PLACE;
 
@@ -214,9 +231,22 @@ namespace auto
                 FastReport.TextObject model = report1.FindObject("repTxtModel") as FastReport.TextObject;
                 model.Text = modelFull;
 
+                FastReport.TextObject modelPrice = report1.FindObject("repModelPrice") as FastReport.TextObject;
+                modelPrice.Text = (mdlTable.Rows[0] as auto.autoDataSet.MODELRow).MODEL_PRICE.ToString() + " руб.";
+
+                FastReport.TextObject engine = report1.FindObject("repTxtEngine") as FastReport.TextObject;
+                engine.Text = (((System.Data.DataRowView)(cmbEngine.SelectedItem)).Row as autoDataSet.ENGINERow).ENGINE_FULL;
+
+                FastReport.TextObject enginePrice = report1.FindObject("repEnginePrice") as FastReport.TextObject;
+                enginePrice.Text = (((System.Data.DataRowView)(cmbEngine.SelectedItem)).Row as autoDataSet.ENGINERow).ENGINE_PRICE.ToString() + " руб.";
+
+                FastReport.TextObject modification = report1.FindObject("repTxtModification") as FastReport.TextObject;
+                modification.Text = (((System.Data.DataRowView)(cmbMod.SelectedItem)).Row as autoDataSet.MODIFICATIONRow).FULL;
+
+                FastReport.TextObject modificationPrice = report1.FindObject("repModificationPrice") as FastReport.TextObject;
+                modificationPrice.Text = (((System.Data.DataRowView)(cmbMod.SelectedItem)).Row as autoDataSet.MODIFICATIONRow).MODIFICATION_PRICE.ToString() + " руб.";
+
                 auto.autoDataSet.AUTORow obj2 = aObj;
-                FastReport.TextObject all = report1.FindObject("repTxtAll") as FastReport.TextObject;
-                all.Text = obj2.AUTO_FULL;
 
                 file = file.Replace("REP_COLOR", obj2.AUTO_COLOR.ToString());
 
@@ -249,10 +279,13 @@ namespace auto
                 //this.rdlViewer1.SourceFile = new Uri(filepath);
                 //this.rdlViewer1.Rebuild();
 
-                this.aUTOTableAdapter.UpdateQueryNotAvailable(autoID);
                 this.clientAdapter.Insert((int)(long)cmbPerson.SelectedValue, autoID);
-                SaleEventForm_Load(sender, e);
 
+                object count = autoCount.GetAutoCount(autoID);
+                int cnt = (int)count;
+                autoCount.UpdateAutoCount(--cnt, autoID);
+
+                SaleEventForm_Load(sender, e);
                 report1.Show();
             }
             catch (Exception ex)
@@ -285,6 +318,8 @@ namespace auto
             {
                 Int32 modelID = (Int32)(((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_ID;
 
+                txtModelPrice.Text = (((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_PRICE.ToString();
+
                 aUTOBindingSource.Filter = string.Format("MODEL_ID={0}", modelID);
 
                 object eObj = aUTOTableAdapter.getEngineID(modelID);
@@ -308,6 +343,10 @@ namespace auto
                     mODIFICATIONBindingSource.Filter = string.Format("MODIFICATION_ID={0}", Int32.MaxValue);
                 }
                 getAutoInfo();
+            }
+            else
+            {
+                txtModelPrice.Text = "";
             }
         }
 
@@ -330,6 +369,8 @@ namespace auto
             {
                 Int32 modelID = (Int32)(((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_ID;
 
+                txtModelPrice.Text = (((System.Data.DataRowView)(cbo.SelectedItem)).Row as autoDataSet.MODELRow).MODEL_PRICE.ToString();
+
                 aUTOBindingSource.Filter = string.Format("MODEL_ID={0}", modelID);
 
                 object eObj = aUTOTableAdapter.getEngineID(modelID);
@@ -354,6 +395,10 @@ namespace auto
                 }
                 getAutoInfo();
             }
+            else
+            {
+                txtModelPrice.Text = "";
+            }
         }
 
         private void getAutoInfo ()
@@ -373,6 +418,7 @@ namespace auto
             if (cmbEngine.SelectedValue != null)
             {
                 engineID = (Int32)(((System.Data.DataRowView)(cmbEngine.SelectedItem)).Row as autoDataSet.ENGINERow).ENGINE_ID;
+                txtEnginePrice.Text = (((System.Data.DataRowView)(cmbEngine.SelectedItem)).Row as autoDataSet.ENGINERow).ENGINE_PRICE.ToString();
             }
             else
             {
@@ -380,11 +426,13 @@ namespace auto
                 txtStatus.Text = String.Empty;
                 txtStatus.BackColor = Color.White;
                 btnApply.Enabled = false;
+                txtEnginePrice.Text = "";
                 return;
             }
             if (cmbMod.SelectedValue != null)
             {
                 modID = (Int32)(((System.Data.DataRowView)(cmbMod.SelectedItem)).Row as autoDataSet.MODIFICATIONRow).MODIFICATION_ID;
+                txtModifiactionPrice.Text = (((System.Data.DataRowView)(cmbMod.SelectedItem)).Row as autoDataSet.MODIFICATIONRow).MODIFICATION_PRICE.ToString();
             }
             else
             {
@@ -392,33 +440,47 @@ namespace auto
                 txtStatus.Text = String.Empty;
                 txtStatus.BackColor = Color.White;
                 btnApply.Enabled = false;
+                txtModifiactionPrice.Text = "";
                 return;
             }
             autoID = (int)(long)aUTOTableAdapter.getAutoID(modelID, modID, engineID);
 
-            autoDataSet.AUTODataTable table = aUTOTableAdapter.GetDataByAutoID(autoID);
-            autoDataSet.AUTORow row = table.Rows[0] as autoDataSet.AUTORow;
-
-            int statusID = (int)(long)row.STATUS_ID;
-
-            autoDataSet.STATUSDataTable statusTable = statusAdapter.GetDataByStatusID(statusID);
-            autoDataSet.STATUSRow statusRow = statusTable.Rows[0] as autoDataSet.STATUSRow;
-            string status = statusRow.STATUS_NAME;
-            if (!status.ToLower().Equals("в наличии"))
+            object count = autoCount.GetAutoCount(autoID);
+            int cnt;
+            if (count == null)
             {
-                txtStatus.Text = status;
+                cnt = 0;
+            }
+            else
+            {
+                cnt = (int)count;                
+            }
+                        
+
+            if (cnt == 0)
+            {
+                txtStatus.Text = "Нет в наличии";
                 txtStatus.BackColor = Color.Red;
                 btnApply.Enabled = false;
                 return;
             }
             else
             {
-                txtStatus.Text = status;
+                txtStatus.Text = "В наличии";
                 txtStatus.BackColor = Color.Green;
             }
 
-            tbPrice.Text = txtCatalogPrice.Text = "";/*row.AUTO_PRICE.ToString();*/
-            btnApply.Enabled = true;
+
+            if (!String.IsNullOrEmpty(txtEnginePrice.Text) &&
+                !String.IsNullOrEmpty(txtModelPrice.Text) &&
+                !String.IsNullOrEmpty(txtModifiactionPrice.Text))
+            {
+                decimal sum = decimal.Parse(txtEnginePrice.Text) +
+                    decimal.Parse(txtModelPrice.Text) +
+                    decimal.Parse(txtModifiactionPrice.Text);
+                tbPrice.Text = txtCatalogPrice.Text = sum.ToString();
+                btnApply.Enabled = true;
+            }     
         }
 
         private void addNewPerson_Click (object sender, EventArgs e)
@@ -438,6 +500,26 @@ namespace auto
                 MessageBox.Show("Пожалуйста, проверьте корректность введенных данных и повторите попытку! \n" + ex.Message,
                 "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cmbEngine_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            getAutoInfo();
+        }
+
+        private void cmbEngine_SelectedValueChanged (object sender, EventArgs e)
+        {
+            getAutoInfo();
+        }
+
+        private void cmbMod_SelectedIndexChanged (object sender, EventArgs e)
+        {
+            getAutoInfo();
+        }
+
+        private void cmbMod_SelectedValueChanged (object sender, EventArgs e)
+        {
+            getAutoInfo();
         }
     }
 }

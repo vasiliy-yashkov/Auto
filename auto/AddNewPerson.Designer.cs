@@ -93,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 113);
+            this.label5.Location = new System.Drawing.Point(12, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 4;
@@ -111,7 +111,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 194);
+            this.label7.Location = new System.Drawing.Point(12, 195);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 13);
             this.label7.TabIndex = 6;
@@ -138,7 +138,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 243);
+            this.label10.Location = new System.Drawing.Point(12, 243);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(52, 13);
             this.label10.TabIndex = 9;
@@ -184,18 +184,24 @@
             this.txtPassportSerial.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassportSerial.Location = new System.Drawing.Point(104, 110);
+            this.txtPassportSerial.MaxLength = 4;
             this.txtPassportSerial.Name = "txtPassportSerial";
             this.txtPassportSerial.Size = new System.Drawing.Size(366, 20);
             this.txtPassportSerial.TabIndex = 14;
+            this.txtPassportSerial.TextChanged += new System.EventHandler(this.txtPassportSerial_TextChanged);
+            this.txtPassportSerial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportSerial_KeyPress);
             // 
             // txtPassportNumber
             // 
             this.txtPassportNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassportNumber.Location = new System.Drawing.Point(109, 136);
+            this.txtPassportNumber.MaxLength = 6;
             this.txtPassportNumber.Name = "txtPassportNumber";
             this.txtPassportNumber.Size = new System.Drawing.Size(361, 20);
             this.txtPassportNumber.TabIndex = 15;
+            this.txtPassportNumber.TextChanged += new System.EventHandler(this.txtPassportNumber_TextChanged);
+            this.txtPassportNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassportNumber_KeyPress);
             // 
             // txtGov
             // 
@@ -228,9 +234,12 @@
             this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPhone.Location = new System.Drawing.Point(70, 240);
+            this.txtPhone.MaxLength = 11;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(400, 20);
             this.txtPhone.TabIndex = 19;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // btnCancel
             // 

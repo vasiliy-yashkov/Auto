@@ -65,6 +65,29 @@ namespace auto
             Object obj = mODELDataGridView.Rows[e.RowIndex].Cells[2].Value;
             if (obj != null)
                 mODELDataGridView.Rows[e.RowIndex].Cells[1].Value = obj;
+            if (e.ColumnIndex == 4)
+            {
+                Object value = mODELDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (value != null && !String.IsNullOrEmpty(value.ToString()))
+                {
+                    try
+                    {
+                        decimal d = decimal.Parse(value.ToString());
+                        if (d == 0 || d < 0)
+                        {
+                            MessageBox.Show("Цена не может быть равной 0!",
+                                "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            mODELDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+                            return;
+                        }
+                        mODELDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = d.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+            }
         }
 
         private void toolStripButton1_Click (object sender, EventArgs e)

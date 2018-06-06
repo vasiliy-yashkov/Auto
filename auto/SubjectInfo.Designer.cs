@@ -291,7 +291,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // pERSONTableAdapter

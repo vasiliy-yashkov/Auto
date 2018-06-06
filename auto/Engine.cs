@@ -15,6 +15,7 @@ namespace auto
         public Engine ()
         {
             InitializeComponent();
+
         }
 
         private void eNGINEBindingNavigatorSaveItem_Click (object sender, EventArgs e)
@@ -62,6 +63,32 @@ namespace auto
             e.Cancel = true;
             MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
                 "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void eNGINEDataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5) {
+                Object value = eNGINEDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (value != null && !String.IsNullOrEmpty(value.ToString()))
+                {
+                    try
+                    {
+                        decimal d = decimal.Parse(value.ToString());
+                        if (d == 0 || d < 0)
+                        {
+                            MessageBox.Show("Цена не может быть равной 0!",
+                                "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            eNGINEDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+                            return;
+                        }
+                        eNGINEDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = d.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+            }
         }
     }
 }

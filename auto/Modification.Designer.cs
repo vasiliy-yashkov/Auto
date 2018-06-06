@@ -53,6 +53,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MODIFICATION_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingNavigator)).BeginInit();
@@ -76,6 +77,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AUTO_COUNTTableAdapter = null;
             this.tableAdapterManager.AUTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CLIENTTableAdapter = null;
@@ -91,7 +93,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // mODIFICATIONBindingNavigator
@@ -238,13 +239,15 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.MODIFICATION_PRICE});
             this.mODIFICATIONDataGridView.DataSource = this.mODIFICATIONBindingSource;
             this.mODIFICATIONDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mODIFICATIONDataGridView.Location = new System.Drawing.Point(0, 25);
             this.mODIFICATIONDataGridView.Name = "mODIFICATIONDataGridView";
             this.mODIFICATIONDataGridView.Size = new System.Drawing.Size(900, 446);
             this.mODIFICATIONDataGridView.TabIndex = 1;
+            this.mODIFICATIONDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.mODIFICATIONDataGridView_CellEndEdit);
             this.mODIFICATIONDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.mODIFICATIONDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn1
@@ -257,21 +260,27 @@
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "MODIFICATION_NAME";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Название модификации";
             this.dataGridViewTextBoxColumn2.Width = 200;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "MODIFICATION_BODY";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Кузов";
             this.dataGridViewTextBoxColumn3.Width = 200;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Кузов";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "TRANSMISSION";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Коробка передач";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Коробка";
+            // 
+            // MODIFICATION_PRICE
+            // 
+            this.MODIFICATION_PRICE.DataPropertyName = "MODIFICATION_PRICE";
+            this.MODIFICATION_PRICE.Name = "MODIFICATION_PRICE";
+            this.MODIFICATION_PRICE.HeaderText = "Цена";
             // 
             // Modification
             // 
@@ -318,7 +327,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridWithFilter.DataGridWithFilter mODIFICATIONDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MODIFICATION_PRICE;
     }
 }

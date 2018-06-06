@@ -75,6 +75,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.addNewPerson = new System.Windows.Forms.Button();
+            this.txtModelPrice = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtEnginePrice = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtModifiactionPrice = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pERSONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
@@ -146,7 +152,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 179);
+            this.label3.Location = new System.Drawing.Point(12, 266);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
@@ -160,7 +166,7 @@
             this.cmbEmployee.DisplayMember = "EMPLOYEE_FULL";
             this.cmbEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmployee.FormattingEnabled = true;
-            this.cmbEmployee.Location = new System.Drawing.Point(109, 176);
+            this.cmbEmployee.Location = new System.Drawing.Point(109, 263);
             this.cmbEmployee.Name = "cmbEmployee";
             this.cmbEmployee.Size = new System.Drawing.Size(650, 21);
             this.cmbEmployee.TabIndex = 5;
@@ -178,7 +184,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 206);
+            this.label4.Location = new System.Drawing.Point(12, 293);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 26);
             this.label4.TabIndex = 6;
@@ -192,7 +198,7 @@
             this.cmbPay.DisplayMember = "PAY_NAME";
             this.cmbPay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPay.FormattingEnabled = true;
-            this.cmbPay.Location = new System.Drawing.Point(109, 211);
+            this.cmbPay.Location = new System.Drawing.Point(109, 298);
             this.cmbPay.Name = "cmbPay";
             this.cmbPay.Size = new System.Drawing.Size(650, 21);
             this.cmbPay.TabIndex = 7;
@@ -210,7 +216,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 245);
+            this.label5.Location = new System.Drawing.Point(12, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 8;
@@ -222,7 +228,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.CustomFormat = "dd.MM.yyyy HH:mm";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(109, 238);
+            this.dateTimePicker1.Location = new System.Drawing.Point(109, 325);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(650, 20);
             this.dateTimePicker1.TabIndex = 9;
@@ -230,7 +236,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 293);
+            this.label6.Location = new System.Drawing.Point(12, 380);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 10;
@@ -240,7 +246,7 @@
             // 
             this.tbPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPrice.Location = new System.Drawing.Point(109, 290);
+            this.tbPrice.Location = new System.Drawing.Point(109, 377);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(650, 20);
             this.tbPrice.TabIndex = 11;
@@ -248,7 +254,7 @@
             // btnApply
             // 
             this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApply.Location = new System.Drawing.Point(603, 324);
+            this.btnApply.Location = new System.Drawing.Point(603, 405);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 12;
@@ -259,7 +265,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(684, 324);
+            this.btnOK.Location = new System.Drawing.Point(684, 405);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 13;
@@ -276,17 +282,17 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 267);
+            this.label7.Location = new System.Drawing.Point(12, 354);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 13);
+            this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Цена в каталоге";
+            this.label7.Text = "Итоговая цена";
             // 
             // txtCatalogPrice
             // 
             this.txtCatalogPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCatalogPrice.Location = new System.Drawing.Point(109, 264);
+            this.txtCatalogPrice.Location = new System.Drawing.Point(109, 351);
             this.txtCatalogPrice.Name = "txtCatalogPrice";
             this.txtCatalogPrice.ReadOnly = true;
             this.txtCatalogPrice.Size = new System.Drawing.Size(650, 20);
@@ -313,7 +319,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 96);
+            this.label9.Location = new System.Drawing.Point(12, 122);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(62, 13);
             this.label9.TabIndex = 18;
@@ -322,7 +328,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 123);
+            this.label10.Location = new System.Drawing.Point(11, 175);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 13);
             this.label10.TabIndex = 19;
@@ -378,11 +384,13 @@
             this.cmbEngine.DisplayMember = "ENGINE_FULL";
             this.cmbEngine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEngine.FormattingEnabled = true;
-            this.cmbEngine.Location = new System.Drawing.Point(109, 93);
+            this.cmbEngine.Location = new System.Drawing.Point(109, 119);
             this.cmbEngine.Name = "cmbEngine";
             this.cmbEngine.Size = new System.Drawing.Size(650, 21);
             this.cmbEngine.TabIndex = 22;
             this.cmbEngine.ValueMember = "ENGINE_ID";
+            this.cmbEngine.SelectedIndexChanged += new System.EventHandler(this.cmbEngine_SelectedIndexChanged);
+            this.cmbEngine.SelectedValueChanged += new System.EventHandler(this.cmbEngine_SelectedValueChanged);
             // 
             // eNGINEBindingSource
             // 
@@ -397,11 +405,13 @@
             this.cmbMod.DisplayMember = "FULL";
             this.cmbMod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMod.FormattingEnabled = true;
-            this.cmbMod.Location = new System.Drawing.Point(109, 120);
+            this.cmbMod.Location = new System.Drawing.Point(109, 172);
             this.cmbMod.Name = "cmbMod";
             this.cmbMod.Size = new System.Drawing.Size(650, 21);
             this.cmbMod.TabIndex = 23;
             this.cmbMod.ValueMember = "MODIFICATION_ID";
+            this.cmbMod.SelectedIndexChanged += new System.EventHandler(this.cmbMod_SelectedIndexChanged);
+            this.cmbMod.SelectedValueChanged += new System.EventHandler(this.cmbMod_SelectedValueChanged);
             // 
             // mODIFICATIONBindingSource
             // 
@@ -427,7 +437,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 153);
+            this.label12.Location = new System.Drawing.Point(12, 240);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 13);
             this.label12.TabIndex = 26;
@@ -437,7 +447,7 @@
             // 
             this.txtStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtStatus.Location = new System.Drawing.Point(109, 150);
+            this.txtStatus.Location = new System.Drawing.Point(109, 237);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.ReadOnly = true;
             this.txtStatus.Size = new System.Drawing.Size(650, 20);
@@ -454,11 +464,74 @@
             this.addNewPerson.UseVisualStyleBackColor = true;
             this.addNewPerson.Click += new System.EventHandler(this.addNewPerson_Click);
             // 
+            // txtModelPrice
+            // 
+            this.txtModelPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtModelPrice.Location = new System.Drawing.Point(109, 93);
+            this.txtModelPrice.Name = "txtModelPrice";
+            this.txtModelPrice.ReadOnly = true;
+            this.txtModelPrice.Size = new System.Drawing.Size(650, 20);
+            this.txtModelPrice.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 13);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Цена модели";
+            // 
+            // txtEnginePrice
+            // 
+            this.txtEnginePrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEnginePrice.Location = new System.Drawing.Point(109, 146);
+            this.txtEnginePrice.Name = "txtEnginePrice";
+            this.txtEnginePrice.ReadOnly = true;
+            this.txtEnginePrice.Size = new System.Drawing.Size(650, 20);
+            this.txtEnginePrice.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Цена двигателя";
+            // 
+            // txtModifiactionPrice
+            // 
+            this.txtModifiactionPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtModifiactionPrice.Location = new System.Drawing.Point(109, 199);
+            this.txtModifiactionPrice.Name = "txtModifiactionPrice";
+            this.txtModifiactionPrice.ReadOnly = true;
+            this.txtModifiactionPrice.Size = new System.Drawing.Size(650, 20);
+            this.txtModifiactionPrice.TabIndex = 34;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 202);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 26);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Цена\r\nкомплектации";
+            // 
             // SaleEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 359);
+            this.ClientSize = new System.Drawing.Size(771, 440);
+            this.Controls.Add(this.txtModifiactionPrice);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtEnginePrice);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtModelPrice);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.addNewPerson);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label12);
@@ -550,5 +623,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Button addNewPerson;
+        private System.Windows.Forms.TextBox txtModelPrice;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtEnginePrice;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtModifiactionPrice;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -231,6 +231,7 @@
             this.pERSONDataGridView.Name = "pERSONDataGridView";
             this.pERSONDataGridView.Size = new System.Drawing.Size(1159, 575);
             this.pERSONDataGridView.TabIndex = 1;
+            this.pERSONDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.pERSONDataGridView_CellEndEdit);
             this.pERSONDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.pERSONDataGridView_DataError);
             // 
             // pERSONTableAdapter
@@ -239,6 +240,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AUTO_COUNTTableAdapter = null;
             this.tableAdapterManager.AUTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CLIENTTableAdapter = null;
@@ -254,7 +256,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dataGridViewTextBoxColumn1
@@ -293,14 +294,16 @@
             // PERSON_PASSPORT_SERIAL
             // 
             this.PERSON_PASSPORT_SERIAL.DataPropertyName = "PERSON_PASSPORT_SERIAL";
+            this.PERSON_PASSPORT_SERIAL.MaxInputLength = 4;
             this.PERSON_PASSPORT_SERIAL.Name = "PERSON_PASSPORT_SERIAL";
-            this.PERSON_PASSPORT_SERIAL.HeaderText = "Паспорт Серия";
+            this.PERSON_PASSPORT_SERIAL.HeaderText = "Паспорт серия";
             // 
             // PERSON_PASSPORT_NUMBER
             // 
             this.PERSON_PASSPORT_NUMBER.DataPropertyName = "PERSON_PASSPORT_NUMBER";
+            this.PERSON_PASSPORT_NUMBER.MaxInputLength = 6;
             this.PERSON_PASSPORT_NUMBER.Name = "PERSON_PASSPORT_NUMBER";
-            this.PERSON_PASSPORT_NUMBER.HeaderText = "Паспорт Номер";
+            this.PERSON_PASSPORT_NUMBER.HeaderText = "Паспорт номер";
             // 
             // PERSON_P_DATE
             // 
@@ -312,7 +315,7 @@
             // 
             this.PERSON_P_PLACE.DataPropertyName = "PERSON_P_PLACE";
             this.PERSON_P_PLACE.Name = "PERSON_P_PLACE";
-            this.PERSON_P_PLACE.HeaderText = "Выдан";
+            this.PERSON_P_PLACE.HeaderText = "Орган выдачи";
             // 
             // Subject
             // 

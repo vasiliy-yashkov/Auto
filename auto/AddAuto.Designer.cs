@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMark = new System.Windows.Forms.ComboBox();
+            this.mARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.autoDataSet = new auto.autoDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbModel = new System.Windows.Forms.ComboBox();
+            this.mODELBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.autoDataSet = new auto.autoDataSet();
-            this.mARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mARKTableAdapter = new auto.autoDataSetTableAdapters.MARKTableAdapter();
-            this.mODELBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mODELTableAdapter = new auto.autoDataSetTableAdapters.MODELTableAdapter();
             this.cmbMod = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.mODIFICATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
             this.mODIFICATIONTableAdapter = new auto.autoDataSetTableAdapters.MODIFICATIONTableAdapter();
             this.txtVIN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,18 +52,12 @@
             this.cmbEngine = new System.Windows.Forms.ComboBox();
             this.eNGINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eNGINETableAdapter = new auto.autoDataSetTableAdapters.ENGINETableAdapter();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.sTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTATUSTableAdapter = new auto.autoDataSetTableAdapters.STATUSTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNGINEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,6 +83,16 @@
             this.cmbMark.SelectedIndexChanged += new System.EventHandler(this.cmbMark_SelectedIndexChanged);
             this.cmbMark.SelectedValueChanged += new System.EventHandler(this.cmbMark_SelectedValueChanged);
             // 
+            // mARKBindingSource
+            // 
+            this.mARKBindingSource.DataMember = "MARK";
+            this.mARKBindingSource.DataSource = this.autoDataSet;
+            // 
+            // autoDataSet
+            // 
+            this.autoDataSet.DataSetName = "autoDataSet";
+            this.autoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -111,6 +115,11 @@
             this.cmbModel.Size = new System.Drawing.Size(312, 21);
             this.cmbModel.TabIndex = 3;
             this.cmbModel.ValueMember = "MODEL_ID";
+            // 
+            // mODELBindingSource
+            // 
+            this.mODELBindingSource.DataMember = "MODEL";
+            this.mODELBindingSource.DataSource = this.autoDataSet;
             // 
             // label3
             // 
@@ -150,24 +159,9 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // autoDataSet
-            // 
-            this.autoDataSet.DataSetName = "autoDataSet";
-            this.autoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mARKBindingSource
-            // 
-            this.mARKBindingSource.DataMember = "MARK";
-            this.mARKBindingSource.DataSource = this.autoDataSet;
-            // 
             // mARKTableAdapter
             // 
             this.mARKTableAdapter.ClearBeforeFill = true;
-            // 
-            // mODELBindingSource
-            // 
-            this.mODELBindingSource.DataMember = "MODEL";
-            this.mODELBindingSource.DataSource = this.autoDataSet;
             // 
             // mODELTableAdapter
             // 
@@ -187,6 +181,11 @@
             this.cmbMod.TabIndex = 8;
             this.cmbMod.ValueMember = "MODIFICATION_ID";
             // 
+            // mODIFICATIONBindingSource
+            // 
+            this.mODIFICATIONBindingSource.DataMember = "MODIFICATION";
+            this.mODIFICATIONBindingSource.DataSource = this.autoDataSet;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -196,11 +195,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Модификация:";
             // 
-            // mODIFICATIONBindingSource
-            // 
-            this.mODIFICATIONBindingSource.DataMember = "MODIFICATION";
-            this.mODIFICATIONBindingSource.DataSource = this.autoDataSet;
-            // 
             // mODIFICATIONTableAdapter
             // 
             this.mODIFICATIONTableAdapter.ClearBeforeFill = true;
@@ -208,9 +202,11 @@
             // txtVIN
             // 
             this.txtVIN.Location = new System.Drawing.Point(46, 207);
+            this.txtVIN.MaxLength = 17;
             this.txtVIN.Name = "txtVIN";
             this.txtVIN.Size = new System.Drawing.Size(304, 20);
             this.txtVIN.TabIndex = 11;
+            this.txtVIN.TextChanged += new System.EventHandler(this.txtVIN_TextChanged);
             // 
             // label5
             // 
@@ -253,24 +249,6 @@
             // 
             this.eNGINETableAdapter.ClearBeforeFill = true;
             // 
-            // txtPrice
-            // 
-            this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrice.Location = new System.Drawing.Point(411, 207);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(312, 20);
-            this.txtPrice.TabIndex = 15;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(369, 210);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Цена:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -280,38 +258,12 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Статус:";
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbStatus.DataSource = this.sTATUSBindingSource;
-            this.cmbStatus.DisplayMember = "STATUS_NAME";
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(62, 174);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(661, 21);
-            this.cmbStatus.TabIndex = 17;
-            this.cmbStatus.ValueMember = "STATUS_ID";
-            // 
-            // sTATUSBindingSource
-            // 
-            this.sTATUSBindingSource.DataMember = "STATUS";
-            this.sTATUSBindingSource.DataSource = this.autoDataSet;
-            // 
-            // sTATUSTableAdapter
-            // 
-            this.sTATUSTableAdapter.ClearBeforeFill = true;
-            // 
             // AddAuto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 286);
-            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbEngine);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtVIN);
@@ -329,12 +281,11 @@
             this.Name = "AddAuto";
             this.Text = "Добавить автомобиль";
             this.Load += new System.EventHandler(this.AddAuto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mARKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNGINEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,11 +316,6 @@
         private System.Windows.Forms.ComboBox cmbEngine;
         private System.Windows.Forms.BindingSource eNGINEBindingSource;
         private autoDataSetTableAdapters.ENGINETableAdapter eNGINETableAdapter;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.BindingSource sTATUSBindingSource;
-        private autoDataSetTableAdapters.STATUSTableAdapter sTATUSTableAdapter;
     }
 }

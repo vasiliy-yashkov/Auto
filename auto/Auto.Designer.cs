@@ -67,20 +67,16 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.v_AUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aUTOTableAdapter = new auto.autoDataSetTableAdapters.AUTOTableAdapter();
             this.tableAdapterManager = new auto.autoDataSetTableAdapters.TableAdapterManager();
             this.eNGINETableAdapter = new auto.autoDataSetTableAdapters.ENGINETableAdapter();
             this.mODELTableAdapter = new auto.autoDataSetTableAdapters.MODELTableAdapter();
             this.mODIFICATIONTableAdapter = new auto.autoDataSetTableAdapters.MODIFICATIONTableAdapter();
-            this.sTATUSTableAdapter = new auto.autoDataSetTableAdapters.STATUSTableAdapter();
             this.mARKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mODELBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mODIFICATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eNGINEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sTATUSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mARKTableAdapter = new auto.autoDataSetTableAdapters.MARKTableAdapter();
             this.v_AUTOTableAdapter = new auto.autoDataSetTableAdapters.V_AUTOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.aUTOBindingNavigator)).BeginInit();
@@ -93,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNGINEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // aUTOBindingNavigator
@@ -310,9 +305,7 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
+            this.dataGridViewTextBoxColumn17});
             this.v_AUTODataGridView.DataSource = this.v_AUTOBindingSource;
             this.v_AUTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.v_AUTODataGridView.Location = new System.Drawing.Point(0, 25);
@@ -433,20 +426,6 @@
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "STATUS_NAME";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Статус";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "AUTO_PRICE";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Цена";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            // 
             // v_AUTOBindingSource
             // 
             this.v_AUTOBindingSource.DataMember = "V_AUTO";
@@ -473,7 +452,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = this.sTATUSTableAdapter;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // eNGINETableAdapter
@@ -487,10 +465,6 @@
             // mODIFICATIONTableAdapter
             // 
             this.mODIFICATIONTableAdapter.ClearBeforeFill = true;
-            // 
-            // sTATUSTableAdapter
-            // 
-            this.sTATUSTableAdapter.ClearBeforeFill = true;
             // 
             // mARKBindingSource
             // 
@@ -511,11 +485,6 @@
             // 
             this.eNGINEBindingSource.DataMember = "ENGINE";
             this.eNGINEBindingSource.DataSource = this.autoDataSet;
-            // 
-            // sTATUSBindingSource
-            // 
-            this.sTATUSBindingSource.DataMember = "STATUS";
-            this.sTATUSBindingSource.DataSource = this.autoDataSet;
             // 
             // mARKTableAdapter
             // 
@@ -546,7 +515,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mODELBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mODIFICATIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eNGINEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTATUSBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -578,11 +546,8 @@
         private System.Windows.Forms.BindingSource mODIFICATIONBindingSource;
         private autoDataSetTableAdapters.ENGINETableAdapter eNGINETableAdapter;
         private System.Windows.Forms.BindingSource eNGINEBindingSource;
-        private autoDataSetTableAdapters.STATUSTableAdapter sTATUSTableAdapter;
-        private System.Windows.Forms.BindingSource sTATUSBindingSource;
         private System.Windows.Forms.BindingSource mARKBindingSource;
         private autoDataSetTableAdapters.MARKTableAdapter mARKTableAdapter;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Mark;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.ToolStripButton tsbAdd;
@@ -606,7 +571,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
     }
 }

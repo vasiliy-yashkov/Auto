@@ -13,6 +13,7 @@ namespace auto
     public partial class AddDelivery : Form
     {
         private autoDataSetTableAdapters.DELIVERYTableAdapter deliveryAdapter;
+        private autoDataSetTableAdapters.AUTO_COUNTTableAdapter autoCount;
 
         private bool edit = false;
         private long deliveryID;
@@ -28,13 +29,17 @@ namespace auto
             deliveryAdapter = new autoDataSetTableAdapters.DELIVERYTableAdapter();
             deliveryAdapter.ClearBeforeFill = true;
             deliveryAdapter.Fill(autoDataSet.DELIVERY);
+            
+            autoCount = new autoDataSetTableAdapters.AUTO_COUNTTableAdapter();
+            autoCount.ClearBeforeFill = true;
+            autoCount.Fill(autoDataSet.AUTO_COUNT);
         }
 
         public AddDelivery (long deliveryID, long providerID, long autoID,
             DateTime date, Decimal price)
         {
-            InitializeComponent ();
-       
+            InitializeComponent();
+
             deliveryAdapter = new autoDataSetTableAdapters.DELIVERYTableAdapter();
             deliveryAdapter.ClearBeforeFill = true;
             deliveryAdapter.Fill(autoDataSet.DELIVERY);
@@ -46,7 +51,7 @@ namespace auto
             this.date = date;
             this.price = price;
         }
-    
+
         private void AddDelivery_Load (object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'autoDataSet.AUTO' table. You can move, or remove it, as needed.
@@ -73,12 +78,23 @@ namespace auto
                     {
                         MessageBox.Show("Пожалуйста, заполните все поля!",
                         "Ошибка ввода данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
                     }
-                    deliveryAdapter.Insert((int)(long)cmbProvider.SelectedValue, (int)(long)cmbAuto.SelectedValue,
-                        dateTimePicker1.Value, Decimal.Parse(txtPrice.Text));
-                    aUTOTableAdapter.SetAutoAvailable((int)(long)cmbAuto.SelectedValue);
-                    this.Close();
+                    else
+                    {
+                        deliveryAdapter.Insert((int)(long)cmbProvider.SelectedValue, (int)(long)cmbAuto.SelectedValue,
+                            dateTimePicker1.Value, Decimal.Parse(txtPrice.Text));
+                        object count = autoCount.GetAutoCount((int)(long)cmbAuto.SelectedValue);
+                        if (count == null)
+                        {
+                            autoCount.Insert((int)(long)cmbAuto.SelectedValue, 1);
+                        }
+                        else
+                        {
+                            int cnt = (int)count;
+                            autoCount.UpdateAutoCount(++cnt, (int)(long)cmbAuto.SelectedValue);
+                        }
+                        this.Close();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -96,10 +112,13 @@ namespace auto
                         "Ошибка ввода данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    deliveryAdapter.Update((int)(long)cmbProvider.SelectedValue, (int)(long)cmbAuto.SelectedValue,
+                    else
+                    {
+                        deliveryAdapter.Update((int)(long)cmbProvider.SelectedValue, (int)(long)cmbAuto.SelectedValue,
                         dateTimePicker1.Value, Decimal.Parse(txtPrice.Text),
                         (int)deliveryID);
-                    this.Close();
+                        this.Close();
+                    }
                 }
                 catch (Exception /*ex*/)
                 {
@@ -107,8 +126,6 @@ namespace auto
                     "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
-            this.Close();
         }
 
         private void cmbCancel_Click (object sender, EventArgs e)
@@ -131,6 +148,39 @@ namespace auto
             if (cbo.SelectedValue != null)
             {
                 this.aUTOTableAdapter.FillByMarkName(this.autoDataSet.AUTO, cbo.Text);
+            }
+        }
+
+        private void txtPrice_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            // запрет на ввод букв
+            if (!Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrice_TextChanged (object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (!String.IsNullOrEmpty(txtPrice.Text))
+            {
+                try
+                {
+                    decimal d = decimal.Parse(txtPrice.Text);
+                    if (d == 0)
+                    {
+                        MessageBox.Show("Цена не может быть меньше или равна 0!",
+                            "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtPrice.Text = "";
+                        return;
+                    }
+                    txtPrice.Text = d.ToString();
+                }
+                catch (Exception)
+                {
+
+                }
             }
         }
     }

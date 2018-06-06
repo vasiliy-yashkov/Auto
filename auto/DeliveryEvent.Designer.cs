@@ -49,7 +49,7 @@
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
             this.tsbEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
-            this.v_DELIVERY_TABLEDataGridView = new System.Windows.Forms.DataGridView();
+            this.v_DELIVERY_TABLEDataGridView = new DataGridWithFilter.DataGridWithFilter();
             this.v_DELIVERY_TABLETableAdapter = new auto.autoDataSetTableAdapters.V_DELIVERY_TABLETableAdapter();
             this.tableAdapterManager = new auto.autoDataSetTableAdapters.TableAdapterManager();
             this.DELIVERY_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -296,7 +296,6 @@
             this.tableAdapterManager.POSTTableAdapter = null;
             this.tableAdapterManager.PROVIDERTableAdapter = null;
             this.tableAdapterManager.SALETableAdapter = null;
-            this.tableAdapterManager.STATUSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = auto.autoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // DELIVERY_ID

@@ -16,7 +16,6 @@ namespace auto
         private bool edit = false;
         private long autoID;
         //private string color;
-        private long statusID;
         //private long modID;
         private long markID;
         private long modelID;
@@ -32,8 +31,8 @@ namespace auto
             autoAdapter.Fill(this.autoDataSet.AUTO);
         }
 
-        public AddAuto (long autoID, string color, long statusID, long modID,
-            long markID, long modelID, long engineID, string vin, decimal price)
+        public AddAuto (long autoID, string color, long modID,
+            long markID, long modelID, long engineID, string vin)
         {
             InitializeComponent();
             autoAdapter = new autoDataSetTableAdapters.AUTOTableAdapter();
@@ -44,8 +43,6 @@ namespace auto
             this.autoID = autoID;
             txtColor.Text = color;
             txtVIN.Text = vin;
-            txtPrice.Text = price.ToString();
-            this.statusID = statusID;
             this.markID = markID;
             this.modelID = modelID;
             this.engineID = engineID;
@@ -53,8 +50,6 @@ namespace auto
 
         private void AddAuto_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.STATUS' table. You can move, or remove it, as needed.
-            this.sTATUSTableAdapter.Fill(this.autoDataSet.STATUS);
             // TODO: This line of code loads data into the 'autoDataSet.ENGINE' table. You can move, or remove it, as needed.
             this.eNGINETableAdapter.Fill(this.autoDataSet.ENGINE);
             // TODO: This line of code loads data into the 'autoDataSet.MODIFICATION' table. You can move, or remove it, as needed.
@@ -68,7 +63,6 @@ namespace auto
 
             if (edit)
             {
-                cmbStatus.SelectedValue = statusID;
                 cmbMark.SelectedValue = markID;
                 cmbModel.SelectedValue = modelID;
                 cmbEngine.SelectedValue = engineID;
@@ -81,13 +75,13 @@ namespace auto
             {
                 try
                 {
-                    if (String.IsNullOrEmpty(txtColor.Text) || String.IsNullOrEmpty(txtPrice.Text))
+                    if (String.IsNullOrEmpty(txtColor.Text))
                     {
                         MessageBox.Show("Пожалуйста, заполните все поля!",
                         "Ошибка ввода данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    autoAdapter.Insert(txtColor.Text, (int)(long)cmbStatus.SelectedValue, (int)(long)cmbMod.SelectedValue, txtVIN.Text,
+                    autoAdapter.Insert(txtColor.Text, (int)(long)cmbMod.SelectedValue, txtVIN.Text,
                         (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue);
                     this.Close();
                 }
@@ -101,13 +95,13 @@ namespace auto
             {
                 try
                 {
-                    if (String.IsNullOrEmpty(txtColor.Text) || String.IsNullOrEmpty(txtPrice.Text))
+                    if (String.IsNullOrEmpty(txtColor.Text))
                     {
                         MessageBox.Show("Пожалуйста, заполните все поля!",
                         "Ошибка ввода данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    autoAdapter.Update(txtColor.Text, (int)(long)cmbStatus.SelectedValue, (int)(long)cmbMod.SelectedValue,
+                    autoAdapter.Update(txtColor.Text, (int)(long)cmbMod.SelectedValue,
                     txtVIN.Text, (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue,
                     (int)autoID);
                     this.Close();
@@ -142,6 +136,15 @@ namespace auto
                 //(cmbModel.DataSource as autoDataSet.MODELDataTable).DefaultView.RowFilter = string.Format("MARK_ID={0}", mark_ID);
                 mODELBindingSource.Filter = string.Format("MARK_ID={0}", mark_ID);
             }
+        }
+
+        private void txtVIN_TextChanged (object sender, EventArgs e)
+        {
+            TextBox tb = sender as TextBox;
+            if (tb.Text.Length != 17)
+                tb.BackColor = Color.Red;
+            else
+                tb.BackColor = Color.White;
         }
     }
 }

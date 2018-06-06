@@ -107,11 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>autoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AutoStatus.cs">
+    <Compile Include="AvailableAuto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AutoStatus.Designer.cs">
-      <DependentUpon>AutoStatus.cs</DependentUpon>
+    <Compile Include="AvailableAuto.Designer.cs">
+      <DependentUpon>AvailableAuto.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs">
       <SubType>Form</SubType>
@@ -193,12 +193,6 @@
     <Compile Include="Provider.Designer.cs">
       <DependentUpon>Provider.cs</DependentUpon>
     </Compile>
-    <Compile Include="SaleEvent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SaleEvent.Designer.cs">
-      <DependentUpon>SaleEvent.cs</DependentUpon>
-    </Compile>
     <Compile Include="SaleEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,8 +224,8 @@
     <EmbeddedResource Include="Auto.resx">
       <DependentUpon>Auto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AutoStatus.resx">
-      <DependentUpon>AutoStatus.cs</DependentUpon>
+    <EmbeddedResource Include="AvailableAuto.resx">
+      <DependentUpon>AvailableAuto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client.resx">
       <DependentUpon>Client.cs</DependentUpon>
@@ -280,9 +274,6 @@
     </Compile>
     <EmbeddedResource Include="Provider.resx">
       <DependentUpon>Provider.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SaleEvent.resx">
-      <DependentUpon>SaleEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SaleEventForm.resx">
       <DependentUpon>SaleEventForm.cs</DependentUpon>

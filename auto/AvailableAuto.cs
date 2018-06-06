@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace auto
 {
-    public partial class AutoStatus : Form
+    public partial class AvailableAuto : Form
     {
-        public AutoStatus ()
+        public AvailableAuto ()
         {
             InitializeComponent();
         }
 
-        private void sTATUSBindingNavigatorSaveItem_Click (object sender, EventArgs e)
+        private void aUTO_COUNTBindingNavigatorSaveItem_Click (object sender, EventArgs e)
         {
             try
             {
                 this.Validate();
-                this.sTATUSBindingSource.EndEdit();
+                this.aUTO_COUNTBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.autoDataSet);
             }
             catch (Exception ex)
@@ -33,12 +33,14 @@ namespace auto
             }
         }
 
-        private void AutoStatus_Load (object sender, EventArgs e)
+        private void AvailableAuto_Load (object sender, EventArgs e)
         {
             try
             {
-                // TODO: This line of code loads data into the 'autoDataSet.STATUS' table. You can move, or remove it, as needed.
-                this.sTATUSTableAdapter.Fill(this.autoDataSet.STATUS);
+                // TODO: This line of code loads data into the 'autoDataSet.AUTO' table. You can move, or remove it, as needed.
+                this.aUTOTableAdapter.Fill(this.autoDataSet.AUTO);
+                // TODO: This line of code loads data into the 'autoDataSet.AUTO_COUNT' table. You can move, or remove it, as needed.
+                this.aUTO_COUNTTableAdapter.Fill(this.autoDataSet.AUTO_COUNT);
             }
             catch (Exception ex)
             {
@@ -46,22 +48,6 @@ namespace auto
                     "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
                 "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void toolStripButton1_Click (object sender, EventArgs e)
-        {
-            this.Validate();
-            this.sTATUSBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.autoDataSet);
-
-            this.sTATUSTableAdapter.Fill(this.autoDataSet.STATUS);
-        }
-
-        private void sTATUSDataGridView_DataError (object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.Cancel = true;
-            MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
-                "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

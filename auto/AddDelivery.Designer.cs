@@ -127,6 +127,8 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(212, 20);
             this.txtPrice.TabIndex = 7;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // label5
             // 
@@ -161,7 +163,6 @@
             // cmbOk
             // 
             this.cmbOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.cmbOk.Location = new System.Drawing.Point(438, 102);
             this.cmbOk.Name = "cmbOk";
             this.cmbOk.Size = new System.Drawing.Size(75, 23);

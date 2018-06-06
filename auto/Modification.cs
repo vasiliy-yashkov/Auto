@@ -64,5 +64,32 @@ namespace auto
             MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
                 "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void mODIFICATIONDataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                Object value = mODIFICATIONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (value != null && !String.IsNullOrEmpty(value.ToString()))
+                {
+                    try
+                    {
+                        decimal d = decimal.Parse(value.ToString());
+                        if (d == 0 || d < 0)
+                        {
+                            MessageBox.Show("Цена не может быть равной 0!",
+                                "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            mODIFICATIONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+                            return;
+                        }
+                        mODIFICATIONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = d.ToString();
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                }
+            }
+        }
     }
 }

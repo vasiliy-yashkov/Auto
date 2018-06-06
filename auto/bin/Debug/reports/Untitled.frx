@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="05/16/2018 11:36:01" ReportInfo.Modified="05/31/2018 12:47:56" ReportInfo.CreatorVersion="2018.3.9.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="05/16/2018 11:36:01" ReportInfo.Modified="06/06/2018 15:56:26" ReportInfo.CreatorVersion="2018.3.9.0">
   <ScriptText>using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -145,7 +145,7 @@ namespace FastReport
       <TextObject Name="repTxtDate" Left="378" Top="9.45" Width="94.5" Height="18.9" Text="dfg"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35"/>
-    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="623.7">
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="746.55">
       <TextObject Name="Text2" Left="9.45" Top="9.45" Width="122.85" Height="18.9" Text="ФИО продавца:" AutoWidth="true"/>
       <TextObject Name="Text5" Left="548.1" Top="9.45" Width="47.25" Height="18.9" Text="Дата рождения:"/>
       <TextObject Name="Text6" Left="9.45" Top="37.8" Width="122.85" Height="18.9" Text="Серия паспорта:"/>
@@ -156,25 +156,25 @@ namespace FastReport
       <TextObject Name="Text13" Left="9.45" Top="207.9" Width="680.4" Height="37.8" Text="По настоящему Договору Покупатель обязуется принять и оплатить, а Продавец обязуется передать в собственность Покупателю следующее транспортное средство:"/>
       <TextObject Name="Text14" Left="9.45" Top="255.15" Width="122.85" Height="18.9" Text="Марка,модель:"/>
       <TextObject Name="Text15" Left="472.5" Top="255.15" Width="37.8" Height="18.9" Text="VIN:"/>
-      <TextObject Name="Text22" Left="463.05" Top="330.75" Width="47.25" Height="18.9" Text="Цвет:"/>
-      <TextObject Name="Text29" Left="9.45" Top="330.75" Width="170.1" Height="18.9" Text="Цена автомобиля:"/>
-      <TextObject Name="Text30" Left="9.45" Top="359.1" Width="661.5" Height="28.35" Text="Цена автомобиля определяется в соглашении Продавца и Покупателя и составляет денежную сумму в размере"/>
-      <TextObject Name="Text31" Left="9.45" Top="387.45" Width="680.4" Height="66.15" Text="Продавец подтверждает факт отсутствия у автомобиля обреиенения от любых прав третьих лиц. Право собственности на автомобиль переходит к Покупателю в момент подписания настоящего Договора. До заключения настоящего Договора Продавец подверждает,что автомобиль никому не продан,не заложен,под арестом не находится,не имеет регистрационных ограничений."/>
-      <TextObject Name="Text33" Left="18.9" Top="500.85" Width="170.1" Height="18.9" Text="ТС (автомобиль):"/>
-      <TextObject Name="Text34" Left="18.9" Top="529.2" Width="94.5" Height="18.9" Text=" VIN:"/>
-      <TextObject Name="Text35" Left="18.9" Top="557.55" Width="94.5" Height="18.9" Text="Получил:"/>
-      <TextObject Name="Text36" Left="9.45" Top="463.05" Width="160.65" Height="18.9" Text="Деньги в сумме:"/>
-      <TextObject Name="Text37" Left="444.15" Top="557.55" Width="94.5" Height="18.9" Text="Получил:"/>
-      <TextObject Name="Text38" Left="18.9" Top="585.9" Width="311.85" Height="18.9" Text="Подпись Покупателя:                   Дата:"/>
-      <TextObject Name="Text39" Left="415.8" Top="585.9" Width="292.95" Height="18.9" Text="Подпись Продавца:               Дата:"/>
+      <TextObject Name="Text22" Left="463.05" Top="425.25" Width="47.25" Height="18.9" Text="Цвет:"/>
+      <TextObject Name="Text29" Left="9.45" Top="425.25" Width="170.1" Height="18.9" Text="Цена автомобиля:"/>
+      <TextObject Name="Text30" Left="9.45" Top="453.6" Width="661.5" Height="28.35" Text="Цена автомобиля определяется в соглашении Продавца и Покупателя и составляет денежную сумму в размере"/>
+      <TextObject Name="Text31" Left="9.45" Top="481.95" Width="680.4" Height="66.15" Text="Продавец подтверждает факт отсутствия у автомобиля обреиенения от любых прав третьих лиц. Право собственности на автомобиль переходит к Покупателю в момент подписания настоящего Договора. До заключения настоящего Договора Продавец подверждает,что автомобиль никому не продан,не заложен,под арестом не находится,не имеет регистрационных ограничений."/>
+      <TextObject Name="Text33" Left="18.9" Top="595.35" Width="170.1" Height="18.9" Text="ТС (автомобиль):"/>
+      <TextObject Name="Text34" Left="18.9" Top="623.7" Width="94.5" Height="18.9" Text=" VIN:"/>
+      <TextObject Name="Text35" Left="18.9" Top="652.05" Width="94.5" Height="18.9" Text="Получил:"/>
+      <TextObject Name="Text36" Left="9.45" Top="557.55" Width="160.65" Height="18.9" Text="Деньги в сумме:"/>
+      <TextObject Name="Text37" Left="444.15" Top="652.05" Width="94.5" Height="18.9" Text="Получил:"/>
+      <TextObject Name="Text38" Left="18.9" Top="680.4" Width="311.85" Height="18.9" Text="Подпись Покупателя:                   Дата:"/>
+      <TextObject Name="Text39" Left="415.8" Top="680.4" Width="292.95" Height="18.9" Text="Подпись Продавца:               Дата:"/>
       <TextObject Name="repTxtPerson" Left="132.3" Top="94.5" Width="406.35" Height="18.9"/>
       <TextObject Name="repTxtModel" Left="132.3" Top="255.15" Width="340.2" Height="18.9"/>
-      <TextObject Name="repTxtSum" Left="444.15" Top="481.95" Width="264.6" Height="18.9"/>
+      <TextObject Name="repTxtSum" Left="444.15" Top="576.45" Width="264.6" Height="18.9"/>
       <TextObject Name="repTxtVin" Left="510.3" Top="255.15" Width="179.55" Height="18.9"/>
       <TextObject Name="repTxtEmployee" Left="132.3" Top="9.45" Width="406.35" Height="18.9"/>
-      <TextObject Name="repTxtVin2" Left="113.4" Top="529.2" Width="179.55" Height="18.9"/>
-      <TextObject Name="Text40" Left="444.15" Top="510.3" Width="160.65" Height="18.9" Text="Способ оплаты:"/>
-      <TextObject Name="repTxtPriceMethod" Left="444.15" Top="529.2" Width="264.6" Height="18.9"/>
+      <TextObject Name="repTxtVin2" Left="113.4" Top="623.7" Width="179.55" Height="18.9"/>
+      <TextObject Name="Text40" Left="444.15" Top="604.8" Width="160.65" Height="18.9" Text="Способ оплаты:"/>
+      <TextObject Name="repTxtPriceMethod" Left="444.15" Top="623.7" Width="264.6" Height="18.9"/>
       <TextObject Name="Text41" Left="9.45" Top="122.85" Width="122.85" Height="18.9" Text="Серия паспорта:"/>
       <TextObject Name="Text42" Left="198.45" Top="37.8" Width="28.35" Height="18.9" Text="№:"/>
       <TextObject Name="Text43" Left="198.45" Top="122.85" Width="28.35" Height="18.9" Text="№:"/>
@@ -191,10 +191,19 @@ namespace FastReport
       <TextObject Name="repTxtCPP" Left="103.95" Top="151.2" Width="595.35" Height="18.9"/>
       <TextObject Name="repTxtEBD" Left="595.35" Top="9.45" Width="94.5" Height="18.9"/>
       <TextObject Name="repTxtCBD" Left="595.35" Top="94.5" Width="94.5" Height="18.9"/>
-      <TextObject Name="repTxtAll" Left="9.45" Top="283.5" Width="680.4" Height="37.8"/>
-      <TextObject Name="repTxtColor" Left="510.3" Top="330.75" Width="179.55" Height="18.9"/>
-      <TextObject Name="repTxtSum2" Left="179.55" Top="330.75" Width="264.6" Height="18.9"/>
+      <TextObject Name="repTxtColor" Left="510.3" Top="425.25" Width="179.55" Height="18.9"/>
+      <TextObject Name="repTxtSum2" Left="179.55" Top="425.25" Width="264.6" Height="18.9"/>
+      <TextObject Name="Text46" Left="9.45" Top="283.5" Width="122.85" Height="18.9" Text="Цена модели:"/>
+      <TextObject Name="repModelPrice" Left="132.3" Top="283.5" Width="340.2" Height="18.9"/>
+      <TextObject Name="Text47" Left="9.45" Top="311.85" Width="122.85" Height="18.9" Text="Модификация:"/>
+      <TextObject Name="repTxtModification" Left="132.3" Top="311.85" Width="557.55" Height="18.9"/>
+      <TextObject Name="Text48" Left="9.45" Top="340.2" Width="141.75" Height="18.9" Text="Цена модификации:"/>
+      <TextObject Name="repModificationPrice" Left="151.2" Top="340.2" Width="340.2" Height="18.9"/>
+      <TextObject Name="Text49" Left="9.45" Top="368.55" Width="122.85" Height="18.9" Text="Двигатель:"/>
+      <TextObject Name="repTxtEngine" Left="132.3" Top="368.55" Width="557.55" Height="18.9"/>
+      <TextObject Name="Text50" Left="9.45" Top="396.9" Width="141.75" Height="18.9" Text="Цена двигателя:"/>
+      <TextObject Name="repEnginePrice" Left="151.2" Top="396.9" Width="340.2" Height="18.9"/>
     </DataBand>
-    <PageFooterBand Name="PageFooter1" Top="701.85" Width="718.2" Height="113.4"/>
+    <PageFooterBand Name="PageFooter1" Top="824.7" Width="718.2" Height="113.4"/>
   </ReportPage>
 </Report>

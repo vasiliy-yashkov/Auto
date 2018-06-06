@@ -62,18 +62,6 @@ namespace auto
             
         }
 
-        private void statusToolStripMenuItem_Click ( object sender, EventArgs e )
-        {
-            AutoStatus autoStatus = new AutoStatus();
-            foreach (Form form in this.MdiChildren)
-            {
-                if (form.GetType() == typeof(AutoStatus))
-                    autoStatus = (AutoStatus) form;
-            }
-            autoStatus.MdiParent = this;
-            autoStatus.Show();
-        }
-
         private void payToolStripMenuItem_Click ( object sender, EventArgs e )
         {
             Pay pay = new Pay();
@@ -263,6 +251,18 @@ namespace auto
             }
             saleReport.MdiParent = this;
             saleReport.showReport();
+        }
+
+        private void availableAutoToolStripMenuItem_Click (object sender, EventArgs e)
+        {
+            AvailableAuto availableForm = new AvailableAuto();
+            foreach (Form form in this.MdiChildren)
+            {
+                if (form.GetType() == typeof(AvailableAuto))
+                    availableForm = (AvailableAuto)form;
+            }
+            availableForm.MdiParent = this;
+            availableForm.Show();
         }
     }
 }

@@ -36,20 +36,27 @@ namespace auto
 
         private void Auto_Load (object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'autoDataSet.V_AUTO' table. You can move, or remove it, as needed.
-            this.v_AUTOTableAdapter.Fill(this.autoDataSet.V_AUTO);
-            // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
-            this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
-            // TODO: This line of code loads data into the 'autoDataSet.STATUS' table. You can move, or remove it, as needed.
-            this.sTATUSTableAdapter.Fill(this.autoDataSet.STATUS);
-            // TODO: This line of code loads data into the 'autoDataSet.ENGINE' table. You can move, or remove it, as needed.
-            this.eNGINETableAdapter.Fill(this.autoDataSet.ENGINE);
-            // TODO: This line of code loads data into the 'autoDataSet.MODIFICATION' table. You can move, or remove it, as needed.
-            this.mODIFICATIONTableAdapter.Fill(this.autoDataSet.MODIFICATION);
-            // TODO: This line of code loads data into the 'autoDataSet.MODEL' table. You can move, or remove it, as needed.
-            this.mODELTableAdapter.Fill(this.autoDataSet.MODEL);
-            // TODO: This line of code loads data into the 'autoDataSet.AUTO' table. You can move, or remove it, as needed.
-            this.aUTOTableAdapter.Fill(this.autoDataSet.AUTO);
+            try
+            {
+                // TODO: This line of code loads data into the 'autoDataSet.V_AUTO' table. You can move, or remove it, as needed.
+                this.v_AUTOTableAdapter.Fill(this.autoDataSet.V_AUTO);
+                // TODO: This line of code loads data into the 'autoDataSet.MARK' table. You can move, or remove it, as needed.
+                this.mARKTableAdapter.Fill(this.autoDataSet.MARK);
+                // TODO: This line of code loads data into the 'autoDataSet.ENGINE' table. You can move, or remove it, as needed.
+                this.eNGINETableAdapter.Fill(this.autoDataSet.ENGINE);
+                // TODO: This line of code loads data into the 'autoDataSet.MODIFICATION' table. You can move, or remove it, as needed.
+                this.mODIFICATIONTableAdapter.Fill(this.autoDataSet.MODIFICATION);
+                // TODO: This line of code loads data into the 'autoDataSet.MODEL' table. You can move, or remove it, as needed.
+                this.mODELTableAdapter.Fill(this.autoDataSet.MODEL);
+                // TODO: This line of code loads data into the 'autoDataSet.AUTO' table. You can move, or remove it, as needed.
+                this.aUTOTableAdapter.Fill(this.autoDataSet.AUTO);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! Возможно " +
+                    "присутствуют дублирующиеся значения, или попытка удаления использующейся записи. \n" + ex.Message,
+                "Ошибка сохранения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             //updateComboboxes();
         }
@@ -152,13 +159,11 @@ namespace auto
                 long mark = (long)mODELTableAdapter.GetMarkID((long)row.Cells[1].Value);
                 AddAuto addAuto = new AddAuto((long)row.Cells[0].Value,
                     row.Cells[7].Value.ToString(),
-                    (long)row.Cells[4].Value,
                     (long)row.Cells[2].Value,
                     mark,
                     (long)row.Cells[1].Value,
                     (long)row.Cells[3].Value,
-                    row.Cells[14].Value.ToString(),
-                    (decimal)row.Cells[16].Value);
+                    row.Cells[14].Value.ToString());
                 addAuto.Text = "Редактирование автомобиля";
                 addAuto.ShowDialog();
                 aUTOBindingNavigatorSaveItem_Click(sender, e);
