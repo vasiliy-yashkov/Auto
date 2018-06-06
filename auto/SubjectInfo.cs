@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -69,6 +70,52 @@ namespace auto
             Object obj = pERSON_INFODataGridView.Rows[e.RowIndex].Cells[1].Value;
             if (obj != null)
                 pERSON_INFODataGridView.Rows[e.RowIndex].Cells[4].Value = obj;
+            if (e.ColumnIndex == 2)
+            {
+                Object value = pERSON_INFODataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (value != null && !String.IsNullOrEmpty(value.ToString()))
+                {
+                    try
+                    {
+                        string number = value.ToString();
+                        string result = "";
+                        bool usePlus = false;
+                        if (number[0] == '+')
+                            usePlus = true;
+                        var pattern = new Regex(@"[^\d]");
+                        result = pattern.Replace(number, string.Empty);
+                        result = result.Trim();
+                        if (usePlus && result.Length > 11)
+                        {
+                            result = "+" + result.Substring(0, 11);
+                        }
+                        else if (usePlus && result.Length <= 11)
+                        {
+                            result = "+" + result;
+                        }
+                        else if (result.Length > 11)
+                        {
+                            result = result.Substring(0, 11);
+                        }
+                        if (String.IsNullOrEmpty(result))
+                        {
+                            MessageBox.Show("Неверный номер телефона!",
+                                    "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            pERSON_INFODataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = null;
+
+                            return;
+                        }
+                        pERSON_INFODataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = result;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Неверный номер телефона!",
+                                "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //pERSONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+                        return;
+                    }
+                }
+            }
         }
 
         private void updateComboboxes ()
@@ -83,7 +130,7 @@ namespace auto
         private void pERSON_INFODataGridView_DataError (object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
-            MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
+            MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! \n" + e.Exception.Message,
                 "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }

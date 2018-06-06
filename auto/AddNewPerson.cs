@@ -144,7 +144,7 @@ namespace auto
         private void txtLastName_KeyPress (object sender, KeyPressEventArgs e)
         {
             // запрет на ввод цифр
-            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' '))
+            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' ') && (e.KeyChar != '-'))
             {
                 e.Handled = true;
             }
@@ -153,7 +153,7 @@ namespace auto
         private void txtName_KeyPress (object sender, KeyPressEventArgs e)
         {
             // запрет на ввод цифр
-            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' '))
+            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' ') && (e.KeyChar != '-'))
             {
                 e.Handled = true;
             }
@@ -162,7 +162,7 @@ namespace auto
         private void txtMiddleName_KeyPress (object sender, KeyPressEventArgs e)
         {
             // запрет на ввод цифр
-            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' '))
+            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' ') && (e.KeyChar != '-'))
             {
                 e.Handled = true;
             }

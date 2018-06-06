@@ -74,7 +74,7 @@ namespace auto
                 if (value != null && !String.IsNullOrEmpty(value.ToString()))
                 {
                     string result = "";
-                    var pattern = new Regex(@"[^\w\s]");
+                    var pattern = new Regex(@"[^\w\s\-]");
                     result = pattern.Replace(value.ToString(), string.Empty);
                     pattern = new Regex(@"[\d]");
                     result = pattern.Replace(result, string.Empty);
