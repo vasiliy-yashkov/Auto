@@ -124,7 +124,7 @@ namespace auto
             {
                 Decimal.Parse(tbPrice.Text);
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
                 MessageBox.Show("Пожалуйста, укажите корректную цену продажи", "Ошибка ввода", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -417,7 +417,7 @@ namespace auto
                 txtStatus.BackColor = Color.Green;
             }
 
-            tbPrice.Text = txtCatalogPrice.Text = row.AUTO_PRICE.ToString();
+            tbPrice.Text = txtCatalogPrice.Text = "";/*row.AUTO_PRICE.ToString();*/
             btnApply.Enabled = true;
         }
 
@@ -435,7 +435,7 @@ namespace auto
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных и повторите попытку!",
+                MessageBox.Show("Пожалуйста, проверьте корректность введенных данных и повторите попытку! \n" + ex.Message,
                 "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

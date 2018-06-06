@@ -62,6 +62,14 @@ namespace auto {
         
         private V_DELIVERY_TABLEDataTable tableV_DELIVERY_TABLE;
         
+        private AUTO_COUNTDataTable tableAUTO_COUNT;
+        
+        private CHECK_AUTO_AVAILABLEDataTable tableCHECK_AUTO_AVAILABLE;
+        
+        private CHECK_SALE_PRICEDataTable tableCHECK_SALE_PRICE;
+        
+        private GET_MODEL_PRICEDataTable tableGET_MODEL_PRICE;
+        
         private global::System.Data.DataRelation relationFK_CLIENT_1;
         
         private global::System.Data.DataRelation relationFK_DELIVERY_1;
@@ -178,6 +186,18 @@ namespace auto {
                 }
                 if ((ds.Tables["V_DELIVERY_TABLE"] != null)) {
                     base.Tables.Add(new V_DELIVERY_TABLEDataTable(ds.Tables["V_DELIVERY_TABLE"]));
+                }
+                if ((ds.Tables["AUTO_COUNT"] != null)) {
+                    base.Tables.Add(new AUTO_COUNTDataTable(ds.Tables["AUTO_COUNT"]));
+                }
+                if ((ds.Tables["CHECK_AUTO_AVAILABLE"] != null)) {
+                    base.Tables.Add(new CHECK_AUTO_AVAILABLEDataTable(ds.Tables["CHECK_AUTO_AVAILABLE"]));
+                }
+                if ((ds.Tables["CHECK_SALE_PRICE"] != null)) {
+                    base.Tables.Add(new CHECK_SALE_PRICEDataTable(ds.Tables["CHECK_SALE_PRICE"]));
+                }
+                if ((ds.Tables["GET_MODEL_PRICE"] != null)) {
+                    base.Tables.Add(new GET_MODEL_PRICEDataTable(ds.Tables["GET_MODEL_PRICE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -389,6 +409,46 @@ namespace auto {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AUTO_COUNTDataTable AUTO_COUNT {
+            get {
+                return this.tableAUTO_COUNT;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CHECK_AUTO_AVAILABLEDataTable CHECK_AUTO_AVAILABLE {
+            get {
+                return this.tableCHECK_AUTO_AVAILABLE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CHECK_SALE_PRICEDataTable CHECK_SALE_PRICE {
+            get {
+                return this.tableCHECK_SALE_PRICE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public GET_MODEL_PRICEDataTable GET_MODEL_PRICE {
+            get {
+                return this.tableGET_MODEL_PRICE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -510,6 +570,18 @@ namespace auto {
                 }
                 if ((ds.Tables["V_DELIVERY_TABLE"] != null)) {
                     base.Tables.Add(new V_DELIVERY_TABLEDataTable(ds.Tables["V_DELIVERY_TABLE"]));
+                }
+                if ((ds.Tables["AUTO_COUNT"] != null)) {
+                    base.Tables.Add(new AUTO_COUNTDataTable(ds.Tables["AUTO_COUNT"]));
+                }
+                if ((ds.Tables["CHECK_AUTO_AVAILABLE"] != null)) {
+                    base.Tables.Add(new CHECK_AUTO_AVAILABLEDataTable(ds.Tables["CHECK_AUTO_AVAILABLE"]));
+                }
+                if ((ds.Tables["CHECK_SALE_PRICE"] != null)) {
+                    base.Tables.Add(new CHECK_SALE_PRICEDataTable(ds.Tables["CHECK_SALE_PRICE"]));
+                }
+                if ((ds.Tables["GET_MODEL_PRICE"] != null)) {
+                    base.Tables.Add(new GET_MODEL_PRICEDataTable(ds.Tables["GET_MODEL_PRICE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -658,6 +730,30 @@ namespace auto {
                     this.tableV_DELIVERY_TABLE.InitVars();
                 }
             }
+            this.tableAUTO_COUNT = ((AUTO_COUNTDataTable)(base.Tables["AUTO_COUNT"]));
+            if ((initTable == true)) {
+                if ((this.tableAUTO_COUNT != null)) {
+                    this.tableAUTO_COUNT.InitVars();
+                }
+            }
+            this.tableCHECK_AUTO_AVAILABLE = ((CHECK_AUTO_AVAILABLEDataTable)(base.Tables["CHECK_AUTO_AVAILABLE"]));
+            if ((initTable == true)) {
+                if ((this.tableCHECK_AUTO_AVAILABLE != null)) {
+                    this.tableCHECK_AUTO_AVAILABLE.InitVars();
+                }
+            }
+            this.tableCHECK_SALE_PRICE = ((CHECK_SALE_PRICEDataTable)(base.Tables["CHECK_SALE_PRICE"]));
+            if ((initTable == true)) {
+                if ((this.tableCHECK_SALE_PRICE != null)) {
+                    this.tableCHECK_SALE_PRICE.InitVars();
+                }
+            }
+            this.tableGET_MODEL_PRICE = ((GET_MODEL_PRICEDataTable)(base.Tables["GET_MODEL_PRICE"]));
+            if ((initTable == true)) {
+                if ((this.tableGET_MODEL_PRICE != null)) {
+                    this.tableGET_MODEL_PRICE.InitVars();
+                }
+            }
             this.relationFK_CLIENT_1 = this.Relations["FK_CLIENT_1"];
             this.relationFK_DELIVERY_1 = this.Relations["FK_DELIVERY_1"];
             this.relationFK_EMPLOYEE_1 = this.Relations["FK_EMPLOYEE_1"];
@@ -722,6 +818,14 @@ namespace auto {
             base.Tables.Add(this.tableV_SALE);
             this.tableV_DELIVERY_TABLE = new V_DELIVERY_TABLEDataTable();
             base.Tables.Add(this.tableV_DELIVERY_TABLE);
+            this.tableAUTO_COUNT = new AUTO_COUNTDataTable();
+            base.Tables.Add(this.tableAUTO_COUNT);
+            this.tableCHECK_AUTO_AVAILABLE = new CHECK_AUTO_AVAILABLEDataTable();
+            base.Tables.Add(this.tableCHECK_AUTO_AVAILABLE);
+            this.tableCHECK_SALE_PRICE = new CHECK_SALE_PRICEDataTable();
+            base.Tables.Add(this.tableCHECK_SALE_PRICE);
+            this.tableGET_MODEL_PRICE = new GET_MODEL_PRICEDataTable();
+            base.Tables.Add(this.tableGET_MODEL_PRICE);
             this.relationFK_CLIENT_1 = new global::System.Data.DataRelation("FK_CLIENT_1", new global::System.Data.DataColumn[] {
                         this.tablePERSON.PERSON_IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCLIENT.PERSON_IDColumn}, false);
@@ -904,6 +1008,30 @@ namespace auto {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeAUTO_COUNT() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeCHECK_AUTO_AVAILABLE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeCHECK_SALE_PRICE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeGET_MODEL_PRICE() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1013,6 +1141,18 @@ namespace auto {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void V_DELIVERY_TABLERowChangeEventHandler(object sender, V_DELIVERY_TABLERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void AUTO_COUNTRowChangeEventHandler(object sender, AUTO_COUNTRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void CHECK_AUTO_AVAILABLERowChangeEventHandler(object sender, CHECK_AUTO_AVAILABLERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void CHECK_SALE_PRICERowChangeEventHandler(object sender, CHECK_SALE_PRICERowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void GET_MODEL_PRICERowChangeEventHandler(object sender, GET_MODEL_PRICERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4171,8 +4311,6 @@ namespace auto {
             
             private global::System.Data.DataColumn columnENGINE_ID;
             
-            private global::System.Data.DataColumn columnAUTO_PRICE;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AUTODataTable() {
@@ -4272,14 +4410,6 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AUTO_PRICEColumn {
-                get {
-                    return this.columnAUTO_PRICE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4315,7 +4445,7 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AUTORow AddAUTORow(string AUTO_COLOR, STATUSRow parentSTATUSRowByFK_AUTO_1, MODIFICATIONRow parentMODIFICATIONRowByFK_AUTO_2, string AUTO_FULL, string AUTO_VIN, MODELRow parentMODELRowByFK_AUTO_3, ENGINERow parentENGINERowByFK_AUTO_4, decimal AUTO_PRICE) {
+            public AUTORow AddAUTORow(string AUTO_COLOR, STATUSRow parentSTATUSRowByFK_AUTO_1, MODIFICATIONRow parentMODIFICATIONRowByFK_AUTO_2, string AUTO_FULL, string AUTO_VIN, MODELRow parentMODELRowByFK_AUTO_3, ENGINERow parentENGINERowByFK_AUTO_4) {
                 AUTORow rowAUTORow = ((AUTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4325,8 +4455,7 @@ namespace auto {
                         AUTO_FULL,
                         AUTO_VIN,
                         null,
-                        null,
-                        AUTO_PRICE};
+                        null};
                 if ((parentSTATUSRowByFK_AUTO_1 != null)) {
                     columnValuesArray[2] = parentSTATUSRowByFK_AUTO_1[0];
                 }
@@ -4376,7 +4505,6 @@ namespace auto {
                 this.columnAUTO_VIN = base.Columns["AUTO_VIN"];
                 this.columnMODEL_ID = base.Columns["MODEL_ID"];
                 this.columnENGINE_ID = base.Columns["ENGINE_ID"];
-                this.columnAUTO_PRICE = base.Columns["AUTO_PRICE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4398,8 +4526,6 @@ namespace auto {
                 base.Columns.Add(this.columnMODEL_ID);
                 this.columnENGINE_ID = new global::System.Data.DataColumn("ENGINE_ID", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnENGINE_ID);
-                this.columnAUTO_PRICE = new global::System.Data.DataColumn("AUTO_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAUTO_PRICE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
                                 this.columnAUTO_VIN}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint3", new global::System.Data.DataColumn[] {
@@ -4419,7 +4545,6 @@ namespace auto {
                 this.columnAUTO_VIN.MaxLength = 100;
                 this.columnMODEL_ID.AllowDBNull = false;
                 this.columnENGINE_ID.AllowDBNull = false;
-                this.columnAUTO_PRICE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4565,6 +4690,8 @@ namespace auto {
             
             private global::System.Data.DataColumn columnENGINE_FULL;
             
+            private global::System.Data.DataColumn columnENGINE_PRICE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ENGINEDataTable() {
@@ -4648,6 +4775,14 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ENGINE_PRICEColumn {
+                get {
+                    return this.columnENGINE_PRICE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4683,7 +4818,7 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ENGINERow AddENGINERow(decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, string ENGINE_FULL) {
+            public ENGINERow AddENGINERow(decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, string ENGINE_FULL, decimal ENGINE_PRICE) {
                 ENGINERow rowENGINERow = ((ENGINERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4691,7 +4826,8 @@ namespace auto {
                         ENGINE_POWER,
                         ENGINE_TYPE,
                         ENGINE_CONSUMPTION,
-                        ENGINE_FULL};
+                        ENGINE_FULL,
+                        ENGINE_PRICE};
                 rowENGINERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowENGINERow);
                 return rowENGINERow;
@@ -4727,6 +4863,7 @@ namespace auto {
                 this.columnENGINE_TYPE = base.Columns["ENGINE_TYPE"];
                 this.columnENGINE_CONSUMPTION = base.Columns["ENGINE_CONSUMPTION"];
                 this.columnENGINE_FULL = base.Columns["ENGINE_FULL"];
+                this.columnENGINE_PRICE = base.Columns["ENGINE_PRICE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4744,6 +4881,8 @@ namespace auto {
                 base.Columns.Add(this.columnENGINE_CONSUMPTION);
                 this.columnENGINE_FULL = new global::System.Data.DataColumn("ENGINE_FULL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnENGINE_FULL);
+                this.columnENGINE_PRICE = new global::System.Data.DataColumn("ENGINE_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnENGINE_PRICE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnENGINE_ID}, true));
                 this.columnENGINE_ID.AutoIncrement = true;
@@ -4758,6 +4897,7 @@ namespace auto {
                 this.columnENGINE_CONSUMPTION.AllowDBNull = false;
                 this.columnENGINE_FULL.ReadOnly = true;
                 this.columnENGINE_FULL.MaxLength = 353;
+                this.columnENGINE_PRICE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5176,6 +5316,8 @@ namespace auto {
             
             private global::System.Data.DataColumn columnMODEL_FULL;
             
+            private global::System.Data.DataColumn columnMODEL_PRICE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MODELDataTable() {
@@ -5243,6 +5385,14 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MODEL_PRICEColumn {
+                get {
+                    return this.columnMODEL_PRICE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5278,13 +5428,14 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MODELRow AddMODELRow(MARKRow parentMARKRowByFK_MODEL_1, string MODEL_NAME, string MODEL_FULL) {
+            public MODELRow AddMODELRow(MARKRow parentMARKRowByFK_MODEL_1, string MODEL_NAME, string MODEL_FULL, decimal MODEL_PRICE) {
                 MODELRow rowMODELRow = ((MODELRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         MODEL_NAME,
-                        MODEL_FULL};
+                        MODEL_FULL,
+                        MODEL_PRICE};
                 if ((parentMARKRowByFK_MODEL_1 != null)) {
                     columnValuesArray[1] = parentMARKRowByFK_MODEL_1[0];
                 }
@@ -5321,6 +5472,7 @@ namespace auto {
                 this.columnMARK_ID = base.Columns["MARK_ID"];
                 this.columnMODEL_NAME = base.Columns["MODEL_NAME"];
                 this.columnMODEL_FULL = base.Columns["MODEL_FULL"];
+                this.columnMODEL_PRICE = base.Columns["MODEL_PRICE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5334,6 +5486,8 @@ namespace auto {
                 base.Columns.Add(this.columnMODEL_NAME);
                 this.columnMODEL_FULL = new global::System.Data.DataColumn("MODEL_FULL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMODEL_FULL);
+                this.columnMODEL_PRICE = new global::System.Data.DataColumn("MODEL_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMODEL_PRICE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMODEL_ID}, true));
                 this.columnMODEL_ID.AutoIncrement = true;
@@ -5346,6 +5500,7 @@ namespace auto {
                 this.columnMODEL_NAME.MaxLength = 250;
                 this.columnMODEL_FULL.ReadOnly = true;
                 this.columnMODEL_FULL.MaxLength = 32765;
+                this.columnMODEL_PRICE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5489,6 +5644,8 @@ namespace auto {
             
             private global::System.Data.DataColumn columnFULL;
             
+            private global::System.Data.DataColumn columnMODIFICATION_PRICE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MODIFICATIONDataTable() {
@@ -5564,6 +5721,14 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MODIFICATION_PRICEColumn {
+                get {
+                    return this.columnMODIFICATION_PRICE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5599,14 +5764,15 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MODIFICATIONRow AddMODIFICATIONRow(string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, string FULL) {
+            public MODIFICATIONRow AddMODIFICATIONRow(string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, string FULL, decimal MODIFICATION_PRICE) {
                 MODIFICATIONRow rowMODIFICATIONRow = ((MODIFICATIONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         MODIFICATION_NAME,
                         MODIFICATION_BODY,
                         TRANSMISSION,
-                        FULL};
+                        FULL,
+                        MODIFICATION_PRICE};
                 rowMODIFICATIONRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMODIFICATIONRow);
                 return rowMODIFICATIONRow;
@@ -5641,6 +5807,7 @@ namespace auto {
                 this.columnMODIFICATION_BODY = base.Columns["MODIFICATION_BODY"];
                 this.columnTRANSMISSION = base.Columns["TRANSMISSION"];
                 this.columnFULL = base.Columns["FULL"];
+                this.columnMODIFICATION_PRICE = base.Columns["MODIFICATION_PRICE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5656,6 +5823,8 @@ namespace auto {
                 base.Columns.Add(this.columnTRANSMISSION);
                 this.columnFULL = new global::System.Data.DataColumn("FULL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFULL);
+                this.columnMODIFICATION_PRICE = new global::System.Data.DataColumn("MODIFICATION_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMODIFICATION_PRICE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMODIFICATION_ID}, true));
                 this.columnMODIFICATION_ID.AutoIncrement = true;
@@ -5670,6 +5839,7 @@ namespace auto {
                 this.columnTRANSMISSION.MaxLength = 100;
                 this.columnFULL.ReadOnly = true;
                 this.columnFULL.MaxLength = 614;
+                this.columnMODIFICATION_PRICE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6142,8 +6312,6 @@ namespace auto {
             
             private global::System.Data.DataColumn columnSTATUS_NAME;
             
-            private global::System.Data.DataColumn columnAUTO_PRICE;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_AUTODataTable() {
@@ -6307,14 +6475,6 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AUTO_PRICEColumn {
-                get {
-                    return this.columnAUTO_PRICE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6366,8 +6526,7 @@ namespace auto {
                         int ENGINE_POWER, 
                         decimal ENGINE_CONSUMPTION, 
                         string AUTO_VIN, 
-                        string STATUS_NAME, 
-                        decimal AUTO_PRICE) {
+                        string STATUS_NAME) {
                 V_AUTORow rowV_AUTORow = ((V_AUTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         AUTO_ID,
@@ -6385,8 +6544,7 @@ namespace auto {
                         ENGINE_POWER,
                         ENGINE_CONSUMPTION,
                         AUTO_VIN,
-                        STATUS_NAME,
-                        AUTO_PRICE};
+                        STATUS_NAME};
                 rowV_AUTORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowV_AUTORow);
                 return rowV_AUTORow;
@@ -6425,7 +6583,6 @@ namespace auto {
                 this.columnENGINE_CONSUMPTION = base.Columns["ENGINE_CONSUMPTION"];
                 this.columnAUTO_VIN = base.Columns["AUTO_VIN"];
                 this.columnSTATUS_NAME = base.Columns["STATUS_NAME"];
-                this.columnAUTO_PRICE = base.Columns["AUTO_PRICE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6463,8 +6620,6 @@ namespace auto {
                 base.Columns.Add(this.columnAUTO_VIN);
                 this.columnSTATUS_NAME = new global::System.Data.DataColumn("STATUS_NAME", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSTATUS_NAME);
-                this.columnAUTO_PRICE = new global::System.Data.DataColumn("AUTO_PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAUTO_PRICE);
                 this.columnMARK_NAME.MaxLength = 250;
                 this.columnMODEL_NAME.MaxLength = 250;
                 this.columnAUTO_COLOR.MaxLength = 250;
@@ -7247,6 +7402,1035 @@ namespace auto {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "V_DELIVERY_TABLEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AUTO_COUNTDataTable : global::System.Data.TypedTableBase<AUTO_COUNTRow> {
+            
+            private global::System.Data.DataColumn columnAC_ID;
+            
+            private global::System.Data.DataColumn columnAC_AUTO_ID;
+            
+            private global::System.Data.DataColumn columnAC_AUTO_COUNT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTDataTable() {
+                this.TableName = "AUTO_COUNT";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal AUTO_COUNTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected AUTO_COUNTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AC_IDColumn {
+                get {
+                    return this.columnAC_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AC_AUTO_IDColumn {
+                get {
+                    return this.columnAC_AUTO_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AC_AUTO_COUNTColumn {
+                get {
+                    return this.columnAC_AUTO_COUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTRow this[int index] {
+                get {
+                    return ((AUTO_COUNTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AUTO_COUNTRowChangeEventHandler AUTO_COUNTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AUTO_COUNTRowChangeEventHandler AUTO_COUNTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AUTO_COUNTRowChangeEventHandler AUTO_COUNTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AUTO_COUNTRowChangeEventHandler AUTO_COUNTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddAUTO_COUNTRow(AUTO_COUNTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTRow AddAUTO_COUNTRow(long AC_ID, long AC_AUTO_ID, int AC_AUTO_COUNT) {
+                AUTO_COUNTRow rowAUTO_COUNTRow = ((AUTO_COUNTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        AC_ID,
+                        AC_AUTO_ID,
+                        AC_AUTO_COUNT};
+                rowAUTO_COUNTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAUTO_COUNTRow);
+                return rowAUTO_COUNTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTRow FindByAC_ID(long AC_ID) {
+                return ((AUTO_COUNTRow)(this.Rows.Find(new object[] {
+                            AC_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AUTO_COUNTDataTable cln = ((AUTO_COUNTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AUTO_COUNTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnAC_ID = base.Columns["AC_ID"];
+                this.columnAC_AUTO_ID = base.Columns["AC_AUTO_ID"];
+                this.columnAC_AUTO_COUNT = base.Columns["AC_AUTO_COUNT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnAC_ID = new global::System.Data.DataColumn("AC_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAC_ID);
+                this.columnAC_AUTO_ID = new global::System.Data.DataColumn("AC_AUTO_ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAC_AUTO_ID);
+                this.columnAC_AUTO_COUNT = new global::System.Data.DataColumn("AC_AUTO_COUNT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAC_AUTO_COUNT);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnAC_ID}, true));
+                this.columnAC_ID.AllowDBNull = false;
+                this.columnAC_ID.Unique = true;
+                this.columnAC_AUTO_ID.AllowDBNull = false;
+                this.columnAC_AUTO_COUNT.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTRow NewAUTO_COUNTRow() {
+                return ((AUTO_COUNTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AUTO_COUNTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AUTO_COUNTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AUTO_COUNTRowChanged != null)) {
+                    this.AUTO_COUNTRowChanged(this, new AUTO_COUNTRowChangeEvent(((AUTO_COUNTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AUTO_COUNTRowChanging != null)) {
+                    this.AUTO_COUNTRowChanging(this, new AUTO_COUNTRowChangeEvent(((AUTO_COUNTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AUTO_COUNTRowDeleted != null)) {
+                    this.AUTO_COUNTRowDeleted(this, new AUTO_COUNTRowChangeEvent(((AUTO_COUNTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AUTO_COUNTRowDeleting != null)) {
+                    this.AUTO_COUNTRowDeleting(this, new AUTO_COUNTRowChangeEvent(((AUTO_COUNTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveAUTO_COUNTRow(AUTO_COUNTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                autoDataSet ds = new autoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AUTO_COUNTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CHECK_AUTO_AVAILABLEDataTable : global::System.Data.TypedTableBase<CHECK_AUTO_AVAILABLERow> {
+            
+            private global::System.Data.DataColumn columnA_COUNT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_AUTO_AVAILABLEDataTable() {
+                this.TableName = "CHECK_AUTO_AVAILABLE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CHECK_AUTO_AVAILABLEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected CHECK_AUTO_AVAILABLEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn A_COUNTColumn {
+                get {
+                    return this.columnA_COUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_AUTO_AVAILABLERow this[int index] {
+                get {
+                    return ((CHECK_AUTO_AVAILABLERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_AUTO_AVAILABLERowChangeEventHandler CHECK_AUTO_AVAILABLERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_AUTO_AVAILABLERowChangeEventHandler CHECK_AUTO_AVAILABLERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_AUTO_AVAILABLERowChangeEventHandler CHECK_AUTO_AVAILABLERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_AUTO_AVAILABLERowChangeEventHandler CHECK_AUTO_AVAILABLERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddCHECK_AUTO_AVAILABLERow(CHECK_AUTO_AVAILABLERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_AUTO_AVAILABLERow AddCHECK_AUTO_AVAILABLERow(int A_COUNT) {
+                CHECK_AUTO_AVAILABLERow rowCHECK_AUTO_AVAILABLERow = ((CHECK_AUTO_AVAILABLERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        A_COUNT};
+                rowCHECK_AUTO_AVAILABLERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCHECK_AUTO_AVAILABLERow);
+                return rowCHECK_AUTO_AVAILABLERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CHECK_AUTO_AVAILABLEDataTable cln = ((CHECK_AUTO_AVAILABLEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CHECK_AUTO_AVAILABLEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnA_COUNT = base.Columns["A_COUNT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnA_COUNT = new global::System.Data.DataColumn("A_COUNT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnA_COUNT);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_AUTO_AVAILABLERow NewCHECK_AUTO_AVAILABLERow() {
+                return ((CHECK_AUTO_AVAILABLERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CHECK_AUTO_AVAILABLERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CHECK_AUTO_AVAILABLERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CHECK_AUTO_AVAILABLERowChanged != null)) {
+                    this.CHECK_AUTO_AVAILABLERowChanged(this, new CHECK_AUTO_AVAILABLERowChangeEvent(((CHECK_AUTO_AVAILABLERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CHECK_AUTO_AVAILABLERowChanging != null)) {
+                    this.CHECK_AUTO_AVAILABLERowChanging(this, new CHECK_AUTO_AVAILABLERowChangeEvent(((CHECK_AUTO_AVAILABLERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CHECK_AUTO_AVAILABLERowDeleted != null)) {
+                    this.CHECK_AUTO_AVAILABLERowDeleted(this, new CHECK_AUTO_AVAILABLERowChangeEvent(((CHECK_AUTO_AVAILABLERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CHECK_AUTO_AVAILABLERowDeleting != null)) {
+                    this.CHECK_AUTO_AVAILABLERowDeleting(this, new CHECK_AUTO_AVAILABLERowChangeEvent(((CHECK_AUTO_AVAILABLERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveCHECK_AUTO_AVAILABLERow(CHECK_AUTO_AVAILABLERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                autoDataSet ds = new autoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CHECK_AUTO_AVAILABLEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CHECK_SALE_PRICEDataTable : global::System.Data.TypedTableBase<CHECK_SALE_PRICERow> {
+            
+            private global::System.Data.DataColumn columnOUT_RES;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_SALE_PRICEDataTable() {
+                this.TableName = "CHECK_SALE_PRICE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CHECK_SALE_PRICEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected CHECK_SALE_PRICEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OUT_RESColumn {
+                get {
+                    return this.columnOUT_RES;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_SALE_PRICERow this[int index] {
+                get {
+                    return ((CHECK_SALE_PRICERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_SALE_PRICERowChangeEventHandler CHECK_SALE_PRICERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_SALE_PRICERowChangeEventHandler CHECK_SALE_PRICERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_SALE_PRICERowChangeEventHandler CHECK_SALE_PRICERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event CHECK_SALE_PRICERowChangeEventHandler CHECK_SALE_PRICERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddCHECK_SALE_PRICERow(CHECK_SALE_PRICERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_SALE_PRICERow AddCHECK_SALE_PRICERow(short OUT_RES) {
+                CHECK_SALE_PRICERow rowCHECK_SALE_PRICERow = ((CHECK_SALE_PRICERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        OUT_RES};
+                rowCHECK_SALE_PRICERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCHECK_SALE_PRICERow);
+                return rowCHECK_SALE_PRICERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CHECK_SALE_PRICEDataTable cln = ((CHECK_SALE_PRICEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CHECK_SALE_PRICEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnOUT_RES = base.Columns["OUT_RES"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnOUT_RES = new global::System.Data.DataColumn("OUT_RES", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOUT_RES);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_SALE_PRICERow NewCHECK_SALE_PRICERow() {
+                return ((CHECK_SALE_PRICERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CHECK_SALE_PRICERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CHECK_SALE_PRICERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CHECK_SALE_PRICERowChanged != null)) {
+                    this.CHECK_SALE_PRICERowChanged(this, new CHECK_SALE_PRICERowChangeEvent(((CHECK_SALE_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CHECK_SALE_PRICERowChanging != null)) {
+                    this.CHECK_SALE_PRICERowChanging(this, new CHECK_SALE_PRICERowChangeEvent(((CHECK_SALE_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CHECK_SALE_PRICERowDeleted != null)) {
+                    this.CHECK_SALE_PRICERowDeleted(this, new CHECK_SALE_PRICERowChangeEvent(((CHECK_SALE_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CHECK_SALE_PRICERowDeleting != null)) {
+                    this.CHECK_SALE_PRICERowDeleting(this, new CHECK_SALE_PRICERowChangeEvent(((CHECK_SALE_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveCHECK_SALE_PRICERow(CHECK_SALE_PRICERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                autoDataSet ds = new autoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CHECK_SALE_PRICEDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class GET_MODEL_PRICEDataTable : global::System.Data.TypedTableBase<GET_MODEL_PRICERow> {
+            
+            private global::System.Data.DataColumn columnPRICE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GET_MODEL_PRICEDataTable() {
+                this.TableName = "GET_MODEL_PRICE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GET_MODEL_PRICEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected GET_MODEL_PRICEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PRICEColumn {
+                get {
+                    return this.columnPRICE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GET_MODEL_PRICERow this[int index] {
+                get {
+                    return ((GET_MODEL_PRICERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GET_MODEL_PRICERowChangeEventHandler GET_MODEL_PRICERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GET_MODEL_PRICERowChangeEventHandler GET_MODEL_PRICERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GET_MODEL_PRICERowChangeEventHandler GET_MODEL_PRICERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GET_MODEL_PRICERowChangeEventHandler GET_MODEL_PRICERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddGET_MODEL_PRICERow(GET_MODEL_PRICERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GET_MODEL_PRICERow AddGET_MODEL_PRICERow(decimal PRICE) {
+                GET_MODEL_PRICERow rowGET_MODEL_PRICERow = ((GET_MODEL_PRICERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PRICE};
+                rowGET_MODEL_PRICERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGET_MODEL_PRICERow);
+                return rowGET_MODEL_PRICERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                GET_MODEL_PRICEDataTable cln = ((GET_MODEL_PRICEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new GET_MODEL_PRICEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnPRICE = base.Columns["PRICE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnPRICE = new global::System.Data.DataColumn("PRICE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRICE);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GET_MODEL_PRICERow NewGET_MODEL_PRICERow() {
+                return ((GET_MODEL_PRICERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new GET_MODEL_PRICERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(GET_MODEL_PRICERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.GET_MODEL_PRICERowChanged != null)) {
+                    this.GET_MODEL_PRICERowChanged(this, new GET_MODEL_PRICERowChangeEvent(((GET_MODEL_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.GET_MODEL_PRICERowChanging != null)) {
+                    this.GET_MODEL_PRICERowChanging(this, new GET_MODEL_PRICERowChangeEvent(((GET_MODEL_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.GET_MODEL_PRICERowDeleted != null)) {
+                    this.GET_MODEL_PRICERowDeleted(this, new GET_MODEL_PRICERowChangeEvent(((GET_MODEL_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.GET_MODEL_PRICERowDeleting != null)) {
+                    this.GET_MODEL_PRICERowDeleting(this, new GET_MODEL_PRICERowChangeEvent(((GET_MODEL_PRICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveGET_MODEL_PRICERow(GET_MODEL_PRICERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                autoDataSet ds = new autoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "GET_MODEL_PRICEDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -8425,17 +9609,6 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal AUTO_PRICE {
-                get {
-                    return ((decimal)(this[this.tableAUTO.AUTO_PRICEColumn]));
-                }
-                set {
-                    this[this.tableAUTO.AUTO_PRICEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public STATUSRow STATUSRow {
                 get {
                     return ((STATUSRow)(this.GetParentRow(this.Table.ParentRelations["FK_AUTO_1"])));
@@ -8623,6 +9796,17 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ENGINE_PRICE {
+                get {
+                    return ((decimal)(this[this.tableENGINE.ENGINE_PRICEColumn]));
+                }
+                set {
+                    this[this.tableENGINE.ENGINE_PRICEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsENGINE_FULLNull() {
                 return this.IsNull(this.tableENGINE.ENGINE_FULLColumn);
             }
@@ -8758,6 +9942,17 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal MODEL_PRICE {
+                get {
+                    return ((decimal)(this[this.tableMODEL.MODEL_PRICEColumn]));
+                }
+                set {
+                    this[this.tableMODEL.MODEL_PRICEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public MARKRow MARKRow {
                 get {
                     return ((MARKRow)(this.GetParentRow(this.Table.ParentRelations["FK_MODEL_1"])));
@@ -8867,6 +10062,17 @@ namespace auto {
                 }
                 set {
                     this[this.tableMODIFICATION.FULLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal MODIFICATION_PRICE {
+                get {
+                    return ((decimal)(this[this.tableMODIFICATION.MODIFICATION_PRICEColumn]));
+                }
+                set {
+                    this[this.tableMODIFICATION.MODIFICATION_PRICEColumn] = value;
                 }
             }
             
@@ -9333,22 +10539,6 @@ namespace auto {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal AUTO_PRICE {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableV_AUTO.AUTO_PRICEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AUTO_PRICE\' in table \'V_AUTO\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableV_AUTO.AUTO_PRICEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAUTO_IDNull() {
                 return this.IsNull(this.tableV_AUTO.AUTO_IDColumn);
             }
@@ -9537,18 +10727,6 @@ namespace auto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSTATUS_NAMENull() {
                 this[this.tableV_AUTO.STATUS_NAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAUTO_PRICENull() {
-                return this.IsNull(this.tableV_AUTO.AUTO_PRICEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAUTO_PRICENull() {
-                this[this.tableV_AUTO.AUTO_PRICEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9999,6 +11177,183 @@ namespace auto {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetDELIVERY_IDNull() {
                 this[this.tableV_DELIVERY_TABLE.DELIVERY_IDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AUTO_COUNTRow : global::System.Data.DataRow {
+            
+            private AUTO_COUNTDataTable tableAUTO_COUNT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal AUTO_COUNTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAUTO_COUNT = ((AUTO_COUNTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long AC_ID {
+                get {
+                    return ((long)(this[this.tableAUTO_COUNT.AC_IDColumn]));
+                }
+                set {
+                    this[this.tableAUTO_COUNT.AC_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long AC_AUTO_ID {
+                get {
+                    return ((long)(this[this.tableAUTO_COUNT.AC_AUTO_IDColumn]));
+                }
+                set {
+                    this[this.tableAUTO_COUNT.AC_AUTO_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AC_AUTO_COUNT {
+                get {
+                    return ((int)(this[this.tableAUTO_COUNT.AC_AUTO_COUNTColumn]));
+                }
+                set {
+                    this[this.tableAUTO_COUNT.AC_AUTO_COUNTColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CHECK_AUTO_AVAILABLERow : global::System.Data.DataRow {
+            
+            private CHECK_AUTO_AVAILABLEDataTable tableCHECK_AUTO_AVAILABLE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CHECK_AUTO_AVAILABLERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCHECK_AUTO_AVAILABLE = ((CHECK_AUTO_AVAILABLEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int A_COUNT {
+                get {
+                    try {
+                        return ((int)(this[this.tableCHECK_AUTO_AVAILABLE.A_COUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'A_COUNT\' in table \'CHECK_AUTO_AVAILABLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCHECK_AUTO_AVAILABLE.A_COUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsA_COUNTNull() {
+                return this.IsNull(this.tableCHECK_AUTO_AVAILABLE.A_COUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetA_COUNTNull() {
+                this[this.tableCHECK_AUTO_AVAILABLE.A_COUNTColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CHECK_SALE_PRICERow : global::System.Data.DataRow {
+            
+            private CHECK_SALE_PRICEDataTable tableCHECK_SALE_PRICE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal CHECK_SALE_PRICERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCHECK_SALE_PRICE = ((CHECK_SALE_PRICEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short OUT_RES {
+                get {
+                    try {
+                        return ((short)(this[this.tableCHECK_SALE_PRICE.OUT_RESColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OUT_RES\' in table \'CHECK_SALE_PRICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCHECK_SALE_PRICE.OUT_RESColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOUT_RESNull() {
+                return this.IsNull(this.tableCHECK_SALE_PRICE.OUT_RESColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOUT_RESNull() {
+                this[this.tableCHECK_SALE_PRICE.OUT_RESColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class GET_MODEL_PRICERow : global::System.Data.DataRow {
+            
+            private GET_MODEL_PRICEDataTable tableGET_MODEL_PRICE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GET_MODEL_PRICERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableGET_MODEL_PRICE = ((GET_MODEL_PRICEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PRICE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableGET_MODEL_PRICE.PRICEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRICE\' in table \'GET_MODEL_PRICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGET_MODEL_PRICE.PRICEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRICENull() {
+                return this.IsNull(this.tableGET_MODEL_PRICE.PRICEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRICENull() {
+                this[this.tableGET_MODEL_PRICE.PRICEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10634,6 +11989,142 @@ namespace auto {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public V_DELIVERY_TABLERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class AUTO_COUNTRowChangeEvent : global::System.EventArgs {
+            
+            private AUTO_COUNTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTRowChangeEvent(AUTO_COUNTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AUTO_COUNTRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class CHECK_AUTO_AVAILABLERowChangeEvent : global::System.EventArgs {
+            
+            private CHECK_AUTO_AVAILABLERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_AUTO_AVAILABLERowChangeEvent(CHECK_AUTO_AVAILABLERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_AUTO_AVAILABLERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class CHECK_SALE_PRICERowChangeEvent : global::System.EventArgs {
+            
+            private CHECK_SALE_PRICERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_SALE_PRICERowChangeEvent(CHECK_SALE_PRICERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CHECK_SALE_PRICERow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class GET_MODEL_PRICERowChangeEvent : global::System.EventArgs {
+            
+            private GET_MODEL_PRICERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GET_MODEL_PRICERowChangeEvent(GET_MODEL_PRICERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GET_MODEL_PRICERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15773,7 +17264,6 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             tableMapping.ColumnMappings.Add("AUTO_VIN", "AUTO_VIN");
             tableMapping.ColumnMappings.Add("MODEL_ID", "MODEL_ID");
             tableMapping.ColumnMappings.Add("ENGINE_ID", "ENGINE_ID");
-            tableMapping.ColumnMappings.Add("AUTO_PRICE", "AUTO_PRICE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -15790,8 +17280,8 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"AUTO\"\r\n                         (AUTO_COLOR, STATUS_ID, MODIFICATION" +
-                "_ID, AUTO_VIN, MODEL_ID, ENGINE_ID, AUTO_PRICE)\r\nVALUES        (@AUTO_COLOR, @ST" +
-                "ATUS_ID, @MODIFICATION_ID, @AUTO_VIN, @MODEL_ID, @ENGINE_ID, @AUTO_PRICE)";
+                "_ID, AUTO_VIN, MODEL_ID, ENGINE_ID)\r\nVALUES        (@AUTO_COLOR, @STATUS_ID, @MO" +
+                "DIFICATION_ID, @AUTO_VIN, @MODEL_ID, @ENGINE_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AUTO_COLOR";
@@ -15815,7 +17305,7 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AUTO_VIN";
-            param.Size = 100;
+            param.Size = 17;
             param.IsNullable = true;
             param.SourceColumn = "AUTO_VIN";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -15833,18 +17323,10 @@ VALUES        (@PERSON_NAME, @PERSON_LAST_NAME, @PERSON_MIDDLE_NAME, @PERSON_BIR
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@AUTO_PRICE";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "AUTO_PRICE";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE       ""AUTO""
-SET                AUTO_ID = @AUTO_ID, AUTO_COLOR = @AUTO_COLOR, STATUS_ID = @STATUS_ID, MODIFICATION_ID = @MODIFICATION_ID, AUTO_VIN = @AUTO_VIN, MODEL_ID = @MODEL_ID, ENGINE_ID = @ENGINE_ID, 
-                         AUTO_PRICE = @AUTO_PRICE
+SET                AUTO_ID = @AUTO_ID, AUTO_COLOR = @AUTO_COLOR, STATUS_ID = @STATUS_ID, MODIFICATION_ID = @MODIFICATION_ID, AUTO_VIN = @AUTO_VIN, MODEL_ID = @MODEL_ID, ENGINE_ID = @ENGINE_ID
 WHERE        (AUTO_ID = @Original_AUTO_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
@@ -15876,7 +17358,7 @@ WHERE        (AUTO_ID = @Original_AUTO_ID)";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AUTO_VIN";
-            param.Size = 100;
+            param.Size = 17;
             param.IsNullable = true;
             param.SourceColumn = "AUTO_VIN";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -15893,13 +17375,6 @@ WHERE        (AUTO_ID = @Original_AUTO_ID)";
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@AUTO_PRICE";
-            param.DbType = global::System.Data.DbType.Decimal;
-            param.Size = 8;
-            param.IsNullable = true;
-            param.SourceColumn = "AUTO_PRICE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_AUTO_ID";
@@ -15925,15 +17400,11 @@ WHERE        (AUTO_ID = @Original_AUTO_ID)";
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_FULL, AUTO_VIN, MODE" +
-                "L_ID, ENGINE_ID, AUTO_PRICE FROM \"AUTO\"";
+                "L_ID, ENGINE_ID FROM \"AUTO\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        ""AUTO"".AUTO_ID, ""AUTO"".AUTO_COLOR, ""AUTO"".STATUS_ID, ""AUTO"".MODIFICATION_ID, ""AUTO"".AUTO_FULL, ""AUTO"".AUTO_VIN, ""AUTO"".MODEL_ID, ""AUTO"".ENGINE_ID, ""AUTO"".AUTO_PRICE
-FROM            ""AUTO"" LEFT OUTER JOIN
-                         MODEL ON MODEL.MODEL_ID = ""AUTO"".MODEL_ID LEFT OUTER JOIN
-                         MARK ON MARK.MARK_ID = MODEL.MARK_ID
-WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
+            this._commandCollection[1].CommandText = @"SELECT ""AUTO"".AUTO_ID, ""AUTO"".AUTO_COLOR, ""AUTO"".STATUS_ID, ""AUTO"".MODIFICATION_ID, ""AUTO"".AUTO_FULL, ""AUTO"".AUTO_VIN, ""AUTO"".MODEL_ID, ""AUTO"".ENGINE_ID FROM ""AUTO"" LEFT OUTER JOIN MODEL ON MODEL.MODEL_ID = ""AUTO"".MODEL_ID LEFT OUTER JOIN MARK ON MARK.MARK_ID = MODEL.MARK_ID WHERE (""UPPER"" (MARK.MARK_NAME) = ""UPPER"" (@MARK_NAME))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MARK_NAME";
@@ -15944,12 +17415,12 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._commandCollection[2] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_FULL, AUTO_VIN, MODE" +
-                "L_ID, ENGINE_ID, AUTO_PRICE FROM \"AUTO\" WHERE (STATUS_ID = 0)";
+                "L_ID, ENGINE_ID FROM \"AUTO\" WHERE (STATUS_ID = 0)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        AUTO_ID\r\nFROM            \"AUTO\"\r\nWHERE        (MODEL_ID = @MODEL_ID" +
-                ") AND (MODIFICATION_ID = @MODIFICATION_ID) AND (ENGINE_ID = @ENGINE_ID)";
+            this._commandCollection[3].CommandText = "SELECT AUTO_ID FROM \"AUTO\" WHERE (MODEL_ID = @MODEL_ID) AND (MODIFICATION_ID = @M" +
+                "ODIFICATION_ID) AND (ENGINE_ID = @ENGINE_ID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODEL_ID";
@@ -15974,9 +17445,8 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._commandCollection[3].Parameters.Add(param);
             this._commandCollection[4] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_FULL, AUTO_VI" +
-                "N, MODEL_ID, ENGINE_ID, AUTO_PRICE\r\nFROM            \"AUTO\"\r\nWHERE        (AUTO_I" +
-                "D = @AUTO_ID)";
+            this._commandCollection[4].CommandText = "SELECT AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_FULL, AUTO_VIN, MODE" +
+                "L_ID, ENGINE_ID FROM \"AUTO\" WHERE (AUTO_ID = @AUTO_ID)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AUTO_ID";
@@ -15987,8 +17457,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._commandCollection[4].Parameters.Add(param);
             this._commandCollection[5] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT        ENGINE_ID\r\nFROM            \"AUTO\"\r\nWHERE        (MODEL_ID = @MODEL_" +
-                "ID)";
+            this._commandCollection[5].CommandText = "SELECT ENGINE_ID FROM \"AUTO\" WHERE (MODEL_ID = @MODEL_ID)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODEL_ID";
@@ -15999,8 +17468,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._commandCollection[5].Parameters.Add(param);
             this._commandCollection[6] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT        MODIFICATION_ID\r\nFROM            \"AUTO\"\r\nWHERE        (MODEL_ID = @" +
-                "MODEL_ID)";
+            this._commandCollection[6].CommandText = "SELECT MODIFICATION_ID FROM \"AUTO\" WHERE (MODEL_ID = @MODEL_ID)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODEL_ID";
@@ -16192,7 +17660,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string AUTO_COLOR, int STATUS_ID, global::System.Nullable<int> MODIFICATION_ID, string AUTO_VIN, int MODEL_ID, int ENGINE_ID, decimal AUTO_PRICE) {
+        public virtual int Insert(string AUTO_COLOR, int STATUS_ID, global::System.Nullable<int> MODIFICATION_ID, string AUTO_VIN, int MODEL_ID, int ENGINE_ID) {
             if ((AUTO_COLOR == null)) {
                 throw new global::System.ArgumentNullException("AUTO_COLOR");
             }
@@ -16214,7 +17682,6 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((int)(MODEL_ID));
             this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ENGINE_ID));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(AUTO_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16235,7 +17702,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int AUTO_ID, string AUTO_COLOR, int STATUS_ID, global::System.Nullable<int> MODIFICATION_ID, string AUTO_VIN, int MODEL_ID, int ENGINE_ID, decimal AUTO_PRICE, int Original_AUTO_ID) {
+        public virtual int Update(int AUTO_ID, string AUTO_COLOR, int STATUS_ID, global::System.Nullable<int> MODIFICATION_ID, string AUTO_VIN, int MODEL_ID, int ENGINE_ID, int Original_AUTO_ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AUTO_ID));
             if ((AUTO_COLOR == null)) {
                 throw new global::System.ArgumentNullException("AUTO_COLOR");
@@ -16258,8 +17725,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(MODEL_ID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(ENGINE_ID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(AUTO_PRICE));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_AUTO_ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_AUTO_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16280,8 +17746,8 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string AUTO_COLOR, int STATUS_ID, global::System.Nullable<int> MODIFICATION_ID, string AUTO_VIN, int MODEL_ID, int ENGINE_ID, decimal AUTO_PRICE, int Original_AUTO_ID) {
-            return this.Update(Original_AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_VIN, MODEL_ID, ENGINE_ID, AUTO_PRICE, Original_AUTO_ID);
+        public virtual int Update(string AUTO_COLOR, int STATUS_ID, global::System.Nullable<int> MODIFICATION_ID, string AUTO_VIN, int MODEL_ID, int ENGINE_ID, int Original_AUTO_ID) {
+            return this.Update(Original_AUTO_ID, AUTO_COLOR, STATUS_ID, MODIFICATION_ID, AUTO_VIN, MODEL_ID, ENGINE_ID, Original_AUTO_ID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16582,10 +18048,11 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             tableMapping.ColumnMappings.Add("ENGINE_TYPE", "ENGINE_TYPE");
             tableMapping.ColumnMappings.Add("ENGINE_CONSUMPTION", "ENGINE_CONSUMPTION");
             tableMapping.ColumnMappings.Add("ENGINE_FULL", "ENGINE_FULL");
+            tableMapping.ColumnMappings.Add("ENGINE_PRICE", "ENGINE_PRICE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""ENGINE"" WHERE ((""ENGINE_ID"" = @Original_ENGINE_ID) AND (""ENGINE_VOLUME"" = @Original_ENGINE_VOLUME) AND (""ENGINE_POWER"" = @Original_ENGINE_POWER) AND (""ENGINE_TYPE"" = @Original_ENGINE_TYPE) AND (""ENGINE_CONSUMPTION"" = @Original_ENGINE_CONSUMPTION) AND ((@IsNull_ENGINE_FULL = 1 AND ""ENGINE_FULL"" IS NULL) OR (""ENGINE_FULL"" = @Original_ENGINE_FULL)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""ENGINE"" WHERE ((""ENGINE_ID"" = @Original_ENGINE_ID) AND (""ENGINE_VOLUME"" = @Original_ENGINE_VOLUME) AND (""ENGINE_POWER"" = @Original_ENGINE_POWER) AND (""ENGINE_TYPE"" = @Original_ENGINE_TYPE) AND (""ENGINE_CONSUMPTION"" = @Original_ENGINE_CONSUMPTION) AND ((@IsNull_ENGINE_FULL = 1 AND ""ENGINE_FULL"" IS NULL) OR (""ENGINE_FULL"" = @Original_ENGINE_FULL)) AND (""ENGINE_PRICE"" = @Original_ENGINE_PRICE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_ENGINE_ID";
@@ -16629,7 +18096,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_ENGINE_FULL";
             param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 353;
+            param.Size = 377;
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_FULL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -16637,16 +18104,24 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_ENGINE_FULL";
-            param.Size = 353;
+            param.Size = 377;
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_FULL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_ENGINE_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "ENGINE_PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"ENGINE\" (\"ENGINE_ID\", \"ENGINE_VOLUME\", \"ENGINE_POWER\", \"ENGINE_TYPE\"" +
-                ", \"ENGINE_CONSUMPTION\") VALUES (@ENGINE_ID, @ENGINE_VOLUME, @ENGINE_POWER, @ENGI" +
-                "NE_TYPE, @ENGINE_CONSUMPTION)";
+                ", \"ENGINE_CONSUMPTION\", \"ENGINE_PRICE\") VALUES (@ENGINE_ID, @ENGINE_VOLUME, @ENG" +
+                "INE_POWER, @ENGINE_TYPE, @ENGINE_CONSUMPTION, @ENGINE_PRICE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@ENGINE_ID";
@@ -16682,9 +18157,16 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_CONSUMPTION";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@ENGINE_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "ENGINE_PRICE";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""ENGINE"" SET ""ENGINE_ID"" = @ENGINE_ID, ""ENGINE_VOLUME"" = @ENGINE_VOLUME, ""ENGINE_POWER"" = @ENGINE_POWER, ""ENGINE_TYPE"" = @ENGINE_TYPE, ""ENGINE_CONSUMPTION"" = @ENGINE_CONSUMPTION WHERE ((""ENGINE_ID"" = @Original_ENGINE_ID) AND (""ENGINE_VOLUME"" = @Original_ENGINE_VOLUME) AND (""ENGINE_POWER"" = @Original_ENGINE_POWER) AND (""ENGINE_TYPE"" = @Original_ENGINE_TYPE) AND (""ENGINE_CONSUMPTION"" = @Original_ENGINE_CONSUMPTION) AND ((@IsNull_ENGINE_FULL = 1 AND ""ENGINE_FULL"" IS NULL) OR (""ENGINE_FULL"" = @Original_ENGINE_FULL)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""ENGINE"" SET ""ENGINE_ID"" = @ENGINE_ID, ""ENGINE_VOLUME"" = @ENGINE_VOLUME, ""ENGINE_POWER"" = @ENGINE_POWER, ""ENGINE_TYPE"" = @ENGINE_TYPE, ""ENGINE_CONSUMPTION"" = @ENGINE_CONSUMPTION, ""ENGINE_PRICE"" = @ENGINE_PRICE WHERE ((""ENGINE_ID"" = @Original_ENGINE_ID) AND (""ENGINE_VOLUME"" = @Original_ENGINE_VOLUME) AND (""ENGINE_POWER"" = @Original_ENGINE_POWER) AND (""ENGINE_TYPE"" = @Original_ENGINE_TYPE) AND (""ENGINE_CONSUMPTION"" = @Original_ENGINE_CONSUMPTION) AND ((@IsNull_ENGINE_FULL = 1 AND ""ENGINE_FULL"" IS NULL) OR (""ENGINE_FULL"" = @Original_ENGINE_FULL)) AND (""ENGINE_PRICE"" = @Original_ENGINE_PRICE))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@ENGINE_ID";
@@ -16719,6 +18201,13 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_CONSUMPTION";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@ENGINE_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "ENGINE_PRICE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_ENGINE_ID";
@@ -16762,7 +18251,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_ENGINE_FULL";
             param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 353;
+            param.Size = 377;
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_FULL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -16770,9 +18259,17 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_ENGINE_FULL";
-            param.Size = 353;
+            param.Size = 377;
             param.IsNullable = true;
             param.SourceColumn = "ENGINE_FULL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_ENGINE_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "ENGINE_PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -16790,8 +18287,8 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"ENGINE_ID\", \"ENGINE_VOLUME\", \"ENGINE_POWER\", \"ENGINE_TYPE\", \"ENGINE_CONSU" +
-                "MPTION\", \"ENGINE_FULL\" FROM \"ENGINE\"";
+            this._commandCollection[0].CommandText = "SELECT ENGINE_ID, ENGINE_VOLUME, ENGINE_POWER, ENGINE_TYPE, ENGINE_CONSUMPTION, E" +
+                "NGINE_FULL, ENGINE_PRICE FROM ENGINE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16852,7 +18349,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_ENGINE_ID, decimal Original_ENGINE_VOLUME, int Original_ENGINE_POWER, string Original_ENGINE_TYPE, decimal Original_ENGINE_CONSUMPTION, string Original_ENGINE_FULL) {
+        public virtual int Delete(long Original_ENGINE_ID, decimal Original_ENGINE_VOLUME, int Original_ENGINE_POWER, string Original_ENGINE_TYPE, decimal Original_ENGINE_CONSUMPTION, string Original_ENGINE_FULL, decimal Original_ENGINE_PRICE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ENGINE_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_ENGINE_VOLUME));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ENGINE_POWER));
@@ -16871,6 +18368,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_ENGINE_FULL));
             }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_ENGINE_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16891,7 +18389,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long ENGINE_ID, decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION) {
+        public virtual int Insert(long ENGINE_ID, decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, decimal ENGINE_PRICE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(ENGINE_ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ENGINE_VOLUME));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ENGINE_POWER));
@@ -16902,6 +18400,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ENGINE_TYPE));
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(ENGINE_CONSUMPTION));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(ENGINE_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16922,7 +18421,7 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long ENGINE_ID, decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, long Original_ENGINE_ID, decimal Original_ENGINE_VOLUME, int Original_ENGINE_POWER, string Original_ENGINE_TYPE, decimal Original_ENGINE_CONSUMPTION, string Original_ENGINE_FULL) {
+        public virtual int Update(long ENGINE_ID, decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, decimal ENGINE_PRICE, long Original_ENGINE_ID, decimal Original_ENGINE_VOLUME, int Original_ENGINE_POWER, string Original_ENGINE_TYPE, decimal Original_ENGINE_CONSUMPTION, string Original_ENGINE_FULL, decimal Original_ENGINE_PRICE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(ENGINE_ID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ENGINE_VOLUME));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ENGINE_POWER));
@@ -16933,24 +18432,26 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ENGINE_TYPE));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(ENGINE_CONSUMPTION));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_ENGINE_ID));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_ENGINE_VOLUME));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ENGINE_POWER));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(ENGINE_PRICE));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((long)(Original_ENGINE_ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_ENGINE_VOLUME));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ENGINE_POWER));
             if ((Original_ENGINE_TYPE == null)) {
                 throw new global::System.ArgumentNullException("Original_ENGINE_TYPE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_ENGINE_TYPE));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_ENGINE_TYPE));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_ENGINE_CONSUMPTION));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_ENGINE_CONSUMPTION));
             if ((Original_ENGINE_FULL == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_ENGINE_FULL));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ENGINE_FULL));
             }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_ENGINE_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16971,8 +18472,8 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, long Original_ENGINE_ID, decimal Original_ENGINE_VOLUME, int Original_ENGINE_POWER, string Original_ENGINE_TYPE, decimal Original_ENGINE_CONSUMPTION, string Original_ENGINE_FULL) {
-            return this.Update(Original_ENGINE_ID, ENGINE_VOLUME, ENGINE_POWER, ENGINE_TYPE, ENGINE_CONSUMPTION, Original_ENGINE_ID, Original_ENGINE_VOLUME, Original_ENGINE_POWER, Original_ENGINE_TYPE, Original_ENGINE_CONSUMPTION, Original_ENGINE_FULL);
+        public virtual int Update(decimal ENGINE_VOLUME, int ENGINE_POWER, string ENGINE_TYPE, decimal ENGINE_CONSUMPTION, decimal ENGINE_PRICE, long Original_ENGINE_ID, decimal Original_ENGINE_VOLUME, int Original_ENGINE_POWER, string Original_ENGINE_TYPE, decimal Original_ENGINE_CONSUMPTION, string Original_ENGINE_FULL, decimal Original_ENGINE_PRICE) {
+            return this.Update(Original_ENGINE_ID, ENGINE_VOLUME, ENGINE_POWER, ENGINE_TYPE, ENGINE_CONSUMPTION, ENGINE_PRICE, Original_ENGINE_ID, Original_ENGINE_VOLUME, Original_ENGINE_POWER, Original_ENGINE_TYPE, Original_ENGINE_CONSUMPTION, Original_ENGINE_FULL, Original_ENGINE_PRICE);
         }
     }
     
@@ -17467,12 +18968,11 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             tableMapping.ColumnMappings.Add("MARK_ID", "MARK_ID");
             tableMapping.ColumnMappings.Add("MODEL_NAME", "MODEL_NAME");
             tableMapping.ColumnMappings.Add("MODEL_FULL", "MODEL_FULL");
+            tableMapping.ColumnMappings.Add("MODEL_PRICE", "MODEL_PRICE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"MODEL\" WHERE ((\"MODEL_ID\" = @Original_MODEL_ID) AND (\"MARK_ID\" = @Or" +
-                "iginal_MARK_ID) AND (\"MODEL_NAME\" = @Original_MODEL_NAME) AND ((@IsNull_MODEL_FU" +
-                "LL = 1 AND \"MODEL_FULL\" IS NULL) OR (\"MODEL_FULL\" = @Original_MODEL_FULL)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""MODEL"" WHERE ((""MODEL_ID"" = @Original_MODEL_ID) AND (""MARK_ID"" = @Original_MARK_ID) AND (""MODEL_NAME"" = @Original_MODEL_NAME) AND ((@IsNull_MODEL_FULL = 1 AND ""MODEL_FULL"" IS NULL) OR (""MODEL_FULL"" = @Original_MODEL_FULL)) AND (""MODEL_PRICE"" = @Original_MODEL_PRICE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_MODEL_ID";
@@ -17513,10 +19013,18 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param.SourceColumn = "MODEL_FULL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MODEL_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODEL_PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"MODEL\" (\"MODEL_ID\", \"MARK_ID\", \"MODEL_NAME\") VALUES (@MODEL_ID, @MAR" +
-                "K_ID, @MODEL_NAME)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"MODEL\" (\"MODEL_ID\", \"MARK_ID\", \"MODEL_NAME\", \"MODEL_PRICE\") VALUES (" +
+                "@MODEL_ID, @MARK_ID, @MODEL_NAME, @MODEL_PRICE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODEL_ID";
@@ -17538,23 +19046,27 @@ WHERE        (UPPER(MARK.MARK_NAME) = UPPER(@MARK_NAME))";
             param.IsNullable = true;
             param.SourceColumn = "MODEL_NAME";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@MODEL_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODEL_PRICE";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE       MODEL
-SET                MODEL_ID = @MODEL_ID, MARK_ID = @MARK_ID, MODEL_NAME = @MODEL_NAME
-WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) AND (MODEL_NAME = @Original_MODEL_NAME) OR
-                         (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) AND (MODEL_NAME = @Original_MODEL_NAME)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""MODEL"" SET ""MODEL_ID"" = @MODEL_ID, ""MARK_ID"" = @MARK_ID, ""MODEL_NAME"" = @MODEL_NAME, ""MODEL_PRICE"" = @MODEL_PRICE WHERE ((""MODEL_ID"" = @Original_MODEL_ID) AND (""MARK_ID"" = @Original_MARK_ID) AND (""MODEL_NAME"" = @Original_MODEL_NAME) AND ((@IsNull_MODEL_FULL = 1 AND ""MODEL_FULL"" IS NULL) OR (""MODEL_FULL"" = @Original_MODEL_FULL)) AND (""MODEL_PRICE"" = @Original_MODEL_PRICE))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODEL_ID";
-            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int64;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "MODEL_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MARK_ID";
-            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int64;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "MARK_ID";
@@ -17566,8 +19078,15 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             param.SourceColumn = "MODEL_NAME";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@MODEL_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODEL_PRICE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_MODEL_ID";
-            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int64;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "MODEL_ID";
@@ -17575,7 +19094,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_MARK_ID";
-            param.DbType = global::System.Data.DbType.Int32;
+            param.DbType = global::System.Data.DbType.Int64;
             param.Size = 8;
             param.IsNullable = true;
             param.SourceColumn = "MARK_ID";
@@ -17586,6 +19105,30 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             param.Size = 250;
             param.IsNullable = true;
             param.SourceColumn = "MODEL_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_MODEL_FULL";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 32765;
+            param.IsNullable = true;
+            param.SourceColumn = "MODEL_FULL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MODEL_FULL";
+            param.Size = 32765;
+            param.IsNullable = true;
+            param.SourceColumn = "MODEL_FULL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MODEL_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODEL_PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -17603,12 +19146,12 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[4];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"MODEL_ID\", \"MARK_ID\", \"MODEL_NAME\", \"MODEL_FULL\" FROM \"MODEL\"";
+            this._commandCollection[0].CommandText = "SELECT MODEL_ID, MARK_ID, MODEL_NAME, MODEL_FULL, MODEL_PRICE FROM MODEL";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        MODEL_ID, MARK_ID, MODEL_NAME, MODEL_FULL\r\nFROM            MODEL\r\nW" +
-                "HERE        (MARK_ID = @mark_id)";
+            this._commandCollection[1].CommandText = "SELECT MODEL_ID, MARK_ID, MODEL_NAME, MODEL_FULL, MODEL_PRICE FROM MODEL WHERE (M" +
+                "ARK_ID = @mark_id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@mark_id";
@@ -17619,8 +19162,8 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._commandCollection[1].Parameters.Add(param);
             this._commandCollection[2] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        MODEL_ID, MARK_ID, MODEL_NAME, MODEL_FULL\r\nFROM            MODEL\r\nW" +
-                "HERE        (MODEL_ID = @Param1)";
+            this._commandCollection[2].CommandText = "SELECT MODEL_ID, MARK_ID, MODEL_NAME, MODEL_FULL, MODEL_PRICE FROM MODEL WHERE (M" +
+                "ODEL_ID = @Param1)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Param1";
@@ -17631,8 +19174,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        MARK_ID\r\nFROM            MODEL\r\nWHERE        (MODEL_ID = @model_ID)" +
-                "";
+            this._commandCollection[3].CommandText = "SELECT MARK_ID, MODEL_PRICE FROM MODEL WHERE (MODEL_ID = @model_ID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@model_ID";
@@ -17752,7 +19294,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_MODEL_ID, long Original_MARK_ID, string Original_MODEL_NAME, string Original_MODEL_FULL) {
+        public virtual int Delete(long Original_MODEL_ID, long Original_MARK_ID, string Original_MODEL_NAME, string Original_MODEL_FULL, decimal Original_MODEL_PRICE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_MODEL_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((long)(Original_MARK_ID));
             if ((Original_MODEL_NAME == null)) {
@@ -17769,6 +19311,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_MODEL_FULL));
             }
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_MODEL_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17789,7 +19332,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long MODEL_ID, long MARK_ID, string MODEL_NAME) {
+        public virtual int Insert(long MODEL_ID, long MARK_ID, string MODEL_NAME, decimal MODEL_PRICE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(MODEL_ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((long)(MARK_ID));
             if ((MODEL_NAME == null)) {
@@ -17798,6 +19341,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(MODEL_NAME));
             }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(MODEL_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17818,23 +19362,33 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int MODEL_ID, int MARK_ID, string MODEL_NAME, int Original_MODEL_ID, int Original_MARK_ID, string Original_MODEL_NAME) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(MODEL_ID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(MARK_ID));
+        public virtual int Update(long MODEL_ID, long MARK_ID, string MODEL_NAME, decimal MODEL_PRICE, long Original_MODEL_ID, long Original_MARK_ID, string Original_MODEL_NAME, string Original_MODEL_FULL, decimal Original_MODEL_PRICE) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(MODEL_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(MARK_ID));
             if ((MODEL_NAME == null)) {
                 throw new global::System.ArgumentNullException("MODEL_NAME");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(MODEL_NAME));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_MODEL_ID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_MARK_ID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(MODEL_PRICE));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_MODEL_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_MARK_ID));
             if ((Original_MODEL_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_MODEL_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_MODEL_NAME));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_MODEL_NAME));
             }
+            if ((Original_MODEL_FULL == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_MODEL_FULL));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_MODEL_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -17855,8 +19409,8 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int MARK_ID, string MODEL_NAME, int Original_MODEL_ID, int Original_MARK_ID, string Original_MODEL_NAME) {
-            return this.Update(Original_MODEL_ID, MARK_ID, MODEL_NAME, Original_MODEL_ID, Original_MARK_ID, Original_MODEL_NAME);
+        public virtual int Update(long MARK_ID, string MODEL_NAME, decimal MODEL_PRICE, long Original_MODEL_ID, long Original_MARK_ID, string Original_MODEL_NAME, string Original_MODEL_FULL, decimal Original_MODEL_PRICE) {
+            return this.Update(Original_MODEL_ID, MARK_ID, MODEL_NAME, MODEL_PRICE, Original_MODEL_ID, Original_MARK_ID, Original_MODEL_NAME, Original_MODEL_FULL, Original_MODEL_PRICE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18015,10 +19569,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             tableMapping.ColumnMappings.Add("MODIFICATION_BODY", "MODIFICATION_BODY");
             tableMapping.ColumnMappings.Add("TRANSMISSION", "TRANSMISSION");
             tableMapping.ColumnMappings.Add("FULL", "FULL");
+            tableMapping.ColumnMappings.Add("MODIFICATION_PRICE", "MODIFICATION_PRICE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""MODIFICATION"" WHERE ((""MODIFICATION_ID"" = @Original_MODIFICATION_ID) AND ((@IsNull_MODIFICATION_NAME = 1 AND ""MODIFICATION_NAME"" IS NULL) OR (""MODIFICATION_NAME"" = @Original_MODIFICATION_NAME)) AND (""MODIFICATION_BODY"" = @Original_MODIFICATION_BODY) AND (""TRANSMISSION"" = @Original_TRANSMISSION) AND ((@IsNull_FULL = 1 AND ""FULL"" IS NULL) OR (""FULL"" = @Original_FULL)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""MODIFICATION"" WHERE ((""MODIFICATION_ID"" = @Original_MODIFICATION_ID) AND ((@IsNull_MODIFICATION_NAME = 1 AND ""MODIFICATION_NAME"" IS NULL) OR (""MODIFICATION_NAME"" = @Original_MODIFICATION_NAME)) AND (""MODIFICATION_BODY"" = @Original_MODIFICATION_BODY) AND (""TRANSMISSION"" = @Original_TRANSMISSION) AND ((@IsNull_FULL = 1 AND ""FULL"" IS NULL) OR (""FULL"" = @Original_FULL)) AND (""MODIFICATION_PRICE"" = @Original_MODIFICATION_PRICE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_MODIFICATION_ID";
@@ -18061,7 +19616,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_FULL";
             param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 614;
+            param.Size = 642;
             param.IsNullable = true;
             param.SourceColumn = "FULL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -18069,16 +19624,24 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FULL";
-            param.Size = 614;
+            param.Size = 642;
             param.IsNullable = true;
             param.SourceColumn = "FULL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MODIFICATION_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODIFICATION_PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO \"MODIFICATION\" (\"MODIFICATION_ID\", \"MODIFICATION_NAME\", \"MODIFICATION" +
-                "_BODY\", \"TRANSMISSION\") VALUES (@MODIFICATION_ID, @MODIFICATION_NAME, @MODIFICAT" +
-                "ION_BODY, @TRANSMISSION)";
+                "_BODY\", \"TRANSMISSION\", \"MODIFICATION_PRICE\") VALUES (@MODIFICATION_ID, @MODIFIC" +
+                "ATION_NAME, @MODIFICATION_BODY, @TRANSMISSION, @MODIFICATION_PRICE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODIFICATION_ID";
@@ -18105,9 +19668,16 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             param.IsNullable = true;
             param.SourceColumn = "TRANSMISSION";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@MODIFICATION_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODIFICATION_PRICE";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""MODIFICATION"" SET ""MODIFICATION_ID"" = @MODIFICATION_ID, ""MODIFICATION_NAME"" = @MODIFICATION_NAME, ""MODIFICATION_BODY"" = @MODIFICATION_BODY, ""TRANSMISSION"" = @TRANSMISSION WHERE ((""MODIFICATION_ID"" = @Original_MODIFICATION_ID) AND ((@IsNull_MODIFICATION_NAME = 1 AND ""MODIFICATION_NAME"" IS NULL) OR (""MODIFICATION_NAME"" = @Original_MODIFICATION_NAME)) AND (""MODIFICATION_BODY"" = @Original_MODIFICATION_BODY) AND (""TRANSMISSION"" = @Original_TRANSMISSION) AND ((@IsNull_FULL = 1 AND ""FULL"" IS NULL) OR (""FULL"" = @Original_FULL)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""MODIFICATION"" SET ""MODIFICATION_ID"" = @MODIFICATION_ID, ""MODIFICATION_NAME"" = @MODIFICATION_NAME, ""MODIFICATION_BODY"" = @MODIFICATION_BODY, ""TRANSMISSION"" = @TRANSMISSION, ""MODIFICATION_PRICE"" = @MODIFICATION_PRICE WHERE ((""MODIFICATION_ID"" = @Original_MODIFICATION_ID) AND ((@IsNull_MODIFICATION_NAME = 1 AND ""MODIFICATION_NAME"" IS NULL) OR (""MODIFICATION_NAME"" = @Original_MODIFICATION_NAME)) AND (""MODIFICATION_BODY"" = @Original_MODIFICATION_BODY) AND (""TRANSMISSION"" = @Original_TRANSMISSION) AND ((@IsNull_FULL = 1 AND ""FULL"" IS NULL) OR (""FULL"" = @Original_FULL)) AND (""MODIFICATION_PRICE"" = @Original_MODIFICATION_PRICE))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@MODIFICATION_ID";
@@ -18133,6 +19703,13 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "TRANSMISSION";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@MODIFICATION_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODIFICATION_PRICE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_MODIFICATION_ID";
@@ -18175,7 +19752,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_FULL";
             param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 614;
+            param.Size = 642;
             param.IsNullable = true;
             param.SourceColumn = "FULL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -18183,9 +19760,17 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FULL";
-            param.Size = 614;
+            param.Size = 642;
             param.IsNullable = true;
             param.SourceColumn = "FULL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_MODIFICATION_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "MODIFICATION_PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -18203,8 +19788,8 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT \"MODIFICATION_ID\", \"MODIFICATION_NAME\", \"MODIFICATION_BODY\", \"TRANSMISSION" +
-                "\", \"FULL\" FROM \"MODIFICATION\"";
+            this._commandCollection[0].CommandText = "SELECT MODIFICATION_ID, MODIFICATION_NAME, MODIFICATION_BODY, TRANSMISSION, \"FULL" +
+                "\", MODIFICATION_PRICE FROM MODIFICATION";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -18265,7 +19850,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_MODIFICATION_ID, string Original_MODIFICATION_NAME, string Original_MODIFICATION_BODY, string Original_TRANSMISSION, string Original_FULL) {
+        public virtual int Delete(long Original_MODIFICATION_ID, string Original_MODIFICATION_NAME, string Original_MODIFICATION_BODY, string Original_TRANSMISSION, string Original_FULL, decimal Original_MODIFICATION_PRICE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_MODIFICATION_ID));
             if ((Original_MODIFICATION_NAME == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -18295,6 +19880,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_FULL));
             }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_MODIFICATION_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18315,7 +19901,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long MODIFICATION_ID, string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION) {
+        public virtual int Insert(long MODIFICATION_ID, string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, decimal MODIFICATION_PRICE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(MODIFICATION_ID));
             if ((MODIFICATION_NAME == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -18335,6 +19921,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(TRANSMISSION));
             }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(MODIFICATION_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18355,7 +19942,7 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long MODIFICATION_ID, string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, long Original_MODIFICATION_ID, string Original_MODIFICATION_NAME, string Original_MODIFICATION_BODY, string Original_TRANSMISSION, string Original_FULL) {
+        public virtual int Update(long MODIFICATION_ID, string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, decimal MODIFICATION_PRICE, long Original_MODIFICATION_ID, string Original_MODIFICATION_NAME, string Original_MODIFICATION_BODY, string Original_TRANSMISSION, string Original_FULL, decimal Original_MODIFICATION_PRICE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(MODIFICATION_ID));
             if ((MODIFICATION_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -18375,35 +19962,37 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(TRANSMISSION));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_MODIFICATION_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(MODIFICATION_PRICE));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_MODIFICATION_ID));
             if ((Original_MODIFICATION_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_MODIFICATION_NAME));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_MODIFICATION_NAME));
             }
             if ((Original_MODIFICATION_BODY == null)) {
                 throw new global::System.ArgumentNullException("Original_MODIFICATION_BODY");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_MODIFICATION_BODY));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_MODIFICATION_BODY));
             }
             if ((Original_TRANSMISSION == null)) {
                 throw new global::System.ArgumentNullException("Original_TRANSMISSION");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_TRANSMISSION));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_TRANSMISSION));
             }
             if ((Original_FULL == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_FULL));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_FULL));
             }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_MODIFICATION_PRICE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18424,8 +20013,8 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, long Original_MODIFICATION_ID, string Original_MODIFICATION_NAME, string Original_MODIFICATION_BODY, string Original_TRANSMISSION, string Original_FULL) {
-            return this.Update(Original_MODIFICATION_ID, MODIFICATION_NAME, MODIFICATION_BODY, TRANSMISSION, Original_MODIFICATION_ID, Original_MODIFICATION_NAME, Original_MODIFICATION_BODY, Original_TRANSMISSION, Original_FULL);
+        public virtual int Update(string MODIFICATION_NAME, string MODIFICATION_BODY, string TRANSMISSION, decimal MODIFICATION_PRICE, long Original_MODIFICATION_ID, string Original_MODIFICATION_NAME, string Original_MODIFICATION_BODY, string Original_TRANSMISSION, string Original_FULL, decimal Original_MODIFICATION_PRICE) {
+            return this.Update(Original_MODIFICATION_ID, MODIFICATION_NAME, MODIFICATION_BODY, TRANSMISSION, MODIFICATION_PRICE, Original_MODIFICATION_ID, Original_MODIFICATION_NAME, Original_MODIFICATION_BODY, Original_TRANSMISSION, Original_FULL, Original_MODIFICATION_PRICE);
         }
     }
     
@@ -18738,7 +20327,6 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             tableMapping.ColumnMappings.Add("ENGINE_CONSUMPTION", "ENGINE_CONSUMPTION");
             tableMapping.ColumnMappings.Add("AUTO_VIN", "AUTO_VIN");
             tableMapping.ColumnMappings.Add("STATUS_NAME", "STATUS_NAME");
-            tableMapping.ColumnMappings.Add("AUTO_PRICE", "AUTO_PRICE");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -18755,7 +20343,9 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ""AUTO_ID"", ""MODEL_ID"", ""MODIFICATION_ID"", ""ENGINE_ID"", ""STATUS_ID"", ""MARK_NAME"", ""MODEL_NAME"", ""AUTO_COLOR"", ""MODIFICATION_NAME"", ""MODIFICATION_BODY"", ""TRANSMISSION"", ""ENGINE_VOLUME"", ""ENGINE_POWER"", ""ENGINE_CONSUMPTION"", ""AUTO_VIN"", ""STATUS_NAME"", ""AUTO_PRICE"" FROM ""V_AUTO""";
+            this._commandCollection[0].CommandText = "SELECT AUTO_ID, MODEL_ID, MODIFICATION_ID, ENGINE_ID, STATUS_ID, MARK_NAME, MODEL" +
+                "_NAME, AUTO_COLOR, MODIFICATION_NAME, MODIFICATION_BODY, TRANSMISSION, ENGINE_VO" +
+                "LUME, ENGINE_POWER, ENGINE_CONSUMPTION, AUTO_VIN, STATUS_NAME FROM V_AUTO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -19134,6 +20724,970 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AUTO_COUNTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public AUTO_COUNTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AUTO_COUNT";
+            tableMapping.ColumnMappings.Add("AC_ID", "AC_ID");
+            tableMapping.ColumnMappings.Add("AC_AUTO_ID", "AC_AUTO_ID");
+            tableMapping.ColumnMappings.Add("AC_AUTO_COUNT", "AC_AUTO_COUNT");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"AUTO_COUNT\" WHERE ((\"AC_ID\" = @Original_AC_ID) AND (\"AC_AUTO_ID\" = @" +
+                "Original_AC_AUTO_ID) AND (\"AC_AUTO_COUNT\" = @Original_AC_AUTO_COUNT))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AC_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AC_AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AC_AUTO_COUNT";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_COUNT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"AUTO_COUNT\" (\"AC_ID\", \"AC_AUTO_ID\", \"AC_AUTO_COUNT\") VALUES (@AC_ID," +
+                " @AC_AUTO_ID, @AC_AUTO_COUNT)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AC_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AC_AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AC_AUTO_COUNT";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_COUNT";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"AUTO_COUNT\" SET \"AC_ID\" = @AC_ID, \"AC_AUTO_ID\" = @AC_AUTO_ID, \"AC_AUTO_CO" +
+                "UNT\" = @AC_AUTO_COUNT WHERE ((\"AC_ID\" = @Original_AC_ID) AND (\"AC_AUTO_ID\" = @Or" +
+                "iginal_AC_AUTO_ID) AND (\"AC_AUTO_COUNT\" = @Original_AC_AUTO_COUNT))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AC_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AC_AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AC_AUTO_COUNT";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_COUNT";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AC_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AC_AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AC_AUTO_COUNT";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AC_AUTO_COUNT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::auto.Properties.Settings.Default.auto_database;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT \"AC_ID\", \"AC_AUTO_ID\", \"AC_AUTO_COUNT\" FROM \"AUTO_COUNT\"";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(autoDataSet.AUTO_COUNTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual autoDataSet.AUTO_COUNTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            autoDataSet.AUTO_COUNTDataTable dataTable = new autoDataSet.AUTO_COUNTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(autoDataSet.AUTO_COUNTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(autoDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "AUTO_COUNT");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(long Original_AC_ID, long Original_AC_AUTO_ID, int Original_AC_AUTO_COUNT) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_AC_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((long)(Original_AC_AUTO_ID));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_AC_AUTO_COUNT));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(long AC_ID, long AC_AUTO_ID, int AC_AUTO_COUNT) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(AC_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(AC_AUTO_ID));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(AC_AUTO_COUNT));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(long AC_ID, long AC_AUTO_ID, int AC_AUTO_COUNT, long Original_AC_ID, long Original_AC_AUTO_ID, int Original_AC_AUTO_COUNT) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(AC_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(AC_AUTO_ID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(AC_AUTO_COUNT));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_AC_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_AC_AUTO_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_AC_AUTO_COUNT));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(long AC_AUTO_ID, int AC_AUTO_COUNT, long Original_AC_ID, long Original_AC_AUTO_ID, int Original_AC_AUTO_COUNT) {
+            return this.Update(Original_AC_ID, AC_AUTO_ID, AC_AUTO_COUNT, Original_AC_ID, Original_AC_AUTO_ID, Original_AC_AUTO_COUNT);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CHECK_AUTO_AVAILABLETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public CHECK_AUTO_AVAILABLETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CHECK_AUTO_AVAILABLE";
+            tableMapping.ColumnMappings.Add("A_COUNT", "A_COUNT");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::auto.Properties.Settings.Default.auto_database;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "\"CHECK_AUTO_AVAILABLE\"";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(autoDataSet.CHECK_AUTO_AVAILABLEDataTable dataTable, global::System.Nullable<long> AUTO_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((AUTO_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(AUTO_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual autoDataSet.CHECK_AUTO_AVAILABLEDataTable GetData(global::System.Nullable<long> AUTO_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((AUTO_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(AUTO_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            autoDataSet.CHECK_AUTO_AVAILABLEDataTable dataTable = new autoDataSet.CHECK_AUTO_AVAILABLEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CHECK_SALE_PRICETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public CHECK_SALE_PRICETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CHECK_SALE_PRICE";
+            tableMapping.ColumnMappings.Add("OUT_RES", "OUT_RES");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::auto.Properties.Settings.Default.auto_database;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "\"CHECK_SALE_PRICE\"";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "AUTO_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "SALE_PRICE";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(autoDataSet.CHECK_SALE_PRICEDataTable dataTable, global::System.Nullable<long> AUTO_ID, global::System.Nullable<decimal> SALE_PRICE) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((AUTO_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(AUTO_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((SALE_PRICE.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(SALE_PRICE.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual autoDataSet.CHECK_SALE_PRICEDataTable GetData(global::System.Nullable<long> AUTO_ID, global::System.Nullable<decimal> SALE_PRICE) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((AUTO_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(AUTO_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((SALE_PRICE.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((decimal)(SALE_PRICE.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            autoDataSet.CHECK_SALE_PRICEDataTable dataTable = new autoDataSet.CHECK_SALE_PRICEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class GET_MODEL_PRICETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public GET_MODEL_PRICETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "GET_MODEL_PRICE";
+            tableMapping.ColumnMappings.Add("PRICE", "PRICE");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::auto.Properties.Settings.Default.auto_database;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "\"GET_MODEL_PRICE\"";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "MODEL_ID";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.Size = 8;
+            param.IsNullable = true;
+            param.SourceColumn = null;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(autoDataSet.GET_MODEL_PRICEDataTable dataTable, global::System.Nullable<long> MODEL_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((MODEL_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(MODEL_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual autoDataSet.GET_MODEL_PRICEDataTable GetData(global::System.Nullable<long> MODEL_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((MODEL_ID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(MODEL_ID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            autoDataSet.GET_MODEL_PRICEDataTable dataTable = new autoDataSet.GET_MODEL_PRICEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -19174,6 +21728,8 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         private MODELTableAdapter _mODELTableAdapter;
         
         private MODIFICATIONTableAdapter _mODIFICATIONTableAdapter;
+        
+        private AUTO_COUNTTableAdapter _aUTO_COUNTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -19402,6 +21958,20 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AUTO_COUNTTableAdapter AUTO_COUNTTableAdapter {
+            get {
+                return this._aUTO_COUNTTableAdapter;
+            }
+            set {
+                this._aUTO_COUNTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -19479,6 +22049,10 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                             && (this._mODIFICATIONTableAdapter.Connection != null))) {
                     return this._mODIFICATIONTableAdapter.Connection;
                 }
+                if (((this._aUTO_COUNTTableAdapter != null) 
+                            && (this._aUTO_COUNTTableAdapter.Connection != null))) {
+                    return this._aUTO_COUNTTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -19537,6 +22111,9 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                 if ((this._mODIFICATIONTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._aUTO_COUNTTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -19557,12 +22134,12 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sTATUSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.STATUS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eNGINETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ENGINE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sTATUSTableAdapter.Update(updatedRows));
+                    result = (result + this._eNGINETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -19584,12 +22161,12 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mODIFICATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MODIFICATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._sTATUSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.STATUS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._mODIFICATIONTableAdapter.Update(updatedRows));
+                    result = (result + this._sTATUSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -19602,12 +22179,12 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._eNGINETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ENGINE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mODIFICATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MODIFICATION.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._eNGINETableAdapter.Update(updatedRows));
+                    result = (result + this._mODIFICATIONTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -19644,6 +22221,15 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._aUTOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aUTO_COUNTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AUTO_COUNT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aUTO_COUNTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -19701,11 +22287,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sTATUSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.STATUS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eNGINETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ENGINE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sTATUSTableAdapter.Update(addedRows));
+                    result = (result + this._eNGINETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -19725,11 +22311,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mODIFICATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MODIFICATION.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._sTATUSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.STATUS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._mODIFICATIONTableAdapter.Update(addedRows));
+                    result = (result + this._sTATUSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -19741,11 +22327,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._eNGINETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ENGINE.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mODIFICATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MODIFICATION.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._eNGINETableAdapter.Update(addedRows));
+                    result = (result + this._mODIFICATIONTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -19778,6 +22364,14 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._aUTOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aUTO_COUNTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AUTO_COUNT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aUTO_COUNTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -19855,6 +22449,14 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._aUTO_COUNTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AUTO_COUNT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aUTO_COUNTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._aUTOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.AUTO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -19887,11 +22489,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eNGINETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ENGINE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mODIFICATIONTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MODIFICATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._eNGINETableAdapter.Update(deletedRows));
+                    result = (result + this._mODIFICATIONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -19903,11 +22505,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._mODIFICATIONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MODIFICATION.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sTATUSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.STATUS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._mODIFICATIONTableAdapter.Update(deletedRows));
+                    result = (result + this._sTATUSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -19927,11 +22529,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sTATUSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.STATUS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eNGINETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ENGINE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sTATUSTableAdapter.Update(deletedRows));
+                    result = (result + this._eNGINETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20054,6 +22656,11 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
             }
             if (((this._mODIFICATIONTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._mODIFICATIONTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._aUTO_COUNTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aUTO_COUNTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -20224,6 +22831,15 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                         adaptersWithAcceptChangesDuringUpdate.Add(this._mODIFICATIONTableAdapter.Adapter);
                     }
                 }
+                if ((this._aUTO_COUNTTableAdapter != null)) {
+                    revertConnections.Add(this._aUTO_COUNTTableAdapter, this._aUTO_COUNTTableAdapter.Connection);
+                    this._aUTO_COUNTTableAdapter.Connection = ((global::FirebirdSql.Data.FirebirdClient.FbConnection)(workConnection));
+                    this._aUTO_COUNTTableAdapter.Transaction = ((global::FirebirdSql.Data.FirebirdClient.FbTransaction)(workTransaction));
+                    if (this._aUTO_COUNTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aUTO_COUNTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aUTO_COUNTTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -20341,6 +22957,10 @@ WHERE        (MODEL_ID = @Original_MODEL_ID) AND (MARK_ID = @Original_MARK_ID) A
                 if ((this._mODIFICATIONTableAdapter != null)) {
                     this._mODIFICATIONTableAdapter.Connection = ((global::FirebirdSql.Data.FirebirdClient.FbConnection)(revertConnections[this._mODIFICATIONTableAdapter]));
                     this._mODIFICATIONTableAdapter.Transaction = null;
+                }
+                if ((this._aUTO_COUNTTableAdapter != null)) {
+                    this._aUTO_COUNTTableAdapter.Connection = ((global::FirebirdSql.Data.FirebirdClient.FbConnection)(revertConnections[this._aUTO_COUNTTableAdapter]));
+                    this._aUTO_COUNTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

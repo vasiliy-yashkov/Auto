@@ -82,7 +82,7 @@ namespace auto
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
+                    MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! \n" + ex.Message,
                     "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -101,7 +101,7 @@ namespace auto
                         (int)deliveryID);
                     this.Close();
                 }
-                catch (Exception ex)
+                catch (Exception /*ex*/)
                 {
                     MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
                     "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);

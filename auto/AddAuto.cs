@@ -15,14 +15,14 @@ namespace auto
         private autoDataSetTableAdapters.AUTOTableAdapter autoAdapter;
         private bool edit = false;
         private long autoID;
-        private string color;
+        //private string color;
         private long statusID;
-        private long modID;
+        //private long modID;
         private long markID;
         private long modelID;
         private long engineID;
-        private string vin;
-        private decimal price;
+        //private string vin;
+        //private decimal price;
 
         public AddAuto ()
         {
@@ -88,12 +88,12 @@ namespace auto
                         return;
                     }
                     autoAdapter.Insert(txtColor.Text, (int)(long)cmbStatus.SelectedValue, (int)(long)cmbMod.SelectedValue, txtVIN.Text,
-                        (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue, Decimal.Parse(txtPrice.Text));
+                        (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue);
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
+                    MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! \n" + ex.Message,
                     "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -108,13 +108,13 @@ namespace auto
                         return;
                     }
                     autoAdapter.Update(txtColor.Text, (int)(long)cmbStatus.SelectedValue, (int)(long)cmbMod.SelectedValue,
-                    txtVIN.Text, (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue, Decimal.Parse(txtPrice.Text),
+                    txtVIN.Text, (int)(long)cmbModel.SelectedValue, (int)(long)cmbEngine.SelectedValue,
                     (int)autoID);
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Пожалуйста, проверьте корректность введенных данных!",
+                    MessageBox.Show("Пожалуйста, проверьте корректность введенных данных! \n" + ex.Message,
                     "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
