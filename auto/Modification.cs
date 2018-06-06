@@ -79,7 +79,7 @@ namespace auto
                         {
                             MessageBox.Show("Цена не может быть равной 0!",
                                 "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            mODIFICATIONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+                            mODIFICATIONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "1";
                             return;
                         }
                         mODIFICATIONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = d.ToString();

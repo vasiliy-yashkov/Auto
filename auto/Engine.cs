@@ -78,7 +78,7 @@ namespace auto
                         {
                             MessageBox.Show("Цена не может быть равной 0!",
                                 "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            eNGINEDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+                            eNGINEDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "1";
                             return;
                         }
                         eNGINEDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = d.ToString();
