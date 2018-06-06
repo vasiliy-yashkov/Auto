@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -67,6 +68,28 @@ namespace auto
 
         private void pERSONDataGridView_CellEndEdit (object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex > 0 && e.ColumnIndex < 4)
+            {
+                Object value = pERSONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (value != null && !String.IsNullOrEmpty(value.ToString()))
+                {
+                    string result = "";
+                    var pattern = new Regex(@"[^\w\s]");
+                    result = pattern.Replace(value.ToString(), string.Empty);
+                    pattern = new Regex(@"[\d]");
+                    result = pattern.Replace(result, string.Empty);
+                    result = result.Trim();
+                    if (String.IsNullOrEmpty(result))
+                    {
+                        MessageBox.Show("Пожалуйста, заполните ФИО корректно!",
+                                "Неверный формат данных", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        pERSONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = null;
+      
+                        return;
+                    }
+                    pERSONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = result;
+                }
+            }
             if (e.ColumnIndex == 5)
             {
                 Object value = pERSONDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;

@@ -68,9 +68,9 @@ namespace auto
 
             try
             {
-                personAdapter.Insert(txtName.Text,
-                    txtLastName.Text,
-                    txtMiddleName.Text,
+                personAdapter.Insert(txtName.Text.Trim(),
+                    txtLastName.Text.Trim(),
+                    txtMiddleName.Text.Trim(),
                     bdDate.Value,
                     txtPassportNumber.Text,
                     txtPassportSerial.Text,
@@ -139,6 +139,33 @@ namespace auto
                 txtPhone.MaxLength = 12;
             else
                 txtPhone.MaxLength = 11;
+        }
+
+        private void txtLastName_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            // запрет на ввод цифр
+            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtName_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            // запрет на ввод цифр
+            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMiddleName_KeyPress (object sender, KeyPressEventArgs e)
+        {
+            // запрет на ввод цифр
+            if (Char.IsDigit(e.KeyChar) && (e.KeyChar != '\b') && (e.KeyChar != ' '))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
